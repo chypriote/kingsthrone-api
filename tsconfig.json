@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+		"declaration": true,
+    "outDir": "lib",
+  },
+	"include": ["src/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "build",
+    ".cache",
+    "lib"
+  ]
+}
