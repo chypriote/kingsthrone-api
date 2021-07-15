@@ -1,1 +1,0 @@
-export { Goat } from './goat'
