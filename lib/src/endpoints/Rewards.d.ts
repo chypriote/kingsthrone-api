@@ -5,6 +5,6 @@ export declare class Rewards extends GoatResource implements RewardsEndpoint {
     getDailyReward(id: number): Promise<boolean>;
     claimWeeklyPoints(): Promise<void>;
     getWeeklyReward(id: number): Promise<boolean>;
-    getProgressionReward(): Promise<void>;
+    getProgressionReward(): Promise<boolean>;
     claimLoginReward(): Promise<void>;
 }

@@ -1,1 +1,3 @@
-export { Goat } from './src/goat'
+import { Goat } from './src/goat'
+export { Goat }
+export const goat = new Goat()

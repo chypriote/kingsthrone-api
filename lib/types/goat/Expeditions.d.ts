@@ -1,3 +1,4 @@
+import { User } from "./User";
 export declare type MerchantInfos = {
     beishu: number;
     gid: number;
@@ -22,7 +23,7 @@ export declare type ExpeditionInfo = {
     heishu: number;
     data: Expedition[];
 };
-export declare type KingdomExpInfo = {
+export interface KingdomExpInfo {
     cfg: {
         bigId: number;
         playNum: number;
@@ -50,4 +51,18 @@ export declare type KingdomExpInfo = {
         level: number;
         num: number;
     }[];
-};
+}
+export interface KingdomExpGlobal {
+    info: KingdomExpInfo & {
+        levelHasPlay: {
+            level: number;
+            num: number;
+        }[];
+        levelBossSubHp: [];
+    };
+    FirstList: {
+        level: number;
+        uid: string;
+        userData: User;
+    }[];
+}

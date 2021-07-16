@@ -1,5 +1,5 @@
 import { Item } from '../Item';
-import { EventShopRank } from './Event';
+import { EventRwd } from './Event';
 export interface GardenStrollDrop {
     id: number;
     tip: number;
@@ -27,7 +27,7 @@ interface GardenStrollInfo {
     };
     drop: GardenStrollDrop[];
     baoxiang: GardenStrollChest[];
-    rank: EventShopRank[];
+    rank: EventRwd[];
     msg: string;
     is_kua: number;
     set: {

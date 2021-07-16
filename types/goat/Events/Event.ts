@@ -38,13 +38,13 @@ export interface EventShopItem {
 	haslimitNum: number
 }
 
-export interface EventShopRank {
+export interface EventRwd {
 	member: { count: number, id: number }[]
 	rand: { re: number, rs: number }
 }
 
 export interface EventShop {
 	hasScore: number //current score
-	rank: EventShopRank | EventShopRank[]
+	rank: EventRwd | EventRwd[]
 	wsShopcfg: EventShopItem[] //Point exchange
 }

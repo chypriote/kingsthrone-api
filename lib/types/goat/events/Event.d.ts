@@ -32,7 +32,7 @@ export interface EventShopItem {
     limitNum: number;
     haslimitNum: number;
 }
-export interface EventShopRank {
+export interface EventRwd {
     member: {
         count: number;
         id: number;
@@ -44,6 +44,6 @@ export interface EventShopRank {
 }
 export interface EventShop {
     hasScore: number;
-    rank: EventShopRank | EventShopRank[];
+    rank: EventRwd | EventRwd[];
     wsShopcfg: EventShopItem[];
 }

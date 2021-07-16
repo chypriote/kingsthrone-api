@@ -4,6 +4,6 @@ export interface Rewards extends GoatResource {
     getDailyReward(id: number): Promise<boolean>;
     claimWeeklyPoints(): Promise<void>;
     getWeeklyReward(id: number): Promise<boolean>;
-    getProgressionReward(): Promise<void>;
+    getProgressionReward(): Promise<boolean>;
     claimLoginReward(): Promise<void>;
 }

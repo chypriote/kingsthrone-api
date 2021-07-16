@@ -1,4 +1,4 @@
-import { Account, Alliance, Children, Expeditions, Feasts, HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile, Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch, DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation } from './endpoints';
+import { Account, Alliance, Children, Expeditions, Feasts, HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile, Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch, DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation, DragonSlaying, JewelsOfLuck } from './endpoints';
 export interface IGoat {
     isLoggedIn: boolean;
     account: Account;
@@ -27,6 +27,8 @@ export interface IGoat {
         picnic: Picnic;
         treasureHunt: TreasureHunt;
         castle: Renovation;
+        dragonSlaying: DragonSlaying;
+        jewelsOfLuck: JewelsOfLuck;
     };
     _setServer(server: string): this;
     _getServer(): string;

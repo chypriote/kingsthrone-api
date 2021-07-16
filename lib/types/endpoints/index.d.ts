@@ -21,3 +21,5 @@ export { GardenStroll } from './Events/GardenStroll';
 export { Picnic } from './Events/Picnic';
 export { TreasureHunt } from './Events/TreasureHunt';
 export { Renovation } from './Events/Renovation';
+export { DragonSlaying } from './Events/DragonSlaying';
+export { JewelsOfLuck } from './Events/JewelsOfLuck';

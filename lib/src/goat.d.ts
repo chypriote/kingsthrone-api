@@ -1,5 +1,5 @@
 import { IGoat } from '../types/IGoat';
-import { Account, Alliance, Children, Expeditions, Feasts, HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile, Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch, DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation } from './endpoints';
+import { Account, Alliance, Children, Expeditions, Feasts, HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile, Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch, DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation, DragonSlaying, JewelsOfLuck } from './endpoints';
 export declare const LOGIN_ACCOUNT_GAUTIER: {
     rsn: string;
     login: {
@@ -90,6 +90,8 @@ export declare class Goat implements IGoat {
         picnic: Picnic;
         treasureHunt: TreasureHunt;
         castle: Renovation;
+        dragonSlaying: DragonSlaying;
+        jewelsOfLuck: JewelsOfLuck;
     };
     constructor();
     _getHost(): string;

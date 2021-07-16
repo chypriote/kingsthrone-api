@@ -3,7 +3,8 @@ import {
 	Account, Alliance, Children, Expeditions, Feasts,
 	HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile,
 	Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch,
-	DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation
+	DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation, DragonSlaying,
+	JewelsOfLuck
 } from './endpoints'
 
 export const LOGIN_ACCOUNT_GAUTIER = { 'rsn':'2ylxannmqx','login':{ 'loginAccount':{ 'parm1':'WIFI','platform':'gaotukc', 'parm2':'GooglePlay','parm6':'4c4fbcab-ab57-3f8c-8447-f675203edc15', 'parm3':'ONEPLUS A5000','openid':'563125632849524101', 'openkey':'6b66102c0d0e963ee2f6ebe96a2344917c3faca4' } } }
@@ -56,6 +57,8 @@ export class Goat implements IGoat {
 		picnic: Picnic
 		treasureHunt: TreasureHunt
 		castle: Renovation
+		dragonSlaying: DragonSlaying
+		jewelsOfLuck: JewelsOfLuck
 	}
 
 	constructor() {
@@ -96,6 +99,8 @@ export class Goat implements IGoat {
 			picnic: new Picnic(this),
 			treasureHunt: new TreasureHunt(this),
 			castle: new Renovation(this),
+			dragonSlaying: new DragonSlaying(this),
+			jewelsOfLuck: new JewelsOfLuck(this),
 		}
 	}
 	_getHost(): string { return this.host}

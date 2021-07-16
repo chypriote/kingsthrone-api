@@ -6,6 +6,8 @@ import { Item } from './Item';
 import { UserTourney } from './Tourney';
 import { Mail } from './Mail';
 import { WorldBoss } from './WorldBoss';
+import { KingdomExpGlobal } from './Expeditions';
+import { WeeklyRank } from './WeeklyRank';
 export declare enum Sex {
     MALE = 2,
     FEMALE = 1
@@ -236,10 +238,10 @@ interface PurchaseReward {
 }
 export declare type GameInfos = {
     banish: {
-        heroList: unknown;
+        heroList: unknown[];
     };
     chat: {
-        blacklist: unknown;
+        blacklist: unknown[];
     };
     chenghao: {
         chInfo: {
@@ -299,7 +301,11 @@ export declare type GameInfos = {
     };
     daily: RegularTasks;
     derail: unknown;
-    friends: unknown;
+    friends: {
+        fapplyStatus: {
+            status: number;
+        };
+    };
     fuli: unknown;
     hangUpSystem: {
         info: CastleInfos[];
@@ -320,7 +326,19 @@ export declare type GameInfos = {
         itemList: Item[];
     };
     jingYing: unknown;
-    laofang: unknown;
+    kingdomExpedition: KingdomExpGlobal;
+    laofang: {
+        laofang: {
+            hit: number;
+            da: number;
+            kaifang: number;
+        };
+        mingwang: {
+            eday: number;
+            mw: number;
+            maxmw: number;
+        };
+    };
     loginMod: unknown;
     mail: {
         mailList: Mail[];
@@ -329,7 +347,20 @@ export declare type GameInfos = {
     ranking: {
         mobai: Ranking;
     };
-    school: unknown;
+    school: {
+        base: {
+            desk: number;
+            fri_desk: number;
+        };
+        list: {
+            id: number;
+            hid: number;
+            cd: {
+                next: number;
+                label: string;
+            };
+        }[];
+    };
     sevenSign: unknown;
     shop: unknown;
     son: {
@@ -342,7 +373,9 @@ export declare type GameInfos = {
     user: UserProfile;
     warHorse: unknown;
     weekly: RegularTasks;
-    weeklyrank: unknown;
+    weeklyrank: {
+        info: WeeklyRank;
+    };
     wife: {
         wifeList: Wife[];
     };

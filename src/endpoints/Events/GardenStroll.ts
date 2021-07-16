@@ -15,7 +15,7 @@ export class GardenStroll extends GoatResource implements GardenStrollEndpoint {
 	}
 
 	async getShop(): Promise<GardenStrollPointExchange> {
-		const data = await this.request({ 'huodong': { 'hd336KuaRank': [] }, 'rsn': '2yaqnxywnqx' })
+		const data = await this.request({ 'huodong':{ 'hd336shop':[] },'rsn':'6wuxlxwbuk' })
 		return data.u.xjhuodong.xijiao
 	}
 }
