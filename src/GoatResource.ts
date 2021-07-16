@@ -1,14 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios'
 import { Goat } from './goat'
+import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
 
-export const LOGIN_ACCOUNT_NAPOLEON: LoginData = { 'rsn':'2axwqwhxyx','login':{ 'loginAccount':{
-	'parm1':'WIFI','platform':'gaotukc',
-	'parm2':'GooglePlay','parm6':'4c4fbcab-ab57-3f8c-8447-f675203edc15',
-	'parm3':'ONEPLUS A5000','openid':'565939577188654916',
-	'openkey':'b4d47e9c7beaf15e97f899c8cd4f2bbc4f31c3bc' } } }
-
-interface LoginData {
+export interface Account {
 	rsn: string
 	login: {
 		loginAccount: {
@@ -85,7 +80,13 @@ export class GoatResource {
 		return await makeRequest(JSON.stringify(data || {}))
 	}
 
-	public async login(user: LoginData): Promise<void> {
+	public async login(user: Account): Promise<void> {
+		//prevent relogin on gautier
+		if (user.rsn === '2ylxannmqx') {
+			this._goat._setToken('d204e5adba2716bfb61b97b9e9a24bf3')
+			this._goat._setGid('699002934')
+			return
+		}
 		const response = await this._request(user)
 
 		if (!response?.a?.loginMod?.loginAccount?.token) {
@@ -97,7 +98,7 @@ export class GoatResource {
 		 console.warn(`Logged in on ${this._goat._getServer()} as ${this._goat._getGid()}`)
 	}
 	protected async request(data: any = null): Promise<any> {
-		if (!this._goat.isLoggedIn) { await this.login(LOGIN_ACCOUNT_NAPOLEON) }
+		if (!this._goat.isLoggedIn) { await this.login(ACCOUNT_NAPOLEON) }
 		const response = await this._request(data)
 		return await this._jsonResponseHandler(response)
 	}

@@ -25,7 +25,7 @@ declare enum GRID_ITEM {
 }
 interface DarkCastleGridSlot {
     id: number;
-    items: Item[];
+    items: Item;
     type: GRID_ITEM;
     sid: number;
     isGet: boolean;

@@ -1,6 +1,5 @@
 import { Goat } from './goat';
-export declare const LOGIN_ACCOUNT_NAPOLEON: LoginData;
-interface LoginData {
+export interface Account {
     rsn: string;
     login: {
         loginAccount: {
@@ -23,7 +22,6 @@ export declare class GoatResource {
     private _makeHeaders;
     private _retry;
     private _request;
-    login(user: LoginData): Promise<void>;
+    login(user: Account): Promise<void>;
     protected request(data?: any): Promise<any>;
 }
-export {};
