@@ -1,4 +1,5 @@
 import { Sex } from './GameInfos'
+import { Item } from './Item';
 
 interface ClubMember {
 	id: string
@@ -40,8 +41,18 @@ export interface ClubInfo {
 	allShiLi: number
 	userLevel: number
 	password: number
-	clubLog: []
-	bossinfo: []
+	clubLog: ClubLog[]
+	bossinfo: AllianceBossInfo[]
+}
+
+interface ClubLog {
+	type: number
+	name: string
+	fname: string
+	num1: number
+	num2: number
+	items: Item[],
+	time: number
 }
 
 export interface Club {
@@ -54,6 +65,8 @@ export interface Club {
 		ltime: { next: number, label: string }
 	}
 	clubInfo: ClubInfo
+	clubLog: ClubLog[]
+	bossInfo: AllianceBossInfo[]
 }
 
 export interface AllianceBossInfo {

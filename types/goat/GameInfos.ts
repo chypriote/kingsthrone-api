@@ -6,10 +6,12 @@ import { Item } from './Item'
 import { UserTourney } from './Tourney'
 import { Mail } from './Mail'
 import { WorldBoss } from './WorldBoss'
+import { KingdomExpGlobal } from './Expeditions'
+import { WeeklyRank } from './WeeklyRank'
 
 export enum Sex {
-	MALE= 2,
-	FEMALE= 1
+	MALE = 2,
+	FEMALE = 1
 }
 interface UserDetails {
 	uid: number
@@ -81,9 +83,9 @@ export interface UserProfile {
 	chapRwdList: { bid: number, rwdStat: number }[]
 	dress: unknown
 	pvb2: { next: number, label: string }
-	efunUpData: {	chongxing: number, xunfang: number, zhengwu: number, shangci: number }
+	efunUpData: { chongxing: number, xunfang: number, zhengwu: number, shangci: number }
 	selectOfficials: []
-	changjing: { ver: number, set: number, list: {id: number, cd: unknown, get: number}[] }
+	changjing: { ver: number, set: number, list: { id: number, cd: unknown, get: number }[] }
 	fuserStatus: { status: number }
 	vipStatus: { status: number }
 	banben: { vipver: number }
@@ -126,7 +128,7 @@ export interface Wife {
 interface Spouse {
 	fuid: number
 	fname: string
-	sname:  string
+	sname: string
 	sonuid: number
 	honor: number
 	sex: Sex
@@ -162,7 +164,7 @@ interface SpecialOfferPack {
 	dc: number
 	items: Item[]
 	itemText: string
-	showHero: {id: number, type: number}
+	showHero: { id: number, type: number }
 }
 interface ShopPack {
 	alreadybuy: number //packs bought
@@ -197,17 +199,17 @@ interface PurchaseReward {
 		ycdc: number
 	}
 	msg: string
-	rwd: {id: number, items: Item[], need: number /*vipexp needed*/}
+	rwd: { id: number, items: Item[], need: number /*vipexp needed*/ }
 }
 
 export type GameInfos = {
-	banish: { heroList: unknown }
-	chat: {  blacklist: unknown }
+	banish: { heroList: unknown[] }
+	chat: { blacklist: unknown[] }
 	chenghao: {
-		chInfo: {setid: number, list: {checked: number, chid: number, endT: number, getT: number}[]}
-		wyrwd: {get: number}
+		chInfo: { setid: number, list: { checked: number, chid: number, endT: number, getT: number }[] }
+		wyrwd: { get: number }
 	}
-	chengjiu: { cjlist: {id: number, num: number, rwd: number}[] }
+	chengjiu: { cjlist: { id: number, num: number, rwd: number }[] }
 	club: Club
 	CombinedSevContinuous: {
 		info: unknown
@@ -224,24 +226,31 @@ export type GameInfos = {
 		typeInfo: ShopPackTip[]
 		typeInfoTwo: ShopPackTip[]
 	}
-	dadian: { counter: {id: number, name: string, num: number}[] } //main quest status
+	dadian: { counter: { id: number, name: string, num: number }[] } //main quest status
 	daily: RegularTasks
 	derail: unknown
-	friends: unknown
+	friends: {fapplyStatus: { status: number }}
 	fuli: unknown
 	hangUpSystem: { info: CastleInfos[] } //Kingdom
 	hanlin: { info: Hanlin }
 	hero: { heroList: Hero[] }
-	huanggong: { qingAn: {type: number} }
+	huanggong: { qingAn: { type: number } }
 	huodonglist: unknown
 	item: { itemList: Item[] }
 	jingYing: unknown
-	laofang: unknown
+	kingdomExpedition: KingdomExpGlobal
+	laofang: {
+		laofang: {hit: number, da: number, kaifang: number }
+		mingwang: {eday: number, mw: number, maxmw: number }
+	}
 	loginMod: unknown
 	mail: { mailList: Mail[] }
 	order: unknown
 	ranking: { mobai: Ranking }
-	school: unknown
+	school: {
+		base: {desk: number, fri_desk: number}
+		list: {id: number, hid: number, cd: {next: number, label: string }}[]
+	} //Training field
 	sevenSign: unknown
 	shop: unknown
 	son: { sonList: Son[] }
@@ -250,7 +259,7 @@ export type GameInfos = {
 	user: UserProfile
 	warHorse: unknown
 	weekly: RegularTasks
-	weeklyrank: unknown
+	weeklyrank: { info: WeeklyRank }
 	wife: { wifeList: Wife[] }
 	wordboss: WorldBoss
 	xingqin: unknown

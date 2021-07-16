@@ -1,3 +1,5 @@
+import { User } from "./User"
+
 export type MerchantInfos = {
 	beishu: number
 	gid: number
@@ -25,7 +27,7 @@ export type ExpeditionInfo = {
 	data: Expedition[]
 }
 
-export type KingdomExpInfo = {
+export interface KingdomExpInfo {
 	cfg: { bigId: number, playNum: number, smallId: number }
 	playNum: number
 	maxLevel: number
@@ -34,4 +36,16 @@ export type KingdomExpInfo = {
 	firstAllRwd: { level: number, num: number }[]
 	firstRwd: { level: number, num: number }[]
 	levelPlayStar: { level: number, num: number }[]
+}
+
+export interface KingdomExpGlobal {
+	info: KingdomExpInfo & {
+		levelHasPlay: { level: number, num: number }[]
+		levelBossSubHp: []
+	}
+	FirstList: {
+		level: number
+		uid: string
+		userData: User
+	}[]
 }

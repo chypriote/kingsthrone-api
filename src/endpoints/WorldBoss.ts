@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { FIGHT_STATUS } from '../../types/goat/worldboss'
+import { FIGHT_STATUS } from '../../types/goat/WorldBoss'
 import { WorldBoss as WorldBossEndpoint } from '../../types/Endpoints/WorldBoss'
 
 export class WorldBoss extends GoatResource implements WorldBossEndpoint {
