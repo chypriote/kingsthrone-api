@@ -1,8 +1,7 @@
 import { CastleInfos } from '../../types/goat/Kingdom'
 import { GoatResource } from '../GoatResource'
-import { Kingdom as KingdomEndpoint } from '../../types/Endpoints/Kingdom'
 
-export class Kingdom extends GoatResource implements KingdomEndpoint {
+export class Kingdom extends GoatResource {
 	async getCastleRewards(id: number, rsn: string): Promise<CastleInfos | false> {
 		try {
 			const reward = await this.request({ 'rsn': rsn, 'hangUpSystem': { 'getRewards': { 'type': 'all', 'id': id } } })

@@ -1,4 +1,3 @@
-import { IGoat } from '../types/IGoat'
 import {
 	Account, Alliance, Children, Expeditions, Feasts,
 	HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile,
@@ -16,7 +15,7 @@ export { ACCOUNT_GAUTIER } from './accounts/gautier'
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos'
 export { ACCOUNT_RAYMUNDUS } from './accounts/raymundus'
 
-export class Goat implements IGoat {
+export class Goat {
 	private readonly cookie: string
 	private token: string|null = null
 	private gid: string|null = null

@@ -1,7 +1,6 @@
 import { GoatResource } from '../GoatResource';
 import { InLaw } from '../../types/goat/InLaw';
-import { Children as ChildrenEndpoint } from '../../types/Endpoints/Children';
-export declare class Children extends GoatResource implements ChildrenEndpoint {
+export declare class Children extends GoatResource {
     getSonsStatus(): Promise<any>;
     raiseAllSons(): Promise<boolean>;
     nameSon(id: number): Promise<void>;

@@ -1,8 +1,6 @@
 import { GoatResource } from '../GoatResource'
 
-import { Mail as MailEndpoint } from '../../types/Endpoints/Mail'
-
-export class Mail extends GoatResource implements MailEndpoint {
+export class Mail extends GoatResource {
 	async readAllMail(): Promise<void> {
 		await this.request({ 'rsn': '6swkxspslyk', 'mail': { 'redAllMails': [] } })
 	}

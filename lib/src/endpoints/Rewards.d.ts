@@ -1,6 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { Rewards as RewardsEndpoint } from '../../types/Endpoints/Rewards';
-export declare class Rewards extends GoatResource implements RewardsEndpoint {
+export declare class Rewards extends GoatResource {
     claimDailyPoints(): Promise<void>;
     getDailyReward(id: number): Promise<boolean>;
     claimWeeklyPoints(): Promise<void>;

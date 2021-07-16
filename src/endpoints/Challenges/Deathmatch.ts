@@ -1,9 +1,7 @@
 import { GoatResource } from '../../GoatResource'
-import { DMOngoingFight, DMRanking } from '../../../types/goat/TourneyDM'
-import { OpponentHero, Reward, ShopItem } from '../../../types/goat/Tourney'
-import { Deathmatch as DeathmatchEndpoint } from '../../../types/Endpoints/Challenges/Deathmatch'
+import { DMOngoingFight, DMRanking, OpponentHero, Reward, TourneyShopItem } from '../../../types'
 
-export class Deathmatch extends GoatResource implements DeathmatchEndpoint {
+export class Deathmatch extends GoatResource {
 	async dmGetTourneyInfos(): Promise<DMOngoingFight> {
 		const data = await this.request({ 'kuayamen': { 'jdComeHd': [] }, 'rsn': '3esswfnhew' })
 		return data.a.jdyamen
@@ -20,7 +18,7 @@ export class Deathmatch extends GoatResource implements DeathmatchEndpoint {
 		return data.a.jdyamen
 	}
 
-	async dmBuyTourneyBoost(item: ShopItem): Promise<DMOngoingFight> {
+	async dmBuyTourneyBoost(item: TourneyShopItem): Promise<DMOngoingFight> {
 		const data = await this.request({ 'kuayamen': { 'jdSeladd': { 'id': item.id } }, 'rsn': '7yddpollxv' })
 		return data.a.jdyamen
 	}

@@ -23,7 +23,7 @@ export interface ITourneyFight { //===TourneyFight
 	hid: number
 	fuser: User
 	fheros: OpponentHero[]
-	shop: ShopItem[]
+	shop: TourneyShopItem[]
 	hp: number
 	hpmax: number
 	ackadd: number
@@ -80,7 +80,7 @@ declare enum BoostType {
 	FLAMES = 1
 }
 
-export interface ShopItem {
+export interface TourneyShopItem {
 	id: number
 	type: BoostType
 	add: number

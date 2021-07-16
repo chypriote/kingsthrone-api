@@ -1,8 +1,7 @@
 import { GoatResource } from '../GoatResource'
-import { ITourneyStatus, OpponentHero, Reward, ShopItem } from '../../types/goat/Tourney'
-import { Tourney as TourneyEndpoint } from '../../types/Endpoints/Tourney'
+import { ITourneyStatus, OpponentHero, Reward, TourneyShopItem } from '../../types/goat/Tourney'
 
-export class Tourney extends GoatResource implements TourneyEndpoint {
+export class Tourney extends GoatResource {
 	async getTourneyInfos(): Promise<ITourneyStatus> {
 		const data = await this.request({ 'yamen': { 'yamen': [] }, 'rsn': '1qtiuqurtia' })
 		return data.a.yamen
@@ -23,7 +22,7 @@ export class Tourney extends GoatResource implements TourneyEndpoint {
 		return data.a.yamen
 	}
 
-	async buyTourneyBoost(item: ShopItem): Promise<ITourneyStatus> {
+	async buyTourneyBoost(item: TourneyShopItem): Promise<ITourneyStatus> {
 		const data = await this.request({ 'yamen': { 'seladd': { id: item.id } }, 'rsn': '2ylqabmbqq' })
 		return data.a.yamen
 	}

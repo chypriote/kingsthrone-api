@@ -1,8 +1,7 @@
 import { GoatResource } from '../../GoatResource'
 import { TreasureHuntStatus } from '../../../types/goat/Events/TreasureHunt'
-import { TreasureHunt as TreasureHuntEndpoint } from '../../../types/Endpoints/Events/TreasureHunt'
 
-export class TreasureHunt extends GoatResource implements TreasureHuntEndpoint {
+export class TreasureHunt extends GoatResource {
 	async eventInfos(): Promise<TreasureHuntStatus> {
 		const data = await this.request({ 'huodong': { 'hd296Info': [] }, 'rsn': '2myqxxhaxab' })
 		return data.a.wbhuodong.wabao

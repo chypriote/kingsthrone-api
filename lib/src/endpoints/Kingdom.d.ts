@@ -1,7 +1,6 @@
 import { CastleInfos } from '../../types/goat/Kingdom';
 import { GoatResource } from '../GoatResource';
-import { Kingdom as KingdomEndpoint } from '../../types/Endpoints/Kingdom';
-export declare class Kingdom extends GoatResource implements KingdomEndpoint {
+export declare class Kingdom extends GoatResource {
     getCastleRewards(id: number, rsn: string): Promise<CastleInfos | false>;
     getChapterRwdList(): Promise<void>;
     claimAll(castleId: number): Promise<void>;

@@ -1,9 +1,8 @@
-import { IGoat } from '../types/IGoat';
 import { Account, Alliance, Children, Expeditions, Feasts, HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile, Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch, DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation, DragonSlaying, JewelsOfLuck } from './endpoints';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
 export { ACCOUNT_RAYMUNDUS } from './accounts/raymundus';
-export declare class Goat implements IGoat {
+export declare class Goat {
     private readonly cookie;
     private token;
     private gid;

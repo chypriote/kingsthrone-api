@@ -1,8 +1,7 @@
 import { GoatResource } from '../GoatResource'
-import { GameInfos } from '../../types/goat/GameInfos'
-import { Account as AccountEndpoint } from '../../types/Endpoints/Account'
+import { GameInfos } from '../../types'
 
-export class Account extends GoatResource implements AccountEndpoint {
+export class Account extends GoatResource {
 	async createAccount(server: string): Promise<void | GameInfos> {
 		this._goat._setServer(server)
 		const player = await this._goat.profile.getGameInfos()

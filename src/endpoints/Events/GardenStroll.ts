@@ -1,9 +1,8 @@
 import { GoatResource } from '../../GoatResource'
 import { EventRankWithServer } from '../../../types/goat/Events/Event'
 import { GardenStrollPointExchange, GardenStrollStatus } from '../../../types/goat/Events/GardenStroll'
-import { GardenStroll as GardenStrollEndpoint } from '../../../types/Endpoints/Events/GardenStroll'
 
-export class GardenStroll extends GoatResource implements GardenStrollEndpoint {
+export class GardenStroll extends GoatResource {
 	async eventInfos(): Promise<GardenStrollStatus> {
 		const data = await this.request({ 'huodong': { 'hd336Info': [] }, 'rsn': '8jmaoekjmvm' })
 		return data.a.xjhuodong.xijiao

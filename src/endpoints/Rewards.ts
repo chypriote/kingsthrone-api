@@ -1,7 +1,6 @@
 import { GoatResource } from '../GoatResource'
-import { Rewards as RewardsEndpoint } from '../../types/Endpoints/Rewards'
 
-export class Rewards extends GoatResource implements RewardsEndpoint {
+export class Rewards extends GoatResource {
 	async claimDailyPoints(): Promise<void> {
 		await this.request({ 'daily': { 'getAlltask': [] }, 'rsn': '9zrizbjjmcs' })
 	}

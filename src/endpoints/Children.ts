@@ -1,8 +1,7 @@
 import { GoatResource } from '../GoatResource'
 import { InLaw } from '../../types/goat/InLaw'
-import { Children as ChildrenEndpoint } from '../../types/Endpoints/Children'
 
-export class Children extends GoatResource implements ChildrenEndpoint {
+export class Children extends GoatResource {
 	//Sons
 	async getSonsStatus(): Promise<any> {
 		const data = await this.request({ 'xingqin': { 'xingqinsuc': [] }, 'rsn': '4fcgmahfhxf' })

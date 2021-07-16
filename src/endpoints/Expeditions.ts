@@ -1,8 +1,7 @@
 import { GoatResource } from '../GoatResource'
 import { ExpeditionInfo, KingdomExpInfo, MerchantInfos } from '../../types/goat/Expeditions'
-import { Expeditions as ExpeditionsEndpoint } from '../../types/Endpoints/Expeditions'
 
-export class Expeditions extends GoatResource implements ExpeditionsEndpoint {
+export class Expeditions extends GoatResource {
 	//Merchant ventures
 	async getMerchantStatus(): Promise<MerchantInfos> {
 		const data = await this.request({ 'silkroad': { 'trade': [] }, 'rsn': '7ydyyyoccv' })

@@ -1,9 +1,8 @@
 import { GoatResource } from '../GoatResource'
 import { AllianceBossInfo, ClubInfo } from '../../types/goat/Club'
 import { FIGHT_STATUS } from '../../types/goat/WorldBoss'
-import { Alliance as AllianceEndpoint } from '../../types/Endpoints/Alliance'
 
-export class Alliance extends GoatResource implements AllianceEndpoint {
+export class Alliance extends GoatResource {
 	async contributeAlliance(): Promise<boolean> {
 		try {
 			await this.request({ 'club': { 'dayGongXian': { 'dcid': 5 } }, 'rsn': '3hfkksnwfn' })

@@ -1,7 +1,6 @@
 import { GoatResource } from '../GoatResource';
 import { ExpeditionInfo, KingdomExpInfo, MerchantInfos } from '../../types/goat/Expeditions';
-import { Expeditions as ExpeditionsEndpoint } from '../../types/Endpoints/Expeditions';
-export declare class Expeditions extends GoatResource implements ExpeditionsEndpoint {
+export declare class Expeditions extends GoatResource {
     getMerchantStatus(): Promise<MerchantInfos>;
     doMerchantVentures(count: number): Promise<void>;
     getExpeditionsStatus(): Promise<ExpeditionInfo>;

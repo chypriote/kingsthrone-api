@@ -44,7 +44,7 @@ export type OngoingFeast = {
 	num: number
 }
 
-export type ShopItem = {
+export type FeastShopItem = {
 	id: number
 	item: Item,
 	cost: number
@@ -57,7 +57,7 @@ export type FeastShop = {
 		next: number
 		label: string
 	}
-	list: ShopItem[]
+	list: FeastShopItem[]
 }
 
 export type FeastStatus = {

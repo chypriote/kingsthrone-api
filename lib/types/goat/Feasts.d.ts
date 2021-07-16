@@ -39,7 +39,7 @@ export declare type OngoingFeast = {
     rid: number;
     num: number;
 };
-export declare type ShopItem = {
+export declare type FeastShopItem = {
     id: number;
     item: Item;
     cost: number;
@@ -52,7 +52,7 @@ export declare type FeastShop = {
         next: number;
         label: string;
     };
-    list: ShopItem[];
+    list: FeastShopItem[];
 };
 export declare type FeastStatus = {
     fynum: number;

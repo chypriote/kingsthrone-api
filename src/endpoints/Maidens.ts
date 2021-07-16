@@ -1,9 +1,8 @@
 import { GoatResource } from '../GoatResource'
 import { Wife } from '../../types/goat/GameInfos'
 import { StaminaResult, VisitsStatus } from '../../types/goat/Maidens'
-import { Maidens as MaidensEndpoint } from '../../types/Endpoints/Maidens'
 
-export class Maidens extends GoatResource implements MaidensEndpoint {
+export class Maidens extends GoatResource {
 	async visitRandomMaiden(): Promise<Wife> {
 		const visit = await this.request({ 'wife': { 'sjxo': [] }, 'rsn': '9rzrtbtsrs' })
 

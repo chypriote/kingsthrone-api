@@ -1,8 +1,7 @@
 import { GoatResource } from '../GoatResource'
 import { GoodwillResult, LuckStatus, ProcessionResult, ProcessionsStatus } from '../../types/goat/Processions'
-import { Processions as ProcessionsEndpoint } from '../../types/Endpoints/Processions'
 
-export class Processions extends GoatResource implements ProcessionsEndpoint {
+export class Processions extends GoatResource {
 	async getAvailableProcessions(): Promise<ProcessionsStatus> {
 		const next = await this.request({ 'user': { 'refxunfang': [] }, 'rsn': '4cmiixghbg' })
 

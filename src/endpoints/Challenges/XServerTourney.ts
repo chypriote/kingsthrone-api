@@ -1,9 +1,7 @@
 import { GoatResource } from '../../GoatResource'
-import { XSOngoingFight } from '../../../types/goat/TourneyXS'
-import { OpponentHero, Reward, ShopItem } from '../../../types/goat/Tourney'
-import { XServerTourney as XServerTourneyEndpoint } from '../../../types/Endpoints/Challenges/XServerTourney'
+import { OpponentHero, Reward, TourneyShopItem, XSOngoingFight } from '../../../types'
 
-export class XServerTourney extends GoatResource implements XServerTourneyEndpoint {
+export class XServerTourney extends GoatResource {
 	async xsGetTourneyInfos(): Promise<XSOngoingFight> {
 		const data = await this.request({ 'kuayamen': { 'yamen': [] }, 'rsn': '2malnlahyqq' })
 		return data.a.kuayamen
@@ -19,7 +17,7 @@ export class XServerTourney extends GoatResource implements XServerTourneyEndpoi
 		return data.a.kuayamen
 	}
 
-	async xsBuyTourneyBoost(item: ShopItem): Promise<XSOngoingFight> {
+	async xsBuyTourneyBoost(item: TourneyShopItem): Promise<XSOngoingFight> {
 		const data = await this.request({ 'kuayamen': { 'seladd': { 'id': item.id } }, 'rsn': '5wfrarhwer' })
 		return data.a.kuayamen
 	}

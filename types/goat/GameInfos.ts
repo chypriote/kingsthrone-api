@@ -71,7 +71,7 @@ interface OldGameStats {
 	nowFlower: number
 }
 
-export interface UserProfile {
+export interface LoggedUser {
 	pvb: []
 	headframe: { id: number }
 	user: UserDetails
@@ -256,7 +256,7 @@ export type GameInfos = {
 	son: { sonList: Son[] }
 	system: unknown
 	task: { tmain: Task }
-	user: UserProfile
+	user: LoggedUser
 	warHorse: unknown
 	weekly: RegularTasks
 	weeklyrank: { info: WeeklyRank }

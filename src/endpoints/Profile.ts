@@ -3,10 +3,9 @@ import { DECREE_TYPE } from '../../types/goat/Misc'
 import { GameInfos } from '../../types/goat/GameInfos'
 import { CouncilStatus } from '../../types/goat/CouncilStatus'
 import { UserProfile } from '../../types/goat/User'
-import { Profile as ProfileEndpoint } from '../../types/Endpoints/Profile'
 import { PunishmentResult } from '../../types/goat/PunishmentResult'
 
-export class Profile extends GoatResource implements ProfileEndpoint {
+export class Profile extends GoatResource {
 	async getGameInfos(): Promise<GameInfos> {
 		const game = await this.request({
 			rsn: '2ynbmhanlb',

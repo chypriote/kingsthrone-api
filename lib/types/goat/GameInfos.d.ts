@@ -69,7 +69,7 @@ interface OldGameStats {
     flower: number;
     nowFlower: number;
 }
-export interface UserProfile {
+export interface LoggedUser {
     pvb: [];
     headframe: {
         id: number;
@@ -370,7 +370,7 @@ export declare type GameInfos = {
     task: {
         tmain: Task;
     };
-    user: UserProfile;
+    user: LoggedUser;
     warHorse: unknown;
     weekly: RegularTasks;
     weeklyrank: {

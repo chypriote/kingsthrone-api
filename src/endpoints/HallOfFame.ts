@@ -1,8 +1,7 @@
 import { GoatResource } from '../GoatResource'
 import { HallOfFamer } from '../../types/goat/HallOfFame'
-import { HallOfFame as HallOfFameEndpoint } from '../../types/Endpoints/HallOfFame'
 
-export class HallOfFame extends GoatResource implements HallOfFameEndpoint {
+export class HallOfFame extends GoatResource {
 	async getHoFInfo(): Promise<HallOfFamer[]> {
 		const data = await this.request({ 'rsn': '5jwryjrwjje', 'huanggong': { 'getNewInfo': [] } })
 

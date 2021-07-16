@@ -1,7 +1,6 @@
 import { GoatResource } from '../GoatResource'
-import { Rankings as RankingsEndpoint } from '../../types/Endpoints/Rankings'
 
-export class Rankings extends GoatResource implements RankingsEndpoint {
+export class Rankings extends GoatResource {
 	async payHomageKP(): Promise<void> {
 		await this.request({ 'rsn': '5jwryfwjhjy', 'ranking': { 'mobai': { 'type': 1 } } })
 	}

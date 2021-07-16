@@ -1,8 +1,7 @@
 import { GoatResource } from '../GoatResource'
 import { FIGHT_STATUS } from '../../types/goat/WorldBoss'
-import { WorldBoss as WorldBossEndpoint } from '../../types/Endpoints/WorldBoss'
 
-export class WorldBoss extends GoatResource implements WorldBossEndpoint {
+export class WorldBoss extends GoatResource {
 	async attackMinion(id: number): Promise<FIGHT_STATUS> {
 		try {
 			await this.request({ 'wordboss': { 'hitmenggu': { id } }, 'rsn': '4fxvghbbxf' })

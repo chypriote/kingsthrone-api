@@ -1,8 +1,7 @@
 import { GoatResource } from '../GoatResource'
 import { FeastDetails, FeastInfo, FeastShop, FeastStatus, OngoingFeast } from '../../types/goat/Feasts'
-import { Feasts as FeastsEndpoint } from '../../types/Endpoints/Feasts'
 
-export class Feasts extends GoatResource implements FeastsEndpoint {
+export class Feasts extends GoatResource {
 	async getFeastsInfo(): Promise<FeastInfo> {
 		const data = await this.request({ 'jiulou': { 'jlInfo': [] }, 'rsn': '3zhwezswfze' })
 		return data.a.jiulou

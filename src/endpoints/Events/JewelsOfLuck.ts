@@ -1,9 +1,8 @@
 import { GoatResource } from '../../GoatResource'
 import { JewelsOfLuckStatus } from '../../../types/goat/Events/JewelsOfLuck'
 import { Item } from '../../../types/goat/Item'
-import { JewelsOfLuck as JewelsOfLuckEndpoint } from '../../../types/Endpoints/Events/JewelsOfLuck'
 
-export class JewelsOfLuck extends GoatResource implements JewelsOfLuckEndpoint {
+export class JewelsOfLuck extends GoatResource {
 	async eventInfos(): Promise<JewelsOfLuckStatus> {
 		const data = await this.request({ 'huodong':{ 'hd1081Info':[] },'rsn':'3ehpkwkpwnp' })
 		return data.a.blackMarket

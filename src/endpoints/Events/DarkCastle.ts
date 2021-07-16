@@ -1,9 +1,8 @@
 import { GoatResource } from '../../GoatResource'
 import { EventRank } from '../../../types/goat/events/Event'
-import { DarkCastle as DarkCastleEndpoint } from '../../../types/Endpoints/Events/DarkCastle'
 import { DarkCastleStatus } from '../../../types/goat/Events/DarkCastle'
 
-export class DarkCastle extends GoatResource implements DarkCastleEndpoint {
+export class DarkCastle extends GoatResource {
 	async eventInfos(): Promise<DarkCastleStatus> {
 		const data = await this.request({ 'huodong': { 'hd1020Info': [] }, 'rsn': '1tbkeuueik' })
 		return data.a.wshuodong
