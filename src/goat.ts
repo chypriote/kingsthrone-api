@@ -12,6 +12,10 @@ const COOKIE = 'lyjxncc=c3ac4e77dff349b66c7aeed276e3eb6c'
 const DEFAULT_HOST = 'ksrus.gtbackoverseas.com'
 // const OLD_HOST = 'zsjefunbm.zwformat.com'
 
+export { ACCOUNT_GAUTIER } from './accounts/gautier'
+export { ACCOUNT_NAPOLEON } from './accounts/demophlos'
+export { ACCOUNT_RAYMUNDUS } from './accounts/raymundus'
+
 export class Goat implements IGoat {
 	private readonly cookie: string
 	private token: string|null = null
