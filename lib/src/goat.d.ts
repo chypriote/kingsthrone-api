@@ -1,4 +1,5 @@
 import { Account, Alliance, Children, Expeditions, Feasts, HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile, Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch, DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation, DragonSlaying, JewelsOfLuck } from './endpoints';
+import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
 export { ACCOUNT_RAYMUNDUS } from './accounts/raymundus';
@@ -9,6 +10,7 @@ export declare class Goat {
     private readonly host;
     private server;
     private version;
+    private loginAccount;
     isLoggedIn: boolean;
     account: Account;
     alliance: Alliance;
@@ -52,5 +54,12 @@ export declare class Goat {
     _setToken(token: string): this;
     _getBaseUrl(): string;
     _isGautier(): boolean;
+    _getAccount(): IAccount;
+    _setAccount(account: IAccount): this;
+    _login({ token, uid }: {
+        token: any;
+        uid: any;
+    }): void;
+    _logout(): void;
 }
 export declare const goat: Goat;

@@ -1,5 +1,5 @@
 import { Goat } from './goat';
-export interface Account {
+export interface IAccount {
     rsn: string;
     login: {
         loginAccount: {
@@ -17,11 +17,11 @@ export declare class GoatResource {
     _goat: Goat;
     _data: string | null;
     constructor(goat: Goat);
-    _jsonResponseHandler(response: any, requestData: any): Promise<any>;
+    private _jsonResponseHandler;
     private _makeParams;
     private _makeHeaders;
     private _retry;
     private _request;
-    login(user: Account, reconnect?: boolean): Promise<void>;
+    private _login;
     protected request(data?: any): Promise<any>;
 }

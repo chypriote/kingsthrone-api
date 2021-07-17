@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Goat } from './goat'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
 
-export interface Account {
+export interface IAccount {
 	rsn: string
 	login: {
 		loginAccount: {
@@ -28,11 +28,12 @@ export class GoatResource {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-	async _jsonResponseHandler(response: any, requestData: any): Promise<any> {
+	private async _jsonResponseHandler(response: any): Promise<any> {
 		if (response?.a?.system?.errror) {
 			if (response.a.system.errror.msg === 'You have logged in elsewhere') {
-				console.log('Token expired, reconnecting')
-				return await this.login(requestData, true)
+				console.warn('Provided token expired, reconnecting')
+				await this._login(true)
+				return await this._retry()
 			}
 			throw new Error(response?.a?.system?.errror.msg || JSON.stringify(response))
 		}
@@ -44,7 +45,6 @@ export class GoatResource {
 
 		return response
 	}
-
 	private _makeParams(): any {
 		return {
 			sevid: this._goat._getServer(),
@@ -71,7 +71,6 @@ export class GoatResource {
 	}
 	private async _request(data: any = null): Promise<any> {
 		const makeRequest = async (data: string) => {
-			if (!this._data) {this._data = data}
 
 			return await axios.post(
 				this._goat._getBaseUrl(),
@@ -84,28 +83,30 @@ export class GoatResource {
 
 		return await makeRequest(JSON.stringify(data || {}))
 	}
+	private async _login(reconnect: boolean = false): Promise<void> {
+		const user = this._goat._getAccount()
 
-	public async login(user: Account, reconnect: boolean = false): Promise<void> {
 		//prevent relogin on gautier
 		if (user.rsn === '2ylxannmqx' && process.env.TOKEN && !reconnect) {
 			this._goat._setToken(process.env.TOKEN)
 			this._goat._setGid('699002934')
 			return
 		}
+
+		this._goat._logout()
 		const response = await this._request(user)
 
-		if (!response?.a?.loginMod?.loginAccount?.token) {
-			 console.error(`LoginError: ${response?.a?.system?.errror.msg}`)
+		if (!response?.a?.loginMod) {
+			 throw new Error(`LoginError: ${response?.a?.system?.errror.msg}`)
 		}
 
-		this._goat._setToken(response?.a?.loginMod?.loginAccount?.token)
-		this._goat._setGid(response?.a?.loginMod?.loginAccount?.uid.toString())
-		 console.warn(`Logged in on ${this._goat._getServer()} as ${this._goat._getGid()}`)
+		this._goat._login(response.a.loginMod.loginAccount)
 	}
+
 	protected async request(data: any = null): Promise<any> {
-		if (!this._goat.isLoggedIn) { await this.login(ACCOUNT_NAPOLEON) }
-		const response = await this._request(data)
-		return await this._jsonResponseHandler(response, data)
+		if (!this._data) {this._data = data}
+		if (!this._goat.isLoggedIn) { await this._login() }
+		return await this._jsonResponseHandler(await this._request(data))
 	}
 }
 

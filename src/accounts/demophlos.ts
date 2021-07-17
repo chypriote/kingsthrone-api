@@ -1,6 +1,6 @@
-import { Account } from '../GoatResource'
+import { IAccount } from '../GoatResource'
 
-export const ACCOUNT_NAPOLEON: Account = {
+export const ACCOUNT_NAPOLEON: IAccount = {
 	rsn: '2axwqwhxyx',
 	login: {
 		loginAccount: {

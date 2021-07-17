@@ -1,2 +1,2 @@
-import { Account } from '../GoatResource';
-export declare const ACCOUNT_GAUTIER: Account;
+import { IAccount } from '../GoatResource';
+export declare const ACCOUNT_GAUTIER: IAccount;

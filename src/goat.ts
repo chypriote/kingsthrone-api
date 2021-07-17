@@ -5,6 +5,8 @@ import {
 	DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation, DragonSlaying,
 	JewelsOfLuck
 } from './endpoints'
+import { IAccount } from './GoatResource'
+import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
 
 const VERSION = 'V1.3.559'
 const COOKIE = 'lyjxncc=c3ac4e77dff349b66c7aeed276e3eb6c'
@@ -23,6 +25,7 @@ export class Goat {
 	private readonly host: string
 	private server: string
 	private version: string
+	private loginAccount: IAccount = ACCOUNT_NAPOLEON
 
 	isLoggedIn = false
 
@@ -128,6 +131,22 @@ export class Goat {
 	}
 	_isGautier(): boolean {
 		return this.gid === '699002934'
+	}
+	_getAccount(): IAccount { return this.loginAccount}
+	_setAccount(account: IAccount): this {
+		this.loginAccount = account
+		return this
+	}
+	_login({ token, uid }) {
+		this.token = token
+		this.gid = uid
+		this.isLoggedIn = true
+		console.warn(`Logged in on ${this.server} as ${this.gid}`)
+	}
+	_logout() {
+		this.token = null
+		this.gid = null
+		this.isLoggedIn = false
 	}
 }
 

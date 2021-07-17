@@ -1,9 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { DECREE_TYPE } from '../../types/goat/Misc'
-import { GameInfos } from '../../types/goat/GameInfos'
-import { CouncilStatus } from '../../types/goat/CouncilStatus'
-import { UserProfile } from '../../types/goat/User'
-import { PunishmentResult } from '../../types/goat/PunishmentResult'
+import { CouncilStatus, DECREE_TYPE, GameInfos, PunishmentResult, UserProfile } from '../../types'
 
 export class Profile extends GoatResource {
 	async getGameInfos(): Promise<GameInfos> {
