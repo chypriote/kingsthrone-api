@@ -6,11 +6,13 @@ const find_egg_rsn = [
 	'1ktukkqqkuu',
 	'7coydyvovg',
 	'9zmrmrbrzts',
+	'5wpjwyhrpf',
 ]
 const claim_egg_rsn = [
 	'1ktukkqiewk',
 	'5jywwvheffh',
 	'6sxwxwlwukg',
+	'5wpjwyhrey',
 ]
 
 export class Renovation extends GoatResource {

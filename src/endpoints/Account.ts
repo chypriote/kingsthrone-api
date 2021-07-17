@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { GameInfos } from '../../types'
+import { GameInfos } from '../../types/goat/GameInfos'
 
 export class Account extends GoatResource {
 	async createAccount(server: string): Promise<void | GameInfos> {

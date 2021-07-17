@@ -1,6 +1,6 @@
 import { GoatResource } from '../../GoatResource'
-import { EventRank } from '../../../types/goat/events/Event'
-import { DarkCastleStatus } from '../../../types/goat/Events/DarkCastle'
+import { DarkCastleStatus  } from '../../../types/goat/Events/DarkCastle'
+import { EventRank } from '../../../types/goat/Events/Event'
 
 export class DarkCastle extends GoatResource {
 	async eventInfos(): Promise<DarkCastleStatus> {

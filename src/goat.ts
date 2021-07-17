@@ -1,9 +1,29 @@
 import {
-	Account, Alliance, Children, Expeditions, Feasts,
-	HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile,
-	Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch,
-	DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation, DragonSlaying,
-	JewelsOfLuck
+	Account,
+	Alliance,
+	Children,
+	DarkCastle,
+	Deathmatch,
+	DragonSlaying,
+	Expeditions,
+	Feasts,
+	GardenStroll,
+	HallOfFame,
+	Items,
+	JewelsOfLuck,
+	Kingdom,
+	Maidens,
+	Mail,
+	Picnic,
+	Processions,
+	Profile,
+	Rankings,
+	Renovation,
+	Rewards,
+	Tourney,
+	TreasureHunt,
+	WorldBoss,
+	XServerTourney
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -137,13 +157,13 @@ export class Goat {
 		this.loginAccount = account
 		return this
 	}
-	_login({ token, uid }) {
+	_login({ token, uid }): void {
 		this.token = token
 		this.gid = uid
 		this.isLoggedIn = true
 		console.warn(`Logged in on ${this.server} as ${this.gid}`)
 	}
-	_logout() {
+	_logout(): void {
 		this.token = null
 		this.gid = null
 		this.isLoggedIn = false

@@ -1,4 +1,4 @@
-import { Account, Alliance, Children, Expeditions, Feasts, HallOfFame, Items, Kingdom, Maidens, Mail, Processions, Profile, Rankings, Rewards, Tourney, WorldBoss, XServerTourney, Deathmatch, DarkCastle, GardenStroll, Picnic, TreasureHunt, Renovation, DragonSlaying, JewelsOfLuck } from './endpoints';
+import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';

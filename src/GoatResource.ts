@@ -2,7 +2,6 @@
 require('dotenv').config()
 import axios from 'axios'
 import { Goat } from './goat'
-import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
 
 export interface IAccount {
 	rsn: string
@@ -83,7 +82,7 @@ export class GoatResource {
 
 		return await makeRequest(JSON.stringify(data || {}))
 	}
-	private async _login(reconnect: boolean = false): Promise<void> {
+	private async _login(reconnect = false): Promise<void> {
 		const user = this._goat._getAccount()
 
 		//prevent relogin on gautier
