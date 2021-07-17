@@ -37,4 +37,8 @@ export class WorldBoss extends GoatResource {
 	async recoverHero(id: number): Promise<void> {
 		await this.request({ 'wordboss': { 'comebackmg': { 'id': id } }, 'rsn': '1ktubatqtaa' })
 	}
+
+	async buyItem(id: number): Promise<void> {
+		await this.request({ 'wordboss':{ 'shopBuy':{ 'id': id } },'rsn':'8jmamkkvrkk' })
+	}
 }

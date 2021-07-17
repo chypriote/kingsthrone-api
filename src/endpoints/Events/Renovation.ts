@@ -5,10 +5,12 @@ import { Item } from '../../../types/goat/Item'
 const find_egg_rsn = [
 	'1ktukkqqkuu',
 	'7coydyvovg',
+	'9zmrmrbrzts',
 ]
 const claim_egg_rsn = [
 	'1ktukkqiewk',
 	'5jywwvheffh',
+	'6sxwxwlwukg',
 ]
 
 export class Renovation extends GoatResource {
