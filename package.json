@@ -1,7 +1,7 @@
 {
   "name": "kingsthrone-api",
   "private": false,
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "dependencies": {
@@ -21,10 +21,11 @@
     "husky": "^7.0",
     "lint-staged": "^11.0",
     "prettier": "^2.3",
+    "rimraf": "^3.0",
     "ts-node": "^10.1"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "rimraf lib && tsc -p tsconfig.json"
   },
   "author": {
     "name": "Chypriote"
