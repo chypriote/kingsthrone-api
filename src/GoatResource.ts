@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+require('dotenv').config()
 import axios from 'axios'
 import { Goat } from './goat'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -82,8 +83,8 @@ export class GoatResource {
 
 	public async login(user: Account): Promise<void> {
 		//prevent relogin on gautier
-		if (user.rsn === '2ylxannmqx') {
-			this._goat._setToken('d204e5adba2716bfb61b97b9e9a24bf3')
+		if (user.rsn === '2ylxannmqx' && process.env.TOKEN) {
+			this._goat._setToken(process.env.TOKEN)
 			this._goat._setGid('699002934')
 			return
 		}
