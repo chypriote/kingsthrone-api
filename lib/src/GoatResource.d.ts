@@ -17,11 +17,11 @@ export declare class GoatResource {
     _goat: Goat;
     _data: string | null;
     constructor(goat: Goat);
-    _jsonResponseHandler(response: any): Promise<any>;
+    _jsonResponseHandler(response: any, requestData: any): Promise<any>;
     private _makeParams;
     private _makeHeaders;
     private _retry;
     private _request;
-    login(user: Account): Promise<void>;
+    login(user: Account, reconnect?: boolean): Promise<void>;
     protected request(data?: any): Promise<any>;
 }

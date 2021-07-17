@@ -27,7 +27,8 @@
     "ts-node": "^10.1"
   },
   "scripts": {
-    "build": "rimraf lib && tsc -p tsconfig.json"
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "test": "ts-node test.ts"
   },
   "author": {
     "name": "Chypriote"

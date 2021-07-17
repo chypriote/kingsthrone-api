@@ -28,8 +28,12 @@ export class GoatResource {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-	async _jsonResponseHandler(response: any): Promise<any> {
+	async _jsonResponseHandler(response: any, requestData: any): Promise<any> {
 		if (response?.a?.system?.errror) {
+			if (response.a.system.errror.msg === 'You have logged in elsewhere') {
+				console.log('Token expired, reconnecting')
+				return await this.login(requestData, true)
+			}
 			throw new Error(response?.a?.system?.errror.msg || JSON.stringify(response))
 		}
 		if (response?.a?.system?.version) {
@@ -81,9 +85,9 @@ export class GoatResource {
 		return await makeRequest(JSON.stringify(data || {}))
 	}
 
-	public async login(user: Account): Promise<void> {
+	public async login(user: Account, reconnect: boolean = false): Promise<void> {
 		//prevent relogin on gautier
-		if (user.rsn === '2ylxannmqx' && process.env.TOKEN) {
+		if (user.rsn === '2ylxannmqx' && process.env.TOKEN && !reconnect) {
 			this._goat._setToken(process.env.TOKEN)
 			this._goat._setGid('699002934')
 			return
@@ -101,7 +105,7 @@ export class GoatResource {
 	protected async request(data: any = null): Promise<any> {
 		if (!this._goat.isLoggedIn) { await this.login(ACCOUNT_NAPOLEON) }
 		const response = await this._request(data)
-		return await this._jsonResponseHandler(response)
+		return await this._jsonResponseHandler(response, data)
 	}
 }
 
