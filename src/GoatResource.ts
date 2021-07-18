@@ -7,11 +7,11 @@ export interface IAccount {
 	rsn: string
 	login: {
 		loginAccount: {
-			parm1: string
 			platform: string
-			parm2: string
-			parm6: string
-			parm3: string
+			// parm1: string
+			// parm2: string
+			// parm6: string
+			// parm3: string
 			openkey: string
 			openid: string
 		}

@@ -3,7 +3,7 @@ import { ACCOUNT_GAUTIER } from './src/accounts/gautier'
 
 const test = async () => {
 	goat._setAccount(ACCOUNT_GAUTIER)
-	await goat.profile.getGameInfos()
+	console.log((await goat.profile.getGameInfos()).hero.heroList)
 }
 
 test().then(() => { process.exit() })

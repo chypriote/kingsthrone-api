@@ -1,7 +1,7 @@
 {
   "name": "kingsthrone-api",
   "private": false,
-  "version": "0.6.0",
+  "version": "0.6.1",
   "main": "lib",
   "types": "types/index.d.ts",
   "dependencies": {
@@ -16,7 +16,7 @@
     "@types/node": "^16.3",
     "@typescript-eslint/eslint-plugin": "^4.28",
     "@typescript-eslint/parser": "^4.28",
-    "eslint": "^7.30",
+    "eslint": "^7.31",
     "eslint-config-prettier": "^8.3",
     "eslint-plugin-prettier": "^3.4",
     "husky": "^7.0",
