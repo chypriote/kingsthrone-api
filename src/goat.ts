@@ -1,29 +1,9 @@
 import {
-	Account,
-	Alliance,
-	Children,
-	DarkCastle,
-	Deathmatch,
-	DragonSlaying,
-	Expeditions,
-	Feasts,
-	GardenStroll,
-	HallOfFame,
-	Items,
-	JewelsOfLuck,
-	Kingdom,
-	Maidens,
-	Mail,
-	Picnic,
-	Processions,
-	Profile,
-	Rankings,
-	Renovation,
-	Rewards,
-	Tourney,
-	TreasureHunt,
-	WorldBoss,
-	XServerTourney
+	Account, Alliance, Children, DarkCastle, Deathmatch,
+	DragonSlaying, Expeditions, Feasts, GardenStroll,
+	HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens,
+	Mail, Picnic, Processions, Profile, Rankings, Renovation,
+	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
