@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { HallOfFamer } from '../../types/goat/HallOfFame'
+import { HallOfFamer } from '../../types/HallOfFame'
 
 export class HallOfFame extends GoatResource {
 	async getHoFInfo(): Promise<HallOfFamer[]> {

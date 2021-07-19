@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { InLaw } from '../../types/goat/InLaw';
+import { InLaw } from '../../types/InLaw';
 export declare class Children extends GoatResource {
     getSonsStatus(): Promise<any>;
     raiseAllSons(): Promise<boolean>;

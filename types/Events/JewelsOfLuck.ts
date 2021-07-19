@@ -1,6 +1,7 @@
 import { Item } from '../Item'
+import { EventWheel } from './Event'
 
-export interface JewelsOfLuckStatus {
+export interface JewelsOfLuckStatus extends EventWheel {
 	info: {
 		chosen:  {id: number, key: number}[]
 		num: number
@@ -9,7 +10,7 @@ export interface JewelsOfLuckStatus {
 		wall_gache:  {
 			id: number
 			prob_1000: number
-			default_item: Item|null
+			default_item: Item|[]
 		}[]
 		chosen_pool: {key: number, item: Item}[]
 		cost: number

@@ -1,5 +1,5 @@
 import { Item } from '../Item'
-import { EventRwd } from './Event'
+import { EventChestReward, EventRwd } from './Event'
 
 export interface GardenStrollDrop { //Possible drops
 	id: number
@@ -8,13 +8,6 @@ export interface GardenStrollDrop { //Possible drops
 	prob_10000: number //probability
 	is_baoji: number
 	add: number
-}
-
-export interface GardenStrollChest {
-	id: number
-	jifen: number //steps required
-	items: Item[]
-	isGet: number //2=yes 0=no
 }
 
 interface GardenStrollInfo {
@@ -29,7 +22,7 @@ interface GardenStrollInfo {
 		_act_id: string
 	}
 	drop: GardenStrollDrop[]
-	baoxiang: GardenStrollChest[]
+	baoxiang: EventChestReward[]
 	rank: EventRwd[]
 	msg: string
 	is_kua: number

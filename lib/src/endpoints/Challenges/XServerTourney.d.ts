@@ -1,6 +1,6 @@
 import { GoatResource } from '../../GoatResource';
-import { OpponentHero, Reward, TourneyShopItem } from '../../../types/goat/Tourney';
-import { XSOngoingFight } from '../../../types/goat/TourneyXS';
+import { OpponentHero, Reward, TourneyShopItem } from '../../../types/Tourney';
+import { XSOngoingFight } from '../../../types/TourneyXS';
 export declare class XServerTourney extends GoatResource {
     xsGetTourneyInfos(): Promise<XSOngoingFight>;
     xsStartTourneyFight(): Promise<XSOngoingFight>;

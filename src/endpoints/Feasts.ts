@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { FeastDetails, FeastInfo, FeastShop, FeastStatus, OngoingFeast } from '../../types/goat/Feasts'
+import { FeastDetails, FeastInfo, FeastShop, FeastStatus, OngoingFeast } from '../../types/Feasts'
 
 export class Feasts extends GoatResource {
 	async getFeastsInfo(): Promise<FeastInfo> {

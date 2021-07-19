@@ -1,6 +1,6 @@
 import { GoatResource } from '../../GoatResource'
-import { JewelsOfLuckStatus } from '../../../types/goat/Events/JewelsOfLuck'
-import { Item } from '../../../types/goat/Item'
+import { JewelsOfLuckStatus } from '../../../types/Events/JewelsOfLuck'
+import { Item } from '../../../types/Item'
 
 export class JewelsOfLuck extends GoatResource {
 	async eventInfos(): Promise<JewelsOfLuckStatus> {

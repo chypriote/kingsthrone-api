@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { ExpeditionInfo, KingdomExpInfo, MerchantInfos } from '../../types/goat/Expeditions'
+import { ExpeditionInfo, KingdomExpInfo, MerchantInfos } from '../../types/Expeditions'
 
 export class Expeditions extends GoatResource {
 	//Merchant ventures

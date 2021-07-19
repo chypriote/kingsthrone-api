@@ -1,6 +1,6 @@
 import { GoatResource } from '../GoatResource'
-import { AllianceBossInfo, ClubInfo } from '../../types/goat/Club'
-import { FIGHT_STATUS } from '../../types/goat/WorldBoss'
+import { AllianceBossInfo, ClubInfo } from '../../types/Club'
+import { FIGHT_STATUS } from '../../types/WorldBoss'
 
 export class Alliance extends GoatResource {
 	async contributeAlliance(): Promise<boolean> {

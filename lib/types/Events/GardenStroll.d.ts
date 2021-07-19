@@ -1,5 +1,5 @@
 import { Item } from '../Item';
-import { EventRwd } from './Event';
+import { EventChestReward, EventRwd } from './Event';
 export interface GardenStrollDrop {
     id: number;
     tip: number;
@@ -7,12 +7,6 @@ export interface GardenStrollDrop {
     prob_10000: number;
     is_baoji: number;
     add: number;
-}
-export interface GardenStrollChest {
-    id: number;
-    jifen: number;
-    items: Item[];
-    isGet: number;
 }
 interface GardenStrollInfo {
     info: {
@@ -26,7 +20,7 @@ interface GardenStrollInfo {
         _act_id: string;
     };
     drop: GardenStrollDrop[];
-    baoxiang: GardenStrollChest[];
+    baoxiang: EventChestReward[];
     rank: EventRwd[];
     msg: string;
     is_kua: number;

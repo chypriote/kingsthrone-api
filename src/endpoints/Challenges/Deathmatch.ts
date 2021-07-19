@@ -1,6 +1,6 @@
 import { GoatResource } from '../../GoatResource'
-import { OpponentHero, Reward, TourneyShopItem } from '../../../types'
-import { DMOngoingFight, DMRanking } from '../../..'
+import { OpponentHero, Reward, TourneyShopItem } from '../../../types/Tourney'
+import { DMOngoingFight, DMRanking } from '../../../types/TourneyDM'
 
 export class Deathmatch extends GoatResource {
 	async dmGetTourneyInfos(): Promise<DMOngoingFight> {

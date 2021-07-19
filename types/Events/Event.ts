@@ -26,6 +26,13 @@ export interface EventQuestCfg {
 	}[];
 }
 
+export interface EventChestReward {
+	id: number
+	jifen: number //event items required (picnic=steps)
+	items: Item[]
+	isGet: number //2=yes 0=no
+}
+
 export interface EventShopItem {
 	dc: number
 	/** example: need {id: 1, count: 100} = buy with 100gems
@@ -39,7 +46,7 @@ export interface EventShopItem {
 }
 
 export interface EventRwd {
-	member: { count: number, id: number }[]
+	member: { count: number, id: number, kind?: number }[]
 	rand: { re: number, rs: number }
 }
 
@@ -47,4 +54,23 @@ export interface EventShop {
 	hasScore: number //current score
 	rank: EventRwd | EventRwd[]
 	wsShopcfg: EventShopItem[] //Point exchange
+}
+
+export interface EventWheelConfig {
+	wall_gache:  {
+		id: number
+		prob_1000: number
+		default_item: Item|[]
+	}[]
+	chosen_pool: {key: number, item: Item}[]
+	cost: number
+	bili: number
+}
+
+export interface EventWheel {
+	info: {
+		chosen:  {id: number, key: number}[]
+		num: number
+	}
+	cfg: EventWheelConfig
 }

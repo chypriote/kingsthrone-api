@@ -21,6 +21,12 @@ export interface EventQuestCfg {
         items: Item[];
     }[];
 }
+export interface EventChestReward {
+    id: number;
+    jifen: number;
+    items: Item[];
+    isGet: number;
+}
 export interface EventShopItem {
     dc: number;
     /** example: need {id: 1, count: 100} = buy with 100gems
@@ -36,6 +42,7 @@ export interface EventRwd {
     member: {
         count: number;
         id: number;
+        kind?: number;
     }[];
     rand: {
         re: number;
@@ -46,4 +53,27 @@ export interface EventShop {
     hasScore: number;
     rank: EventRwd | EventRwd[];
     wsShopcfg: EventShopItem[];
+}
+export interface EventWheelConfig {
+    wall_gache: {
+        id: number;
+        prob_1000: number;
+        default_item: Item | [];
+    }[];
+    chosen_pool: {
+        key: number;
+        item: Item;
+    }[];
+    cost: number;
+    bili: number;
+}
+export interface EventWheel {
+    info: {
+        chosen: {
+            id: number;
+            key: number;
+        }[];
+        num: number;
+    };
+    cfg: EventWheelConfig;
 }

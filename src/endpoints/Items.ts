@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { Item } from '../../types/goat/Item'
+import { Item } from '../../types/Item'
 
 export class Items extends GoatResource {
 	async getBag(): Promise<Item[]> {

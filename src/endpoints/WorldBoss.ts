@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { FIGHT_STATUS } from '../../types/goat/WorldBoss'
+import { FIGHT_STATUS } from '../../types/WorldBoss'
 
 export class WorldBoss extends GoatResource {
 	async attackMinion(id: number): Promise<FIGHT_STATUS> {

@@ -11,10 +11,10 @@ export interface PicnicStatus {
 		image: Item[]
 		list: {
 			dc: number
-			items: Item[]
+			items: Item
 			prob_10000: number
 			tip: number
-		}
+		}[]
 	}
 	shop: EventShop
 	task: {
