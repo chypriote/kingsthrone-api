@@ -1,7 +1,7 @@
 {
   "name": "kingsthrone-api",
   "private": false,
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "lib",
   "types": "types/index.d.ts",
   "dependencies": {
@@ -21,6 +21,7 @@
     "eslint-plugin-prettier": "^3.4",
     "husky": "^7.0",
     "lint-staged": "^11.0",
+    "pinst": "^2.1",
     "prettier": "^2.3",
     "rimraf": "^3.0",
     "ts-node": "^10.1",
@@ -28,7 +29,11 @@
   },
   "scripts": {
     "build": "rimraf lib && tsc -p tsconfig.json",
-    "test": "ts-node test.ts"
+    "test": "ts-node test.ts",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "prepare": "husky install"
   },
   "author": {
     "name": "Chypriote"

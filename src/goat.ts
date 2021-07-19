@@ -3,7 +3,8 @@ import {
 	DragonSlaying, Expeditions, Feasts, GardenStroll,
 	HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens,
 	Mail, Picnic, Processions, Profile, Rankings, Renovation,
-	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney
+	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
+	AllianceSiege, MaidenPainting
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -49,6 +50,7 @@ export class Goat {
 	challenges: {
 		xServerTourney: XServerTourney
 		deathmatch: Deathmatch
+		allianceSiege: AllianceSiege
 	}
 
 	events: {
@@ -59,6 +61,7 @@ export class Goat {
 		castle: Renovation
 		dragonSlaying: DragonSlaying
 		jewelsOfLuck: JewelsOfLuck
+		maidenPainting: MaidenPainting
 	}
 
 	constructor() {
@@ -91,6 +94,7 @@ export class Goat {
 		this.challenges = {
 			xServerTourney: new XServerTourney(this),
 			deathmatch: new Deathmatch(this),
+			allianceSiege: new AllianceSiege(this),
 		}
 
 		this.events = {
@@ -101,6 +105,7 @@ export class Goat {
 			castle: new Renovation(this),
 			dragonSlaying: new DragonSlaying(this),
 			jewelsOfLuck: new JewelsOfLuck(this),
+			maidenPainting: new MaidenPainting(this),
 		}
 	}
 	_getHost(): string { return this.host}

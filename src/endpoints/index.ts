@@ -17,6 +17,7 @@ export { WorldBoss } from './WorldBoss'
 
 export { XServerTourney } from './Challenges/XServerTourney'
 export { Deathmatch } from './Challenges/Deathmatch'
+export { AllianceSiege } from './Challenges/AllianceSiege'
 
 export { DarkCastle } from './Events/DarkCastle'
 export { DragonSlaying } from './Events/DragonSlaying'
@@ -25,3 +26,4 @@ export { JewelsOfLuck } from './Events/JewelsOfLuck'
 export { Picnic } from './Events/Picnic'
 export { Renovation } from './Events/Renovation'
 export { TreasureHunt } from './Events/TreasureHunt'
+export { MaidenPainting } from './Events/MaidenPainting'

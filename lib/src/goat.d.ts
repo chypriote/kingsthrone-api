@@ -1,4 +1,4 @@
-import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney } from './endpoints';
+import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney, AllianceSiege, MaidenPainting } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -31,6 +31,7 @@ export declare class Goat {
     challenges: {
         xServerTourney: XServerTourney;
         deathmatch: Deathmatch;
+        allianceSiege: AllianceSiege;
     };
     events: {
         darkCastle: DarkCastle;
@@ -40,6 +41,7 @@ export declare class Goat {
         castle: Renovation;
         dragonSlaying: DragonSlaying;
         jewelsOfLuck: JewelsOfLuck;
+        maidenPainting: MaidenPainting;
     };
     constructor();
     _getHost(): string;
