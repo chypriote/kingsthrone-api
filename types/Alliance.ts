@@ -36,7 +36,7 @@ export interface AllianceShop {
 	lock: number
 	maxNum: number
 	num: number
-	payGx: number
+	payGX: number
 }
 
 export interface AllianceInfo {
