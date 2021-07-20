@@ -76,7 +76,12 @@ export interface Alliance {
 	clubInfo: AllianceInfo
 	clubLog: AllianceLog[]
 	bossInfo: AllianceBossInfo[]
+	bossInfoList: {
+		num: number,
+		list: {count: number, gid: number}[]
+	}
 	shopList: AllianceShop[]
+	clubKuaInfo: XSBattleInfo
 }
 
 export interface XSBattleInfo {
@@ -102,7 +107,7 @@ interface XSBattleRoster {
 	cname: string
 	allshili: number
 	list: {
-		uid: number
+		uid: string
 		name: string
 		post: number
 		heroid: number

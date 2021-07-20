@@ -11,16 +11,9 @@ export class Kingdom extends GoatResource {
 		}
 	}
 
-	async getChapterRwdList(): Promise<void> {
-		return await this.request({ 'user': { 'getChapterRwdList': [] }, 'rsn': '9zriizmmnmt' })
-	}
-
 	async claimAll(castleId: number): Promise<void> {
 		try {
-			await this.request({
-				'rsn': '4acfahcffvm',
-				'hangUpSystem': { 'getSonDispatchRewards': { 'eventId': 'all', 'id': castleId } },
-			})
+			await this.request({ 'rsn': '4acfahcffvm', 'hangUpSystem': { 'getSonDispatchRewards': { 'eventId': 'all', 'id': castleId } } })
 		} catch (e) {
 			console.error(`Failed at claimAll ${e.toString()}`)
 		}
@@ -28,10 +21,7 @@ export class Kingdom extends GoatResource {
 
 	async claimQuest(eventId: string, castleId: number): Promise<void> {
 		try {
-			await this.request({
-				'rsn': '9zrmzjtbsjm',
-				'hangUpSystem': { 'getSonDispatchRewards': { 'eventId': eventId, 'id': castleId } },
-			})
+			await this.request({ 'rsn': '9zrmzjtbsjm', 'hangUpSystem': { 'getSonDispatchRewards': { 'eventId': eventId, 'id': castleId } } })
 		} catch (e) {
 			console.error(`Failed at claimQuest ${e.toString()}`)
 		}
@@ -59,14 +49,17 @@ export class Kingdom extends GoatResource {
 
 	async refreshQuests(castleId: number): Promise<CastleInfos | false> {
 		try {
-			const refresh = await this.request({
-				'rsn': '3hzpseshen',
-				'hangUpSystem': { 'refreshEvent': { 'type': 0, 'id': castleId } },
-			})
+			const refresh = await this.request({ 'rsn': '3hzpseshen', 'hangUpSystem': { 'refreshEvent': { 'type': 0, 'id': castleId } } })
 			return refresh.u.hangUpSystem.info[0]
 		} catch (e) {
 			console.error(`Failed at refreshQuests ${e.toString()}`)
 			return false
 		}
+	}
+
+	async levelUpCastle(castleId: number): Promise<void> {
+		try {
+			await this.request({ 'rsn':'4afcmafaibm','hangUpSystem':{ 'upLevel':{ 'id':castleId } } })
+		} catch (e) {/* do nothing */}
 	}
 }

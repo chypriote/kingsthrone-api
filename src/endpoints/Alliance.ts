@@ -1,8 +1,12 @@
 import { GoatResource } from '../GoatResource'
-import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus } from '../../types/Alliance'
+import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus, Alliance as AllianceFull } from '../../types/Alliance'
 import { FIGHT_STATUS } from '../../types/WorldBoss'
 
 export class Alliance extends GoatResource {
+	async getAllianceInfos(): Promise<AllianceFull> {
+		const data = await this.request({ 'club':{ 'shopList':[],'clubInfo':[] },'rsn':'4fcghcixmfb' })
+		return data.a.club
+	}
 	async contributeAlliance(): Promise<boolean> {
 		try {
 			await this.request({ 'club': { 'dayGongXian': { 'dcid': 5 } }, 'rsn': '3hfkksnwfn' })
@@ -40,6 +44,10 @@ export class Alliance extends GoatResource {
 	async getLadder(): Promise<AllianceInfo[]> {
 		const alliances = await this.request({ club: { clubList: [] }, rsn: '3zhpsspfrse' })
 		return alliances.a.club.clubList
+	}
+
+	async buyAllianceShopItem(id: number): Promise<void> {
+		await this.request({ 'club':{ 'shopBuy':{ 'id':id } },'rsn':'4fcghcixgbb' })
 	}
 
 	async getXServerBattleInfos(): Promise<XSBattleInfo> {
