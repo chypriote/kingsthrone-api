@@ -4,7 +4,7 @@ export { GoatResource, IAccount } from '../src/GoatResource'
 
 export const goat: Goat
 
-export * from './Club'
+export * from './Alliance'
 export * from './CouncilStatus'
 export * from './Expeditions'
 export * from './Feasts'

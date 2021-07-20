@@ -1,6 +1,6 @@
 import { sample } from 'lodash'
 import { GoatResource } from '../../GoatResource'
-import { Item } from '../../../types/Item'
+import { Item } from '../../../types'
 
 const find_egg_rsn = [
 	'1ktukkqqkuu',
@@ -8,6 +8,7 @@ const find_egg_rsn = [
 	'9zmrmrbrzts',
 	'5wpjwyhrpf',
 	'8arjjiavoe',
+	'7xycgyvgcvp',
 ]
 const claim_egg_rsn = [
 	'1ktukkqiewk',
@@ -15,6 +16,7 @@ const claim_egg_rsn = [
 	'6sxwxwlwukg',
 	'5wpjwyhrey',
 	'4afcammvbbb',
+	'9mrtjrzmrmi',
 ]
 
 export class Renovation extends GoatResource {

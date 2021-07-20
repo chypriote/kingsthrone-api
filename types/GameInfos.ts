@@ -1,6 +1,6 @@
 import { CastleInfos } from './Kingdom'
 import { RegularTasks } from './RegularTasks'
-import { Club } from './Club'
+import { Alliance } from './Alliance'
 import { Hero } from './Hero'
 import { Item } from './Item'
 import { UserTourney } from './Tourney'
@@ -210,7 +210,7 @@ export type GameInfos = {
 		wyrwd: { get: number }
 	}
 	chengjiu: { cjlist: { id: number, num: number, rwd: number }[] }
-	club: Club
+	club: Alliance
 	CombinedSevContinuous: {
 		info: unknown
 		cfg: SpecialOfferPack[]

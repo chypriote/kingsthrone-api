@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { AllianceBossInfo, ClubInfo } from '../../types/Club'
+import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus } from '../../types/Alliance'
 import { FIGHT_STATUS } from '../../types/WorldBoss'
 
 export class Alliance extends GoatResource {
@@ -32,12 +32,28 @@ export class Alliance extends GoatResource {
 			if (msg === 'Error: The boss has been killed') {
 				return FIGHT_STATUS.BOSS_KILLED
 			}
-			console.log(e)
+			console.log(msg)
 		}
 		return FIGHT_STATUS.ONGOING
 	}
-	async getLadder(): Promise<ClubInfo[]> {
-		const alliances = await this.request({ club:{ clubList:[] }, rsn:'3zhpsspfrse' })
+
+	async getLadder(): Promise<AllianceInfo[]> {
+		const alliances = await this.request({ club: { clubList: [] }, rsn: '3zhpsspfrse' })
 		return alliances.a.club.clubList
+	}
+
+	async getXServerBattleInfos(): Promise<XSBattleInfo> {
+		const data = await this.request({ 'club': { 'kuaPKinfo': [] }, 'rsn': '4fcghcfmimb' })
+		return data.a.club.clubKuaInfo
+	}
+	async getXServerFight(): Promise<XSBattleStatus> {
+		const data = await this.request({ 'club':{ 'kuaPKCszr':[] },'rsn':'6sxwgxpbwbg' })
+		return {
+			status: data.a.club.clubKuaCszr,
+			heroes: data.a.club.kuaHeroList,
+		}
+	}
+	async dispatchXServerHero(id: number): Promise<void> {
+		await this.request({ 'club':{ 'kuaPKAdd':{ 'hid':id } },'rsn':'2myaxyxlabq' })
 	}
 }

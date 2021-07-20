@@ -1,13 +1,17 @@
 import { GoatResource } from '../GoatResource'
 import { CouncilStatus, DECREE_TYPE, GameInfos, PunishmentResult, UserProfile } from '../../types'
+import { cloneDeep } from 'lodash'
 
 export class Profile extends GoatResource {
+	gameInfos?: GameInfos
+
 	async getGameInfos(): Promise<GameInfos> {
-		const game = await this.request({
-			rsn: '2ynbmhanlb',
-			guide: { login: { language: 1, platform: 'gaotukc', ug: '' } },
-		})
-		return game.a
+		if (this.gameInfos) { return this.gameInfos}
+
+		const game = await this.request({ rsn: '2ynbmhanlb', guide: { login: { language: 1, platform: 'gaotukc', ug: '' } } })
+		this.gameInfos = cloneDeep(game.a)
+
+		return this.gameInfos
 	}
 
 	async getAllLevies(): Promise<boolean> {

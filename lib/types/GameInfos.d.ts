@@ -1,6 +1,6 @@
 import { CastleInfos } from './Kingdom';
 import { RegularTasks } from './RegularTasks';
-import { Club } from './Club';
+import { Alliance } from './Alliance';
 import { Hero } from './Hero';
 import { Item } from './Item';
 import { UserTourney } from './Tourney';
@@ -264,7 +264,7 @@ export declare type GameInfos = {
             rwd: number;
         }[];
     };
-    club: Club;
+    club: Alliance;
     CombinedSevContinuous: {
         info: unknown;
         cfg: SpecialOfferPack[];

@@ -1,9 +1,8 @@
-import { goat } from './src/goat'
-import { ACCOUNT_GAUTIER } from './src/accounts/gautier'
+import { ACCOUNT_NAPOLEON, goat } from './src/goat'
 
 const test = async () => {
-	goat._setAccount(ACCOUNT_GAUTIER)
-	console.log((await goat.profile.getGameInfos()).hero.heroList)
+	goat._setAccount(ACCOUNT_NAPOLEON)
+	console.log(await goat.alliance.getXServerBattleInfos())
 }
 
 test().then(() => { process.exit() })
