@@ -32,7 +32,7 @@ interface AllianceMember extends User {
         label: string;
     };
 }
-interface AllianceShop {
+export interface AllianceShop {
     id: number;
     item: Item;
     lock: number;

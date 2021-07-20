@@ -30,7 +30,7 @@ interface AllianceMember extends User {
 	inTime: { next: number, label: string }
 }
 
-interface AllianceShop {
+export interface AllianceShop {
 	id: number
 	item: Item
 	lock: number
