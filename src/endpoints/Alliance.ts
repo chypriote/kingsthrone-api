@@ -2,6 +2,8 @@ import { GoatResource } from '../GoatResource'
 import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus, Alliance as AllianceFull } from '../../types/Alliance'
 import { FIGHT_STATUS } from '../../types/WorldBoss'
 
+interface UsedHero { id: number; h: number; f: number; }
+
 export class Alliance extends GoatResource {
 	async getAllianceInfos(): Promise<AllianceFull> {
 		const data = await this.request({ 'club':{ 'shopList':[],'clubInfo':[] },'rsn':'4fcghcixmfb' })
@@ -16,10 +18,13 @@ export class Alliance extends GoatResource {
 		return true
 	}
 
-	async getAllianceBossInfo(): Promise<AllianceBossInfo[]> {
+	async getAllianceBossInfo(): Promise<{bosses: AllianceBossInfo[], heroes: UsedHero[]}> {
 		const data = await this.request({ 'club': { 'clubBossInfo': [] }, 'rsn': '5wfppaeavy' })
 
-		return data.a.club.bossInfo
+		return {
+			bosses: data.a.club.bossInfo,
+			heroes: data.a.club.bossft,
+		}
 	}
 
 	async fightAllianceBoss(boss: number, hero: number): Promise<FIGHT_STATUS> {
