@@ -31,7 +31,12 @@ export class Rewards extends GoatResource {
 		const data = await this.request({ 'chengjiu': { 'getAllrwd': [] }, 'rsn': '4fcgicgcabm' })
 		return !!data.a.msgwin
 	}
-	async claimLoginReward(): Promise<void> {
-		await this.request({ 'fuli':{ 'qiandao':[] },'rsn':'6wguukkgpk' })
+	async claimLoginReward(): Promise<boolean> {
+		const data = await this.request({ 'fuli': { 'qiandao': [] }, 'rsn': '6wguukkgpk' })
+		if (data.a?.system?.errror) {
+			if (data.a.system.errror === 'Today\'s log-in times has run out') { return false }
+			throw new Error(data.a.system.errror.msg)
+		}
+		return true
 	}
 }
