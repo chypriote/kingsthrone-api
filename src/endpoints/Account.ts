@@ -18,9 +18,8 @@ export class Account extends GoatResource {
 				console.log('exiting')
 				process.exit()
 			}
-		} catch (e) {
-			console.log('catching name error')
-		}
+		} catch (e) {console.log('catching name error')}
+
 		console.debug('Skipping guide')
 		await this.request({ 'user': { 'adok': { 'label': '' } }, 'rsn': '8ajixearke' })
 		await this.request({ 'fuli': { 'answer': { 'code': 'tg' } }, 'rsn': '2ylhaxxbwy' })

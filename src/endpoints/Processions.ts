@@ -30,8 +30,6 @@ export class Processions extends GoatResource {
 
 	async setAutoDonation(value = 82, grain: boolean, gold: boolean): Promise<LuckStatus> {
 		//num = current luck, ySet = min luck
-		console.log(`Setting auto donation to ${value}`)
-
 		const status = await this.request({
 			'rsn': '4fhaibbigb', 'xunfang': {
 				'yunshi': {
