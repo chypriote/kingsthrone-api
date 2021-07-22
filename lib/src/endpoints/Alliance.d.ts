@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus, Alliance as AllianceFull } from '../../types/Alliance';
+import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus, Alliance as AllianceFull, XSRewardInfos } from '../../types/Alliance';
 import { FIGHT_STATUS } from '../../types/WorldBoss';
 interface UsedHero {
     id: number;
@@ -19,5 +19,7 @@ export declare class Alliance extends GoatResource {
     getXServerBattleInfos(): Promise<XSBattleInfo>;
     getXServerFight(): Promise<XSBattleStatus>;
     dispatchXServerHero(id: number): Promise<void>;
+    getXServerRewardInfos(): Promise<XSRewardInfos>;
+    claimXServerReward(): Promise<void>;
 }
 export {};

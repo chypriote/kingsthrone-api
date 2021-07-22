@@ -149,4 +149,26 @@ export interface XSBattleStatus {
     status: XSBattleRoster;
     heroes: XSBattleHeroes[];
 }
+export interface XSRewardInfos {
+    club: {
+        count: number;
+        id: number;
+        kind: number;
+    }[];
+    fcid: string;
+    flevel: number;
+    fname: string;
+    fservid: number;
+    getCname: string;
+    getCuid: string;
+    is_get: number;
+    isGet: number;
+    isWin: number;
+    member: {
+        count: number;
+        id: number;
+        kind: number;
+    }[];
+    setMems: string[];
+}
 export {};

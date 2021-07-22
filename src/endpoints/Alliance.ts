@@ -1,5 +1,12 @@
 import { GoatResource } from '../GoatResource'
-import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus, Alliance as AllianceFull } from '../../types/Alliance'
+import {
+	AllianceBossInfo,
+	AllianceInfo,
+	XSBattleInfo,
+	XSBattleStatus,
+	Alliance as AllianceFull,
+	XSRewardInfos
+} from '../../types/Alliance'
 import { FIGHT_STATUS } from '../../types/WorldBoss'
 
 interface UsedHero { id: number; h: number; f: number; }
@@ -68,5 +75,12 @@ export class Alliance extends GoatResource {
 	}
 	async dispatchXServerHero(id: number): Promise<void> {
 		await this.request({ 'club':{ 'kuaPKAdd':{ 'hid':id } },'rsn':'2myaxyxlabq' })
+	}
+	async getXServerRewardInfos(): Promise<XSRewardInfos> {
+		const data = await this.request({ 'club':{ 'kuaPKrwdinfo':[] },'rsn':'1qktbbkqiiu' })
+		return data.a.clubKuapkrwd
+	}
+	async claimXServerReward(): Promise<void> {
+		await this.request({ 'club':{ 'kuaPKrwdget':{ 'id':1 } },'rsn':'8arjeeoxeo' })
 	}
 }
