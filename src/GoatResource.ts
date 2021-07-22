@@ -26,20 +26,32 @@ export class GoatResource {
 		this._goat = goat
 	}
 
+	private _getErrorMessage(response: any): string|null {
+		if (response?.a?.system?.errror) {
+			return response.a.system.errror.msg
+		}
+		if (response?.system?.errror) {
+			return response.system.errror.msg
+		}
+		return null
+	}
+
 	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 	private async _jsonResponseHandler(response: any): Promise<any> {
-		if (response?.a?.system?.errror) {
-			if (response.a.system.errror.msg === 'You have logged in elsewhere') {
-				console.warn('Provided token expired, reconnecting')
-				await this._login(true)
-				return await this._retry()
-			}
-			throw new Error(response?.a?.system?.errror.msg || JSON.stringify(response))
+		const msg = this._getErrorMessage(response)
+
+		if (msg) {
+			if (msg !== 'You have logged in elsewhere') { throw new Error(msg) }
+			console.warn('Provided token expired, reconnecting')
+			await this._login(true)
+			return await this._retry()
 		}
+
 		if (response?.a?.system?.version) {
 			this._goat._setVersion(response.a.system.version.ver)
 			return await this._retry()
 		}
+
 		this._data = null
 
 		return response

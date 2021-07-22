@@ -13,6 +13,7 @@ export declare class GoatResource {
     _goat: Goat;
     _data: string | null;
     constructor(goat: Goat);
+    private _getErrorMessage;
     private _jsonResponseHandler;
     private _makeParams;
     private _makeHeaders;
