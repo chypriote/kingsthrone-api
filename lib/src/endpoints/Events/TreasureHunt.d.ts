@@ -5,4 +5,5 @@ export declare class TreasureHunt extends GoatResource {
     claimAllShovels(): Promise<void>;
     claimShovel(id: number): Promise<void>;
     dig(): Promise<void>;
+    openChest(id: number): Promise<void>;
 }

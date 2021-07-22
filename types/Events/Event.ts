@@ -75,6 +75,12 @@ export interface EventWheel {
 	cfg: EventWheelConfig
 }
 
+export enum QUEST_STATUS {
+	ONGOING= 0,
+	FINISHED= 1,
+	CLAIMED= 2
+}
+
 export interface Event {
 	id: number
 	title: string

@@ -1,9 +1,14 @@
 import { Item } from '../Item';
+export declare enum RWD_STATUS {
+    NOT_READY = 0,
+    READY = 1,
+    CLAIMED = 2
+}
 declare type TreasureHuntReward = {
     id: number;
     isGet: number;
     items: Item[];
-    need: any;
+    need: number[];
     tid: number;
     type: number;
 };

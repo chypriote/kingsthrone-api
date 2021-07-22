@@ -19,4 +19,8 @@ export class TreasureHunt extends GoatResource {
 	async dig(): Promise<void> {
 		await this.request({ 'huodong': { 'hd296Wa': [] }, 'rsn': '5wpwwyhjyy' })
 	}
+
+	async openChest(id: number): Promise<void> {
+		await this.request({ 'huodong':{ 'hd296Rwd':{ 'id':id } },'rsn':'7xycoosdooy' }	)
+	}
 }
