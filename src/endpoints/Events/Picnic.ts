@@ -1,6 +1,5 @@
 import { GoatResource } from '../../GoatResource'
-import { PicnicStatus } from '../../../types/Events/Picnic'
-import { EventRank } from '../../../types'
+import { EventRank, PicnicStatus } from '../../../types'
 
 export class Picnic extends GoatResource {
 	async eventInfos(): Promise<PicnicStatus> {

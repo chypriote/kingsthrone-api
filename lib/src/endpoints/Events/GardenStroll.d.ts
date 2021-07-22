@@ -1,6 +1,5 @@
 import { GoatResource } from '../../GoatResource';
-import { GardenStrollPointExchange, GardenStrollStatus } from '../../../types/Events/GardenStroll';
-import { EventRankWithServer } from '../../../types/Events/Event';
+import { EventRankWithServer, GardenStrollPointExchange, GardenStrollStatus } from '../../../types';
 export declare class GardenStroll extends GoatResource {
     eventInfos(): Promise<GardenStrollStatus>;
     getRanking(): Promise<EventRankWithServer[]>;

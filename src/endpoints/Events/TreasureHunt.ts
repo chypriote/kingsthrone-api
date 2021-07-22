@@ -1,5 +1,5 @@
 import { GoatResource } from '../../GoatResource'
-import { TreasureHuntStatus } from '../../../types/Events/TreasureHunt'
+import { TreasureHuntStatus } from '../../../types'
 
 export class TreasureHunt extends GoatResource {
 	async eventInfos(): Promise<TreasureHuntStatus> {

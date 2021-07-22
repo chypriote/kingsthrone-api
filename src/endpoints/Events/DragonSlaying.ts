@@ -1,5 +1,5 @@
 import { GoatResource } from '../../GoatResource'
-import { DragonSlayingStatus } from '../../../types/Events/DragonSlaying'
+import { DragonSlayingStatus } from '../../../types'
 
 export class DragonSlaying extends GoatResource {
 	async eventInfos(): Promise<DragonSlayingStatus> {

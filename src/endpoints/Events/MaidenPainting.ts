@@ -1,5 +1,5 @@
 import { GoatResource } from '../../GoatResource'
-import { MaidenPaintingStatus } from '../../../types/Events/MaidenPainting'
+import { MaidenPaintingStatus } from '../../../types'
 
 export class MaidenPainting extends GoatResource {
 	async eventInfos(): Promise<MaidenPaintingStatus> {

@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus, Alliance as AllianceFull, XSRewardInfos } from '../../types/Alliance';
+import { AllianceBossInfo, AllianceInfo, XSBattleInfo, XSBattleStatus, Alliance as AllianceFull, XSRewardInfos } from '../../types';
 import { FIGHT_STATUS } from '../../types/WorldBoss';
 interface UsedHero {
     id: number;
