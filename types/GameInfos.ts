@@ -8,6 +8,7 @@ import { Mail } from './Mail'
 import { WorldBoss } from './WorldBoss'
 import { KingdomExpGlobal } from './Expeditions'
 import { WeeklyRank } from './WeeklyRank'
+import { Event } from './Events'
 
 export enum Sex {
 	MALE = 2,
@@ -235,7 +236,7 @@ export type GameInfos = {
 	hanlin: { info: Hanlin }
 	hero: { heroList: Hero[] }
 	huanggong: { qingAn: { type: number } }
-	huodonglist: unknown
+	huodonglist: { all: Event[] }
 	item: { itemList: Item[] }
 	jingYing: unknown
 	kingdomExpedition: KingdomExpGlobal

@@ -8,6 +8,7 @@ import { Mail } from './Mail';
 import { WorldBoss } from './WorldBoss';
 import { KingdomExpGlobal } from './Expeditions';
 import { WeeklyRank } from './WeeklyRank';
+import { Event } from './Events';
 export declare enum Sex {
     MALE = 2,
     FEMALE = 1
@@ -321,7 +322,9 @@ export declare type GameInfos = {
             type: number;
         };
     };
-    huodonglist: unknown;
+    huodonglist: {
+        all: Event[];
+    };
     item: {
         itemList: Item[];
     };

@@ -7,10 +7,13 @@ export class TreasureHunt extends GoatResource {
 		return data.a.wbhuodong.wabao
 	}
 
-	async claimShovels(): Promise<void> {
+	async claimAllShovels(): Promise<void> {
 		for (let i = 1; i < 15; i++) {
 			await this.request({ 'huodong': { 'hd296Task': { 'id': i } }, 'rsn': '5wpwwyhwhf' })
 		}
+	}
+	async claimShovel(id: number): Promise<void> {
+		await this.request({ 'huodong': { 'hd296Task': { 'id': id } }, 'rsn': '5wpwwyhwhf' })
 	}
 
 	async dig(): Promise<void> {

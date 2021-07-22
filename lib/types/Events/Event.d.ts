@@ -77,3 +77,17 @@ export interface EventWheel {
     };
     cfg: EventWheelConfig;
 }
+export interface Event {
+    id: number;
+    title: string;
+    pindex: number;
+    type: number;
+    sTime: number;
+    eTime: number;
+    showTime: number;
+    cd: {
+        next: number;
+        label: string;
+    };
+    news: number;
+}
