@@ -98,13 +98,13 @@ const handleAccount = async (server: string) => {
 }
 
 const levelUp = async () => {
-	for (const server of ['222', '333', '612', '614', '615', '617', '618', '619', '637']) {
-		try {
-			await handleAccount(server)
-		} catch (e) {
-			console.log(`Error ${server}`, e)
-		}
-	}
+	// for (const server of ['222', '333', '612', '614', '615', '617', '618', '619', '637']) {
+	// 	try {
+	// 	} catch (e) {
+	// 		console.log(`Error ${server}`, e)
+	// 	}
+	// }
+	await handleAccount('427')
 
 	console.log('Finished !')
 }
