@@ -13,7 +13,7 @@ export declare class GoatResource {
     _goat: Goat;
     _data: string | null;
     constructor(goat: Goat);
-    private _getErrorMessage;
+    private static _getErrorMessage;
     private _jsonResponseHandler;
     private _makeParams;
     private _makeHeaders;
@@ -21,4 +21,5 @@ export declare class GoatResource {
     private _request;
     private _login;
     protected request(data?: any): Promise<any>;
+    _unsafe(data: any): Promise<any>;
 }

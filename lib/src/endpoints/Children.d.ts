@@ -1,8 +1,9 @@
 import { GoatResource } from '../GoatResource';
-import { InLaw } from '../../types/InLaw';
+import { InLaw } from '../../types';
 export declare class Children extends GoatResource {
     getSonsStatus(): Promise<any>;
     raiseAllSons(): Promise<boolean>;
+    raiseSon(id: number): Promise<void>;
     nameSon(id: number): Promise<void>;
     useEnergyDraught(son: number, num: number): Promise<void>;
     evaluateSon(son: number): Promise<void>;

@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { ITourneyStatus, OpponentHero, Reward, TourneyShopItem } from '../../types/Tourney'
+import { ITourneyStatus, OpponentHero, Reward, TourneyShopItem } from '../../types'
 
 export class Tourney extends GoatResource {
 	async getTourneyInfos(): Promise<ITourneyStatus> {

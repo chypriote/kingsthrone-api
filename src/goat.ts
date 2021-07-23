@@ -1,10 +1,10 @@
 import {
 	Account, Alliance, Children, DarkCastle, Deathmatch,
-	DragonSlaying, Expeditions, Feasts, GardenStroll,
+	DragonSlaying, Expeditions, Feasts, GardenStroll, Heroes,
 	HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens,
 	Mail, Picnic, Processions, Profile, Rankings, Renovation,
 	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
-	AllianceSiege, MaidenPainting, Divining, Coronation
+	AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom, Campaign
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -32,10 +32,12 @@ export class Goat {
 
 	account: Account
 	alliance: Alliance
+	campaign: Campaign
 	children: Children
 	expeditions: Expeditions
 	feasts: Feasts
 	hallOfFame: HallOfFame
+	heroes: Heroes
 	items: Items
 	kingdom: Kingdom
 	maidens: Maidens
@@ -44,6 +46,7 @@ export class Goat {
 	profile: Profile
 	rankings: Rankings
 	rewards: Rewards
+	throneRoom: ThroneRoom
 	tourney: Tourney
 	worldBoss: WorldBoss
 
@@ -78,10 +81,12 @@ export class Goat {
 
 		this.account = new Account(this)
 		this.alliance = new Alliance(this)
+		this.campaign = new Campaign(this)
 		this.children = new Children(this)
 		this.expeditions = new Expeditions(this)
 		this.feasts = new Feasts(this)
 		this.hallOfFame = new HallOfFame(this)
+		this.heroes = new Heroes(this)
 		this.items = new Items(this)
 		this.kingdom = new Kingdom(this)
 		this.maidens = new Maidens(this)
@@ -90,6 +95,7 @@ export class Goat {
 		this.profile = new Profile(this)
 		this.rankings = new Rankings(this)
 		this.rewards = new Rewards(this)
+		this.throneRoom = new ThroneRoom(this)
 		this.tourney = new Tourney(this)
 		this.worldBoss = new WorldBoss(this)
 

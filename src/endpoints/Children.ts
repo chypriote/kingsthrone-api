@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { InLaw } from '../../types/InLaw'
+import { InLaw } from '../../types'
 
 export class Children extends GoatResource {
 	//Sons
@@ -11,10 +11,11 @@ export class Children extends GoatResource {
 	async raiseAllSons(): Promise<boolean> {
 		try {
 			await this.request({ 'rsn': '3hfkkwrshp', 'son': { 'allplay': [] } })
-		} catch (e) {
-			return false
-		}
+		} catch (e) {return false}
 		return true
+	}
+	async raiseSon(id: number): Promise<void> {
+		await this.request({ 'rsn':'8maoemroveo','son':{ 'play':{ 'id': id } } })
 	}
 
 	async nameSon(id: number): Promise<void> {

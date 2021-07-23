@@ -1,7 +1,7 @@
 {
   "name": "kingsthrone-api",
   "private": false,
-  "version": "0.10.8",
+  "version": "0.11.0",
   "main": "lib",
   "types": "types/index.d.ts",
   "dependencies": {
@@ -30,6 +30,7 @@
   "scripts": {
     "build": "rimraf lib && tsc -p tsconfig.json",
     "test": "ts-node test.ts",
+    "levelup": "ts-node levelup.ts",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",

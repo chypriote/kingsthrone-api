@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { ITourneyStatus, OpponentHero, Reward, TourneyShopItem } from '../../types/Tourney';
+import { ITourneyStatus, OpponentHero, Reward, TourneyShopItem } from '../../types';
 export declare class Tourney extends GoatResource {
     getTourneyInfos(): Promise<ITourneyStatus>;
     getTourneyAdok(): Promise<ITourneyStatus>;

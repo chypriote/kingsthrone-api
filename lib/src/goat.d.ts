@@ -1,4 +1,4 @@
-import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney, AllianceSiege, MaidenPainting, Divining, Coronation } from './endpoints';
+import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, Heroes, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney, AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom, Campaign } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -14,10 +14,12 @@ export declare class Goat {
     isLoggedIn: boolean;
     account: Account;
     alliance: Alliance;
+    campaign: Campaign;
     children: Children;
     expeditions: Expeditions;
     feasts: Feasts;
     hallOfFame: HallOfFame;
+    heroes: Heroes;
     items: Items;
     kingdom: Kingdom;
     maidens: Maidens;
@@ -26,6 +28,7 @@ export declare class Goat {
     profile: Profile;
     rankings: Rankings;
     rewards: Rewards;
+    throneRoom: ThroneRoom;
     tourney: Tourney;
     worldBoss: WorldBoss;
     challenges: {

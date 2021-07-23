@@ -1,5 +1,6 @@
 import { GoatResource } from '../GoatResource'
 import { GameInfos } from '../../types'
+import { sample } from 'lodash'
 
 export class Account extends GoatResource {
 	async createAccount(server: string): Promise<void | GameInfos> {
@@ -76,5 +77,37 @@ export class Account extends GoatResource {
 		await this.request({ 'rsn': '6xpsluwkyk', 'guide': { 'setUinfo': { 'sex': 1, name, 'job': 7 } } })
 
 		return name
+	}
+
+	async doMainQuestTask(id: number): Promise<void> {
+		await this.request({ 'task':{ 'taskdo':{ 'id': id } }, 'rsn':sample([
+			'5jywefaefyf', '2yaqhyxlaab', '8jmairooamo', '9zmrcntmjis', '6sxwyubsbuy',
+			'7cogcyopyv', '3ehpwekhrsn', '5wpfwypayf', '6sxwyubgxgk', '4cimcfvccg',
+			'6xwbkxuxswy', '9mrtimnmbts', '9zmrcntnbzc', '4afcvighgbb', '1ktuikbqrua',
+		]) })
+	}
+
+	async getThrone(): Promise<void> {
+		const status = await this.request({ 'user':{ 'refjingying':[] },'rsn':'5jywefajvyr' })
+
+		for (let i=0; i < status.a.jingYing.army.num; i++) {
+			await this.request({ 'user':{ 'jingYing':{ 'jyid':4 } },'rsn':'6sxwyglskxg' })
+		}
+		for (let i=0; i < status.a.jingYing.coin.num; i++) {
+			await this.request({ 'user':{ 'jingYing':{ 'jyid':2 } },'rsn':'7cogcyxgoy' })
+		}
+		for (let i=0; i < status.a.jingYing.food.num; i++) {
+			await this.request({ 'user':{ 'jingYing':{ 'jyid':3 } },'rsn':'3hkfhezfke' })
+		}
+	}
+	async doCampaignGuide(smap: number, bmap: number, mmap: number): Promise<void> {
+		await this.request({ 'guide':{ 'guide':{ smap, bmap, mmap } }, 'rsn': sample([
+			'6wugwxgwly', '6wugwxgwly', '8maoemkekio', '8jmaikxvakk', '2anxayxmmx', '6sxwyglppbg', '1ktuikaiwek',
+		]) })
+	}
+	async doGuide(id: number): Promise<void> {
+		await this.request({ 'guide':{ 'guide':{ 'gnew': id } }, 'rsn': sample([
+			'8maoemroaam', '8maoemroaam', '2myabnqqxnb',
+		]) })
 	}
 }

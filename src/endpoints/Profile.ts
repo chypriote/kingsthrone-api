@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { CouncilStatus, DECREE_TYPE, GameInfos, PunishmentResult, UserProfile } from '../../types'
+import { CouncilStatus, GameInfos, PunishmentResult, UserProfile } from '../../types'
 import { cloneDeep } from 'lodash'
 
 export class Profile extends GoatResource {
@@ -12,23 +12,6 @@ export class Profile extends GoatResource {
 		this.gameInfos = cloneDeep(game.a)
 
 		return this.gameInfos
-	}
-
-	async getAllLevies(): Promise<boolean> {
-		try {
-			await this.request({ 'user': { 'jingYingAll': [] }, 'rsn': '1tabbiiurr' })
-		} catch (e) {
-			return false
-		}
-		return true
-	}
-	async getAllDecreesResources(type: DECREE_TYPE): Promise<boolean> {
-		try {
-			const data = await this.request({ 'user': { 'yjZhengWu': { 'act': type } }, 'rsn': '1tabbiitbi' })
-			return !!data.a.msgwin
-		} catch (e) {
-			return false
-		}
 	}
 
 	async finishTraining(): Promise<boolean> {

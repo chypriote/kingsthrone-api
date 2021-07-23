@@ -26,7 +26,7 @@ export class GoatResource {
 		this._goat = goat
 	}
 
-	private _getErrorMessage(response: any): string|null {
+	private static _getErrorMessage(response: any): string|null {
 		if (response?.a?.system?.errror) {
 			return response.a.system.errror.msg
 		}
@@ -38,7 +38,7 @@ export class GoatResource {
 
 	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 	private async _jsonResponseHandler(response: any): Promise<any> {
-		const msg = this._getErrorMessage(response)
+		const msg = GoatResource._getErrorMessage(response)
 
 		if (msg) {
 			if (msg === 'You have logged in elsewhere') {
@@ -123,6 +123,10 @@ export class GoatResource {
 		if (!this._data) {this._data = data}
 		if (!this._goat.isLoggedIn) { await this._login() }
 		return await this._jsonResponseHandler(await this._request(data))
+	}
+	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+	public async _unsafe(data: any): Promise<any> {
+		return await this._request(data)
 	}
 }
 
