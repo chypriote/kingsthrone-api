@@ -1,5 +1,6 @@
 export * from './Event'
 
+export * from './Coronation'
 export * from './Divining'
 export * from './DarkCastle'
 export * from './DragonSlaying'

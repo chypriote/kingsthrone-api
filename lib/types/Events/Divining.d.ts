@@ -5,7 +5,7 @@ interface DiviningShop {
         all_limit: number;
         id: number;
         is_limit: number;
-        items: Item[];
+        items: Item;
         limit: number;
         need: number;
     }[];

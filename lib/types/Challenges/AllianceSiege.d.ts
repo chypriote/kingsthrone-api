@@ -1,7 +1,7 @@
 import { User } from '../User';
 import { Alliance } from '../Alliance';
 import { Item } from '../Item';
-import { EventRwd } from '../Events';
+import { ClubEventRwd, EventRwd } from '../Events';
 interface AllianceSiegeRank {
     generalName: string;
     shili: number;
@@ -51,20 +51,7 @@ export interface AllianceSiegeBattle {
             id: number;
             count: number;
         };
-        wall_alliance_rank: {
-            rand: {
-                re: number;
-                rs: number;
-            };
-            mengzhu: {
-                id: number;
-                count: number;
-            }[];
-            member: {
-                id: number;
-                count: number;
-            }[];
-        }[];
+        wall_alliance_rank: ClubEventRwd[];
         wall_personal_rank: EventRwd[];
         taskscfg: {
             type: number;

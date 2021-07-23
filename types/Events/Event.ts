@@ -49,6 +49,11 @@ export interface EventRwd {
 	member: { count: number, id: number, kind?: number }[]
 	rand: { re: number, rs: number }
 }
+export interface ClubEventRwd {
+	mengzhu: { id: number, count: number}[]
+	member: { id: number, count: number}[]
+	rand: { re: number, rs: number }
+}
 
 export interface EventShop {
 	hasScore: number //current score

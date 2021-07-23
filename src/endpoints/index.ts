@@ -19,6 +19,7 @@ export { XServerTourney } from './Challenges/XServerTourney'
 export { Deathmatch } from './Challenges/Deathmatch'
 export { AllianceSiege } from './Challenges/AllianceSiege'
 
+export { Coronation } from './Events/Coronation'
 export { DarkCastle } from './Events/DarkCastle'
 export { Divining } from './Events/Divining'
 export { DragonSlaying } from './Events/DragonSlaying'
