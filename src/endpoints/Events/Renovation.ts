@@ -3,22 +3,14 @@ import { GoatResource } from '../../GoatResource'
 import { Item } from '../../../types'
 
 const find_egg_rsn = [
-	'1ktukkqqkuu',
-	'7coydyvovg',
-	'9zmrmrbrzts',
-	'5wpjwyhrpf',
-	'8arjjiavoe',
-	'7xycgyvgcvp',
-	'2yaqwwbbwly',
+	'1ktukkqqkuu', '7coydyvovg', '9zmrmrbrzts',
+	'5wpjwyhrpf', '8arjjiavoe', '7xycgyvgcvp',
+	'2yaqwwbbwly', '7coglsgdlg',
 ]
 const claim_egg_rsn = [
-	'1ktukkqiewk',
-	'5jywwvheffh',
-	'6sxwxwlwukg',
-	'5wpjwyhrey',
-	'4afcammvbbb',
-	'9mrtjrzmrmi',
-	'6sxwuussybb',
+	'1ktukkqiewk', '5jywwvheffh', '6sxwxwlwukg',
+	'5wpjwyhrey', '4afcammvbbb', '9mrtjrzmrmi',
+	'6sxwuussybb', '4afcvfxxvfm',
 ]
 
 export class Renovation extends GoatResource {

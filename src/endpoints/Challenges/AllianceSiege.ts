@@ -1,14 +1,9 @@
 import { GoatResource } from '../../GoatResource'
-import { AllianceSiegeBattle, AllianceSiegeStatus, BATTLE_STATUS } from '../../../types'
+import { AllianceSiegeBattle, BATTLE_STATUS } from '../../../types'
 
 export class AllianceSiege extends GoatResource {
-	async eventInfos(): Promise<AllianceSiegeStatus> {
+	async eventInfos(): Promise<AllianceSiegeBattle> {
 		const data = await this.request({ 'rsn':'5ywhevjahwy','kuaCLubBattle':{ 'getInfo':[] } })
-		return data.a.kuaCLubBattle
-	}
-
-	async getBattleInfos(): Promise<AllianceSiegeBattle> {
-		const data = await this.request({ 'rsn':'2yaqwllnqay','kuaCLubBattle':{ 'getInfo':[] } })
 		return data.a.kuaCLubBattle
 	}
 

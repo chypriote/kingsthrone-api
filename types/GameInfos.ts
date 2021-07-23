@@ -9,6 +9,7 @@ import { WorldBoss } from './WorldBoss'
 import { KingdomExpGlobal } from './Expeditions'
 import { WeeklyRank } from './WeeklyRank'
 import { Event } from './Events'
+import { AllianceSiegeInfo } from './Challenges'
 
 export enum Sex {
 	MALE = 2,
@@ -240,6 +241,10 @@ export type GameInfos = {
 	item: { itemList: Item[] }
 	jingYing: unknown
 	kingdomExpedition: KingdomExpGlobal
+	kuaCLubBattle: {
+		data: { type: number },
+		info: AllianceSiegeInfo
+	} | undefined
 	laofang: {
 		laofang: {hit: number, da: number, kaifang: number }
 		mingwang: {eday: number, mw: number, maxmw: number }

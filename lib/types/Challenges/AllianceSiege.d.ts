@@ -14,9 +14,6 @@ interface AllianceSiegeRank {
     wallHurt: number;
     generalHurt: number;
 }
-export interface AllianceSiegeStatus {
-    kuaCLubBattle: any;
-}
 interface AllianceSiegeMember extends User {
     id: number;
     post: number;
@@ -30,9 +27,22 @@ interface AllianceSiegeMember extends User {
     };
 }
 export declare enum BATTLE_STATUS {
+    AWAITING = 0,
     WALL = 2,
     GENERAL = 3,
-    PLUNDER = 4
+    PLUNDER = 4,
+    FINISHED = 5
+}
+export interface AllianceSiegeInfo {
+    buyNum: number;
+    dayShop: any[];
+    freeNum: number;
+    hasScore: number;
+    next: number;
+    notify_before: number;
+    notify_club_battle: number;
+    score: number;
+    shop: any[];
 }
 export interface AllianceSiegeBattle {
     cfg: {
@@ -91,17 +101,7 @@ export interface AllianceSiegeBattle {
         num: number;
         rwd: number;
     }[];
-    info: {
-        freeNum: number;
-        buyNum: number;
-        notify_before: number;
-        notify_club_battle: number;
-        score: number;
-        hasScore: number;
-        shop: any[];
-        dayShop: any[];
-        next: number;
-    };
+    info: AllianceSiegeInfo;
     data: {
         type: number;
         startTime: boolean;
