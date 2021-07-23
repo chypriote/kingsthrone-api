@@ -4,7 +4,7 @@ import {
 	HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens,
 	Mail, Picnic, Processions, Profile, Rankings, Renovation,
 	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
-	AllianceSiege, MaidenPainting
+	AllianceSiege, MaidenPainting, Divining
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -55,6 +55,7 @@ export class Goat {
 
 	events: {
 		darkCastle: DarkCastle
+		divining: Divining
 		gardenStroll: GardenStroll
 		picnic: Picnic
 		treasureHunt: TreasureHunt
@@ -99,6 +100,7 @@ export class Goat {
 
 		this.events = {
 			darkCastle: new DarkCastle(this),
+			divining: new Divining(this),
 			gardenStroll: new GardenStroll(this),
 			picnic: new Picnic(this),
 			treasureHunt: new TreasureHunt(this),

@@ -1,6 +1,6 @@
 export * from './Event'
 
-export * from './Astrology'
+export * from './Divining'
 export * from './DarkCastle'
 export * from './DragonSlaying'
 export * from './GardenStroll'
