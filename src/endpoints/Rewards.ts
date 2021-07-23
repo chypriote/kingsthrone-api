@@ -39,4 +39,15 @@ export class Rewards extends GoatResource {
 		}
 		return true
 	}
+	async claimFirstWeekRewards(id: number): Promise<boolean> {
+		const data = await this.request({ 'huodong':{ 'hd287Get':{ 'id':id } },'rsn':'6sxwyuyplxk' }	)
+		if (data.a?.system?.errror) {
+			if (data.a.system.errror.msg === 'Duplicated reward collection for 7 Day Sign-in event') { return false }
+			throw new Error(data.a.system.errror.msg)
+		}
+		return true
+	}
+	async claimGrowthFund(id: number): Promise<void> {
+		await this.request({ 'huodong':{ 'hd1061Rwd':{ 'type':'','id':id } },'rsn':'7cogcgyyvv' }	)
+	}
 }

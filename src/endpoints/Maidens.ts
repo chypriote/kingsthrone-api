@@ -4,7 +4,6 @@ import { StaminaResult, VisitsStatus, Wife } from '../../types'
 export class Maidens extends GoatResource {
 	async visitRandomMaiden(): Promise<Wife> {
 		const visit = await this.request({ 'wife': { 'sjxo': [] }, 'rsn': '9rzrtbtsrs' })
-
 		return visit.u.wife.wifeList[0]
 	}
 
@@ -21,5 +20,9 @@ export class Maidens extends GoatResource {
 		const next = await this.request({ 'user': { 'refwife': [] }, 'rsn': '9zrimzcbbis' })
 
 		return next.a.wife.jingLi
+	}
+	async payVisit(id: number): Promise<Wife> {
+		const visit = await this.request({ 'wife':{ 'xxoo':{ 'id':id } },'rsn':'6wugwgwpuk' })
+		return visit.u.wife.wifeList[0]
 	}
 }

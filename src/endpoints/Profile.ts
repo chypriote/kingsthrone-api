@@ -5,8 +5,8 @@ import { cloneDeep } from 'lodash'
 export class Profile extends GoatResource {
 	gameInfos?: GameInfos
 
-	async getGameInfos(): Promise<GameInfos> {
-		if (this.gameInfos) { return this.gameInfos}
+	async getGameInfos(force = false): Promise<GameInfos> {
+		if (!force && this.gameInfos) { return this.gameInfos}
 
 		const game = await this.request({ rsn: '2ynbmhanlb', guide: { login: { language: 1, platform: 'gaotukc', ug: '' } } })
 		this.gameInfos = cloneDeep(game.a)
@@ -17,13 +17,14 @@ export class Profile extends GoatResource {
 	async finishTraining(): Promise<boolean> {
 		try {
 			await this.request({ 'rsn': '9zrimzjntjm', 'school': { 'allover': [] } })
-		} catch (e) {
-			return false
-		}
+		} catch (e) { return false }
 		return true
 	}
 	async startTraining(): Promise<void> {
 		await this.request({ 'rsn': '6wguulskgy', 'school': { 'allstart': [] } })
+	}
+	async sendTraining(id: number, dummy = 1): Promise<void> {
+		await this.request({ 'rsn':'2anxaxyxbq','school':{ 'start':{ 'id':dummy,'hid':id } } })
 	}
 
 	async visitCouncil(): Promise<CouncilStatus> {
@@ -47,5 +48,8 @@ export class Profile extends GoatResource {
 		}
 
 		return profile.a.user.fuser
+	}
+	async levelUpKingdom(): Promise<void> {
+		await this.request({ 'user':{ 'shengguan':[] },'rsn':'7cogcyoosl' })
 	}
 }

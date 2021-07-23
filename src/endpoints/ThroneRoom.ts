@@ -37,11 +37,12 @@ export class ThroneRoom extends GoatResource {
 		try {
 			const data = await this.request({ 'user': { 'yjZhengWu': { 'act': type } }, 'rsn': '1tabbiitbi' })
 			return !!data.a.msgwin
-		} catch (e) {
-			return false
-		}
+		} catch (e) { return false }
 	}
 	async getDecree(type: DECREE_TYPE): Promise<void> {
 		await this.request({ 'user':{ 'zhengWu':{ 'act':type } },'rsn':'1qktrawbuwr' })
+	}
+	async useSeal(count = 1): Promise<void> {
+		await this.request({ 'user':{ 'zhengWuLing':{ 'num':count } },'rsn':'3hkfhfhhef' }	)
 	}
 }

@@ -1,13 +1,17 @@
 import { goat } from './index'
-import { DECREE_TYPE } from './types'
+import { DECREE_TYPE } from './types/ThroneRoom'
 
-const levelUp = async () => {
-	await goat.account.createAccount('741')
+const handleAccount = async (server: string) => {
+	if (goat.isLoggedIn) { goat._logout() }
+	await goat.account.createAccount(server)
 
 	//upgrade oliver
 	await goat.heroes.levelUpTen(1)
 	//Claim main quest
 	await goat.account.doMainQuestTask(2)
+	await goat.rewards.claimLoginReward()
+	await goat.rewards.claimGrowthFund(1)
+	await goat.profile.sendTraining(1)
 
 	// do campaign
 	await goat.campaign.oneKeyPve()
@@ -24,6 +28,9 @@ const levelUp = async () => {
 	await goat.account.doCampaignGuide(40, 2, 6)
 	await goat.account.doMainQuestTask(3)
 
+	await goat.throneRoom.getAllLevies()
+	await goat.throneRoom.getAllDecreesResources(DECREE_TYPE.EXPERIENCE)
+
 	//Getting maiden and son
 	await goat.account.doMainQuestTask(4)
 	await goat.account.doGuide(101)
@@ -31,15 +38,17 @@ const levelUp = async () => {
 	await goat.maidens.visitRandomMaiden()
 	await goat.account.doGuide(102)
 	await goat.maidens.visitRandomMaiden()
-	const son = await goat.children._unsafe({ 'xingqin':{ 'xingqinsuc':[] },'rsn':'9zmrcnttnmt' })
-	const sonId = son.u.son.sonList[0].id
+	const sons = (await goat.profile.getGameInfos(true)).son.sonList
+	const sonId = sons[0].id
 	await goat.children.nameSon(sonId)
 	await goat.children.raiseSon(sonId)
 
 	//back to main room
-	await goat.throneRoom._unsafe({ 'user':{ 'zhengWuLing':{ 'num':1 } },'rsn':'5wpfwypfee' })
-	await goat.throneRoom.getDecree(DECREE_TYPE.EXPERIENCE)
-	await goat.throneRoom._unsafe({ 'user':{ 'shengguan':[] },'rsn':'7cogcyoosl' })
+	await goat.throneRoom.useSeal(3)
+	await goat.throneRoom.getAllDecreesResources(DECREE_TYPE.EXPERIENCE)
+	await goat.profile.levelUpKingdom()
+	await goat.rewards.claimGrowthFund(2)
+	await goat.rewards.claimFirstWeekRewards(1)
 
 	//processions
 	await goat.processions.getAvailableProcessions()
@@ -48,7 +57,7 @@ const levelUp = async () => {
 	await goat.processions.startProcession()
 	await goat.account.doMainQuestTask(5)
 	//use tomes
-	await goat.items.useForHero(53, 1, 1)
+	await goat.items.useForHero(52, 1, 1)
 	await goat.account.doMainQuestTask(6)
 	//level up heroes
 	await goat.account.getThrone()
@@ -67,13 +76,37 @@ const levelUp = async () => {
 	await goat.account.doMainQuestTask(14)
 	await goat.heroes.levelUpTen(10)
 	await goat.heroes.levelUpTen(10)
+	await goat.heroes.levelUpTen(10)
 	await goat.account.doMainQuestTask(15)
 	await goat.account.doMainQuestTask(16)
 	await goat.heroes.levelUpTen(4)
 	await goat.heroes.levelUpTen(4)
+	await goat.heroes.levelUpTen(5)
+	await goat.heroes.levelUpTen(5)
 	await goat.heroes.levelUpTen(6)
 	await goat.heroes.levelUpTen(6)
 	await goat.account.doMainQuestTask(17)
+	await goat.campaign.oneKeyPve()
+	await goat.account.doCampaignGuide(40, 2, 6)
+	await goat.account.doMainQuestTask(18)
+	await goat.account.doMainQuestTask(19)
+	await goat.account.doMainQuestTask(20)
+	await goat.maidens.payVisit(3)
+	await goat.account.doMainQuestTask(21)
+	await goat.account.doMainQuestTask(22)
+	console.log(`Finished ${server}`)
+}
+
+const levelUp = async () => {
+	for (const server of ['222', '333', '612', '614', '615', '617', '618', '619', '637']) {
+		try {
+			await handleAccount(server)
+		} catch (e) {
+			console.log(`Error ${server}`, e)
+		}
+	}
+
+	console.log('Finished !')
 }
 
 levelUp().then(() => { process.exit() })

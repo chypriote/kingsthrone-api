@@ -8,4 +8,5 @@ export declare class ThroneRoom extends GoatResource {
     getAllLevies(): Promise<boolean>;
     getAllDecreesResources(type: DECREE_TYPE): Promise<boolean>;
     getDecree(type: DECREE_TYPE): Promise<void>;
+    useSeal(count?: number): Promise<void>;
 }

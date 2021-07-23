@@ -19,9 +19,7 @@ export class Alliance extends GoatResource {
 	async contributeAlliance(): Promise<boolean> {
 		try {
 			await this.request({ 'club': { 'dayGongXian': { 'dcid': 5 } }, 'rsn': '3hfkksnwfn' })
-		} catch (e) {
-			return false
-		}
+		} catch (e) { return false }
 		return true
 	}
 

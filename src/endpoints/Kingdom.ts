@@ -6,9 +6,7 @@ export class Kingdom extends GoatResource {
 		try {
 			const reward = await this.request({ 'rsn': rsn, 'hangUpSystem': { 'getRewards': { 'type': 'all', 'id': id } } })
 			return reward.u.hangUpSystem.info[0]
-		} catch (e) {
-			return false
-		}
+		} catch (e) { return false }
 	}
 
 	async claimAll(castleId: number): Promise<void> {

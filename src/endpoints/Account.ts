@@ -5,7 +5,7 @@ import { GameInfos } from '../../types'
 export class Account extends GoatResource {
 	async createAccount(server: string): Promise<void | GameInfos> {
 		this._goat._setServer(server)
-		const player = await this._goat.profile.getGameInfos()
+		const player = await this._goat.profile.getGameInfos(true)
 
 		if (player.user.user.name) {
 			console.warn(`Found existing player named ${player.user.user.name} on server ${server}`)
