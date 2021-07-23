@@ -41,10 +41,15 @@ export class GoatResource {
 		const msg = this._getErrorMessage(response)
 
 		if (msg) {
-			if (msg !== 'You have logged in elsewhere') { throw new Error(msg) }
-			console.warn('Provided token expired, reconnecting')
-			await this._login(true)
-			return await this._retry()
+			if (msg === 'You have logged in elsewhere') {
+				console.warn('Provided token expired, reconnecting')
+				await this._login(true)
+				return await this._retry()
+			}
+			if (msg === `Error: server_is_busyuser_${this._goat._getGid()}`) {
+				return await this._retry()
+			}
+			throw new Error(msg)
 		}
 
 		if (response?.a?.system?.version) {
