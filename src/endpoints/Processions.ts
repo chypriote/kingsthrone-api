@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { GoodwillResult, LuckStatus, ProcessionResult, ProcessionsStatus } from '../../types/Processions'
+import { GoodwillResult, LuckStatus, ProcessionResult, ProcessionsStatus } from '../../types'
 
 export class Processions extends GoatResource {
 	async getAvailableProcessions(): Promise<ProcessionsStatus> {

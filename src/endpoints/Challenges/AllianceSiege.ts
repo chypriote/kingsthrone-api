@@ -1,5 +1,6 @@
 import { GoatResource } from '../../GoatResource'
-import { AllianceSiegeBattle, BATTLE_STATUS } from '../../../types'
+import { AllianceSiegeBattle } from '../../../types'
+import { BATTLE_STATUS } from '../../../types/Challenges/AllianceSiege'
 
 export class AllianceSiege extends GoatResource {
 	async eventInfos(): Promise<AllianceSiegeBattle> {

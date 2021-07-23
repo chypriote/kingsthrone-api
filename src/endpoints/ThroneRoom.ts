@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { DECREE_TYPE, LEVEE_TYPE } from '../../types'
+import { DECREE_TYPE, LEVEE_TYPE } from '../../types/ThroneRoom'
 
 export class ThroneRoom extends GoatResource {
 	//Levies

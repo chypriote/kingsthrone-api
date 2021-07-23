@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { DECREE_TYPE } from '../../types';
+import { DECREE_TYPE } from '../../types/ThroneRoom';
 export declare class ThroneRoom extends GoatResource {
     getCoins(): Promise<void>;
     getArmy(): Promise<void>;

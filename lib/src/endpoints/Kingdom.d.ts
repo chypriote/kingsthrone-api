@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { CastleInfos } from '../../types/Kingdom';
+import { CastleInfos } from '../../types';
 export declare class Kingdom extends GoatResource {
     getCastleRewards(id: number, rsn: string): Promise<CastleInfos | false>;
     claimAll(castleId: number): Promise<void>;

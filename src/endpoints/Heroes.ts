@@ -1,5 +1,5 @@
-import { GoatResource } from '../GoatResource'
 import { sample } from 'lodash'
+import { GoatResource } from '../GoatResource'
 
 export class Heroes extends GoatResource {
 	async levelUpTen(id: number): Promise<void> {

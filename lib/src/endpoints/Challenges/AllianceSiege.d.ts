@@ -1,5 +1,6 @@
 import { GoatResource } from '../../GoatResource';
-import { AllianceSiegeBattle, BATTLE_STATUS } from '../../../types';
+import { AllianceSiegeBattle } from '../../../types';
+import { BATTLE_STATUS } from '../../../types/Challenges/AllianceSiege';
 export declare class AllianceSiege extends GoatResource {
     eventInfos(): Promise<AllianceSiegeBattle>;
     attackWall(): Promise<BATTLE_STATUS>;

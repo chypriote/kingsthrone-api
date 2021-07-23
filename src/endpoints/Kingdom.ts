@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { CastleInfos } from '../../types/Kingdom'
+import { CastleInfos } from '../../types'
 
 export class Kingdom extends GoatResource {
 	async getCastleRewards(id: number, rsn: string): Promise<CastleInfos | false> {

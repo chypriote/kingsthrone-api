@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { ExpeditionInfo, KingdomExpInfo, MerchantInfos } from '../../types/Expeditions';
+import { ExpeditionInfo, KingdomExpInfo, MerchantInfos } from '../../types';
 export declare class Expeditions extends GoatResource {
     getMerchantStatus(): Promise<MerchantInfos>;
     doMerchantVentures(count: number): Promise<void>;
