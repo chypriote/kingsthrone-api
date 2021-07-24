@@ -20,14 +20,14 @@ export class Rankings extends GoatResource {
 		this.localLadder = data.a.ranking
 		return this.localLadder
 	}
-	async getLadderKP(): Promise<User[]> {
-		return (await this.getLadders()).shili
+	async getLadderKP(force = false): Promise<User[]> {
+		return (await this.getLadders(force)).shili
 	}
-	async getLadderCampaign(): Promise<User[]> {
-		return (await this.getLadders()).guanka
+	async getLadderCampaign(force = false): Promise<User[]> {
+		return (await this.getLadders(force)).guanka
 	}
-	async getLadderIntimacy(): Promise<User[]> {
-		return (await this.getLadders()).love
+	async getLadderIntimacy(force = false): Promise<User[]> {
+		return (await this.getLadders(force)).love
 	}
 
 	async payHomageXSKP(): Promise<void> {

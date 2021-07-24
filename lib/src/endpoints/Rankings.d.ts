@@ -11,9 +11,9 @@ export declare class Rankings extends GoatResource {
     payHomageCampaign(): Promise<void>;
     payHomageIntimacy(): Promise<void>;
     getLadders(force?: boolean): Promise<LocalLadder>;
-    getLadderKP(): Promise<User[]>;
-    getLadderCampaign(): Promise<User[]>;
-    getLadderIntimacy(): Promise<User[]>;
+    getLadderKP(force?: boolean): Promise<User[]>;
+    getLadderCampaign(force?: boolean): Promise<User[]>;
+    getLadderIntimacy(force?: boolean): Promise<User[]>;
     payHomageXSKP(): Promise<void>;
     payHomageXSAlliance(): Promise<void>;
     payHomageXSIntimacy(): Promise<void>;
