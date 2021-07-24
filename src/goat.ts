@@ -5,7 +5,7 @@ import {
 	Mail, Picnic, Processions, Profile, Rankings, Renovation,
 	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
 	AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom,
-	Campaign, BlessedChest
+	Campaign, BlessedChest, GiftOfTheFae
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -63,6 +63,7 @@ export class Goat {
 		darkCastle: DarkCastle
 		divining: Divining
 		gardenStroll: GardenStroll
+		giftOfTheFae: GiftOfTheFae
 		picnic: Picnic
 		treasureHunt: TreasureHunt
 		castle: Renovation
@@ -113,6 +114,7 @@ export class Goat {
 			darkCastle: new DarkCastle(this),
 			divining: new Divining(this),
 			gardenStroll: new GardenStroll(this),
+			giftOfTheFae: new GiftOfTheFae(this),
 			picnic: new Picnic(this),
 			treasureHunt: new TreasureHunt(this),
 			castle: new Renovation(this),
