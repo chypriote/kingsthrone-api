@@ -12,6 +12,7 @@ import { Event } from './Events'
 import { AllianceSiegeInfo } from './Challenges'
 import { PackageShop } from './Packages'
 import { Shop } from './Shop'
+import { LevyStatus } from './ThroneRoom'
 
 export enum Sex {
 	MALE = 2,
@@ -198,7 +199,7 @@ export type GameInfos = {
 	CombinedSevContinuous: {
 		info: unknown
 		cfg: SpecialOfferPack[]
-	}
+	} | undefined
 	czhuodong: {
 		day: { cfg: PurchaseReward, cons: number, rwd: number }
 		leitian: { cfg: PurchaseReward, cons: number, rwd: number }
@@ -216,7 +217,7 @@ export type GameInfos = {
 	huanggong: { qingAn: { type: number } }
 	huodonglist: { all: Event[] }
 	item: { itemList: Item[] }
-	jingYing: unknown
+	jingYing: LevyStatus
 	kingdomExpedition: KingdomExpGlobal
 	kuaCLubBattle: {
 		data: { type: number },
@@ -226,7 +227,7 @@ export type GameInfos = {
 		laofang: {hit: number, da: number, kaifang: number }
 		mingwang: {eday: number, mw: number, maxmw: number }
 	}
-	loginMod: unknown
+	loginMod: { countTimeLength: { status: number } }
 	mail: { mailList: Mail[] }
 	order: unknown
 	ranking: { mobai: Ranking }
@@ -234,7 +235,10 @@ export type GameInfos = {
 		base: {desk: number, fri_desk: number}
 		list: {id: number, hid: number, cd: {next: number, label: string }}[]
 	} //Training field
-	sevenSign: unknown
+	sevenSign: {
+		cfg: { level: {day: number, type:number}[], rwd: {id: number, items:Item[]}[] }
+		countdown: number
+	} //?event?
 	shop: { giftlist: Shop }
 	son: { sonList: Son[] }
 	system: unknown
@@ -245,7 +249,11 @@ export type GameInfos = {
 	weeklyrank: { info: WeeklyRank }
 	wife: { wifeList: Wife[] }
 	wordboss: WorldBoss
-	xingqin: unknown
-	xunfang: unknown
+	xingqin: { checknew: { isNewSj: number, newListQj: [], isNewSuc: number } }
+	xunfang: {
+		xfInfo: { num: number, next: number, label: string }
+		recover: { num: number, auto2: number, auto3: number, ysSet: number }
+		zhenZai: { used: number, num: number }
+	}
 	yamen: UserTourney //Tourney
 }

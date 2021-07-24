@@ -12,6 +12,7 @@ import { Event } from './Events';
 import { AllianceSiegeInfo } from './Challenges';
 import { PackageShop } from './Packages';
 import { Shop } from './Shop';
+import { LevyStatus } from './ThroneRoom';
 export declare enum Sex {
     MALE = 2,
     FEMALE = 1
@@ -252,7 +253,7 @@ export declare type GameInfos = {
     CombinedSevContinuous: {
         info: unknown;
         cfg: SpecialOfferPack[];
-    };
+    } | undefined;
     czhuodong: {
         day: {
             cfg: PurchaseReward;
@@ -306,7 +307,7 @@ export declare type GameInfos = {
     item: {
         itemList: Item[];
     };
-    jingYing: unknown;
+    jingYing: LevyStatus;
     kingdomExpedition: KingdomExpGlobal;
     kuaCLubBattle: {
         data: {
@@ -326,7 +327,11 @@ export declare type GameInfos = {
             maxmw: number;
         };
     };
-    loginMod: unknown;
+    loginMod: {
+        countTimeLength: {
+            status: number;
+        };
+    };
     mail: {
         mailList: Mail[];
     };
@@ -348,7 +353,19 @@ export declare type GameInfos = {
             };
         }[];
     };
-    sevenSign: unknown;
+    sevenSign: {
+        cfg: {
+            level: {
+                day: number;
+                type: number;
+            }[];
+            rwd: {
+                id: number;
+                items: Item[];
+            }[];
+        };
+        countdown: number;
+    };
     shop: {
         giftlist: Shop;
     };
@@ -369,8 +386,30 @@ export declare type GameInfos = {
         wifeList: Wife[];
     };
     wordboss: WorldBoss;
-    xingqin: unknown;
-    xunfang: unknown;
+    xingqin: {
+        checknew: {
+            isNewSj: number;
+            newListQj: [];
+            isNewSuc: number;
+        };
+    };
+    xunfang: {
+        xfInfo: {
+            num: number;
+            next: number;
+            label: string;
+        };
+        recover: {
+            num: number;
+            auto2: number;
+            auto3: number;
+            ysSet: number;
+        };
+        zhenZai: {
+            used: number;
+            num: number;
+        };
+    };
     yamen: UserTourney;
 };
 export {};
