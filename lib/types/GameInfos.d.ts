@@ -10,6 +10,8 @@ import { KingdomExpGlobal } from './Expeditions';
 import { WeeklyRank } from './WeeklyRank';
 import { Event } from './Events';
 import { AllianceSiegeInfo } from './Challenges';
+import { PackageShop } from './Packages';
+import { Shop } from './Shop';
 export declare enum Sex {
     MALE = 2,
     FEMALE = 1
@@ -199,26 +201,6 @@ interface SpecialOfferPack {
         type: number;
     };
 }
-interface ShopPack {
-    alreadybuy: number;
-    biaohao: string;
-    bid: number;
-    diamond: number;
-    discout: number;
-    id: number;
-    items: Item[];
-    limit: number;
-    name: string;
-    need: number;
-    tips: string;
-    type: number;
-    vipexp: number;
-}
-interface ShopPackTip {
-    description: string;
-    item: Item;
-    type: number;
-}
 interface PurchaseReward {
     info: {
         _act_id: number;
@@ -288,12 +270,7 @@ export declare type GameInfos = {
             rwd: number;
         };
     };
-    czlbhuodong: {
-        list: ShopPack[];
-        listTwo: ShopPack[];
-        typeInfo: ShopPackTip[];
-        typeInfoTwo: ShopPackTip[];
-    };
+    czlbhuodong: PackageShop;
     dadian: {
         counter: {
             id: number;
@@ -372,7 +349,9 @@ export declare type GameInfos = {
         }[];
     };
     sevenSign: unknown;
-    shop: unknown;
+    shop: {
+        giftlist: Shop;
+    };
     son: {
         sonList: Son[];
     };

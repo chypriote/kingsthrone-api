@@ -10,6 +10,8 @@ import { KingdomExpGlobal } from './Expeditions'
 import { WeeklyRank } from './WeeklyRank'
 import { Event } from './Events'
 import { AllianceSiegeInfo } from './Challenges'
+import { PackageShop } from './Packages'
+import { Shop } from './Shop'
 
 export enum Sex {
 	MALE = 2,
@@ -168,26 +170,6 @@ interface SpecialOfferPack {
 	itemText: string
 	showHero: { id: number, type: number }
 }
-interface ShopPack {
-	alreadybuy: number //packs bought
-	biaohao: string //name
-	bid: number
-	diamond: number //gems
-	discout: number //shown % discount
-	id: number //pack id
-	items: Item[]
-	limit: number //max packs
-	name: string //name
-	need: number //price
-	tips: string //
-	type: number
-	vipexp: number //exp won
-}
-interface ShopPackTip {
-	description: string
-	item: Item
-	type: number
-}
 interface PurchaseReward {
 	info: {
 		_act_id: number
@@ -222,12 +204,7 @@ export type GameInfos = {
 		leitian: { cfg: PurchaseReward, cons: number, rwd: number }
 		total: { cfg: PurchaseReward, cons: number, rwd: number }
 	}
-	czlbhuodong: {
-		list: ShopPack[] //recommended
-		listTwo: ShopPack[] //special
-		typeInfo: ShopPackTip[]
-		typeInfoTwo: ShopPackTip[]
-	}
+	czlbhuodong: PackageShop
 	dadian: { counter: { id: number, name: string, num: number }[] } //main quest status
 	daily: RegularTasks
 	derail: unknown
@@ -258,7 +235,7 @@ export type GameInfos = {
 		list: {id: number, hid: number, cd: {next: number, label: string }}[]
 	} //Training field
 	sevenSign: unknown
-	shop: unknown
+	shop: { giftlist: Shop }
 	son: { sonList: Son[] }
 	system: unknown
 	task: { tmain: Task }

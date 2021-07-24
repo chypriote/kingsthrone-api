@@ -14,7 +14,7 @@ interface FaeItem extends Item {
     idd: number;
     pro: number;
 }
-export interface FaePool {
+interface FaePool {
     choose: {
         idd: number;
     }[];
