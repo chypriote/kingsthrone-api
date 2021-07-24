@@ -23,4 +23,10 @@ export class GiftOfTheFae extends GoatResource {
 	async pourDew(water: number, pool = 1): Promise<void> {
 		await this.request({ 'huodong2':{ 'hd1299ZhuShui':{ 'num':water,'id':pool } },'rsn':'9zmrccbbtzm' })
 	}
+	async praiseTheSun(pool = 1): Promise<void> {
+		await this.request({ 'huodong2':{ 'hd1299GetHeChengOtherRwd':{ 'id':pool } },'rsn':'8arkjkakji' })
+	}
+	async claimPoolItem(pool = 1): Promise<void> {
+		await this.request({ 'huodong2':{ 'hd1299getHeChengRwd':{ 'id':pool } },'rsn':'7yclpvpxclg' })
+	}
 }

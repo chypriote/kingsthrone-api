@@ -7,4 +7,6 @@ export declare class GiftOfTheFae extends GoatResource {
     useExtraOutput(tree?: number): Promise<void>;
     selectPoolReward(rwd?: number, pool?: number): Promise<void>;
     pourDew(water: number, pool?: number): Promise<void>;
+    praiseTheSun(pool?: number): Promise<void>;
+    claimPoolItem(pool?: number): Promise<void>;
 }
