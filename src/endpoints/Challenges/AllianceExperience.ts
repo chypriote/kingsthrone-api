@@ -6,4 +6,7 @@ export class AllianceExperience extends GoatResource {
 		const data = await this.request({ 'huodong':{ 'hd250Info':[] },'rsn':'9zmrjjmjcnc' })
 		return data.a.cbhuodong
 	}
+	async claimProgressReward(id: number): Promise<void> {
+		await this.request({ 'huodong':{ 'hdCbGetRwd':{ 'huodongId':250,'id': id } },'rsn':'1tbabubkti' })
+	}
 }
