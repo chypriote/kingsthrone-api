@@ -20,6 +20,8 @@ export { WorldBoss } from './WorldBoss';
 export { XServerTourney } from './Challenges/XServerTourney';
 export { Deathmatch } from './Challenges/Deathmatch';
 export { AllianceSiege } from './Challenges/AllianceSiege';
+export { AllianceExperience } from './Challenges/AllianceExperience';
+export { AllianceIntimacy } from './Challenges/AllianceIntimacy';
 export { BlessedChest } from './Events/BlessedChest';
 export { Coronation } from './Events/Coronation';
 export { DarkCastle } from './Events/DarkCastle';

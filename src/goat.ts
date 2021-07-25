@@ -5,7 +5,7 @@ import {
 	Mail, Picnic, Processions, Profile, Rankings, Renovation,
 	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
 	AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom,
-	Campaign, BlessedChest, GiftOfTheFae
+	Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -55,6 +55,8 @@ export class Goat {
 		xServerTourney: XServerTourney
 		deathmatch: Deathmatch
 		allianceSiege: AllianceSiege
+		allianceIntimacy: AllianceIntimacy
+		allianceExperience: AllianceExperience
 	}
 
 	events: {
@@ -106,6 +108,8 @@ export class Goat {
 			xServerTourney: new XServerTourney(this),
 			deathmatch: new Deathmatch(this),
 			allianceSiege: new AllianceSiege(this),
+			allianceIntimacy: new AllianceIntimacy(this),
+			allianceExperience: new AllianceExperience(this),
 		}
 
 		this.events = {
