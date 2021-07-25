@@ -1,5 +1,5 @@
 import { Item } from '../Item';
-interface FaeTree {
+export interface FaeTree {
     dc: number;
     hasFreeExtraNum: number;
     hasFreeFastNum: number;
@@ -14,7 +14,7 @@ interface FaeItem extends Item {
     idd: number;
     pro: number;
 }
-interface FaePool {
+export interface FaePool {
     choose: {
         idd: number;
     }[];
