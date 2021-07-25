@@ -3,9 +3,9 @@ import { AllianceSiegeBattle } from '../../../types';
 import { BATTLE_STATUS } from '../../../types/Challenges/AllianceSiege';
 export declare class AllianceSiege extends GoatResource {
     eventInfos(): Promise<AllianceSiegeBattle>;
-    attackWall(): Promise<BATTLE_STATUS>;
-    attackGeneral(): Promise<BATTLE_STATUS>;
-    attackMember(uid: string): Promise<void>;
+    attackWall(count?: number): Promise<BATTLE_STATUS>;
+    attackGeneral(count?: number): Promise<BATTLE_STATUS>;
+    attackMember(uid: string, count?: number): Promise<void>;
     claimTaskReward(id: number): Promise<void>;
     buySiegeWeapon(count?: number): Promise<void>;
 }

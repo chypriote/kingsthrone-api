@@ -8,16 +8,16 @@ export class AllianceSiege extends GoatResource {
 		return data.a.kuaCLubBattle
 	}
 
-	async attackWall(): Promise<BATTLE_STATUS> {
-		const data = await this.request({ 'rsn':'3zehkssffww','kuaCLubBattle':{ 'play':{ 'type':2,'uid':0,'num':1 } } })
+	async attackWall(count = 1): Promise<BATTLE_STATUS> {
+		const data = await this.request({ 'rsn':'3zehkssffww','kuaCLubBattle':{ 'play':{ 'type':2,'uid':0,'num':count } } })
 		return data.a.type
 	}
-	async attackGeneral(): Promise<BATTLE_STATUS> {
-		const data = await this.request({ 'rsn':'4fcghxxbihf','kuaCLubBattle':{ 'play':{ 'type':3,'uid':0,'num':1 } } })
+	async attackGeneral(count = 1): Promise<BATTLE_STATUS> {
+		const data = await this.request({ 'rsn':'4fcghxxbihf','kuaCLubBattle':{ 'play':{ 'type':3,'uid':0,'num':count } } })
 		return data.a.type
 	}
-	async attackMember(uid: string): Promise<void> {
-		await this.request({ 'rsn':'1tbqwwwaiu','kuaCLubBattle':{ 'play':{ 'type':4,'uid':uid,'num':1 } } })
+	async attackMember(uid: string, count = 1): Promise<void> {
+		await this.request({ 'rsn':'1tbqwwwaiu','kuaCLubBattle':{ 'play':{ 'type':4,'uid':uid,'num':count } } })
 	}
 
 	async claimTaskReward(id: number): Promise<void> {
