@@ -14,4 +14,14 @@ export class Divining extends GoatResource {
 	async stargaze(): Promise<void> {
 		await this.request({ 'huodong':{ 'hd1123guanxing':[] },'rsn':'1ktuitbttra' })
 	}
+	async buyGlobes(count = 1): Promise<void> {
+		await this.request({ 'huodong':{ 'hd1123BuyItem':{ 'num':count } },'rsn':'2myahqymxhh' })
+	}
+	async divine(count= 1): Promise<void> {
+		await this.request({ 'huodong':{ 'hd1123zhanxing':{ 'num':count } },'rsn':'5wpfphpaye' })
+	}
+
+	async getShopItem(id: number): Promise<void> {
+		await this.request({ 'huodong':{ 'hd1123Exchange':{ 'num':1,'id':id } },'rsn':'5wpfphehvy' })
+	}
 }
