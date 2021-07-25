@@ -50,8 +50,8 @@ export interface EventRwd {
 	rand: { re: number, rs: number }
 }
 export interface ClubEventRwd {
-	mengzhu: { id: number, count: number}[]
-	member: { id: number, count: number}[]
+	mengzhu: { id: number, count: number}[] //leader reward (items)
+	member: { id: number, count: number}[] //member reward (items)
 	rand: { re: number, rs: number }
 }
 
