@@ -8,4 +8,6 @@ export declare class AllianceSiege extends GoatResource {
     attackMember(uid: string, count?: number): Promise<void>;
     claimTaskReward(id: number): Promise<void>;
     buySiegeWeapon(count?: number): Promise<void>;
+    buyDailyShop(id: number): Promise<void>;
+    buyClassicShop(id: number): Promise<void>;
 }

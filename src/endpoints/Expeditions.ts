@@ -64,4 +64,7 @@ export class Expeditions extends GoatResource {
 	async claimKingdomExpReward(id: number): Promise<void> {
 		await this.request({ 'huodong': { 'hd1268getPhaRwd': { 'id': id } }, 'rsn': '2myqhwbnlxx' })
 	}
+	async claimKingdomFirstReward(id: number): Promise<void> {
+		await this.request({ 'huodong':{ 'hd1268FirstAllRwd':{ 'id':id } },'rsn':'1qktiubkbwk' })
+	}
 }

@@ -26,4 +26,11 @@ export class AllianceSiege extends GoatResource {
 	async buySiegeWeapon(count = 1): Promise<void> {
 		await this.request({ 'rsn':'7yclsddsvlg','kuaCLubBattle':{ 'buyBattleNum':{ 'num':count } } }	)
 	}
+
+	async buyDailyShop(id: number): Promise<void> {
+		await this.request({ 'rsn':'6sxwkbsykwy','kuaCLubBattle':{ 'dayShopBuy':{ 'num':1,'id':id } } })
+	}
+	async buyClassicShop(id: number): Promise<void> {
+		await this.request({ 'rsn':'3ehpsphwkww','kuaCLubBattle':{ 'shopBuy':{ 'num':1,'id':5 } } })
+	}
 }

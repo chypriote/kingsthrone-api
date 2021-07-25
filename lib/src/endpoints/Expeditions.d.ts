@@ -9,4 +9,5 @@ export declare class Expeditions extends GoatResource {
     getKingdomExpStatus(): Promise<KingdomExpInfo>;
     doKingdomExpedition(level: number): Promise<KingdomExpInfo>;
     claimKingdomExpReward(id: number): Promise<void>;
+    claimKingdomFirstReward(id: number): Promise<void>;
 }
