@@ -39,3 +39,16 @@ export type StaminaResult = {
 	}
 	status: VisitsStatus
 }
+
+interface WifeSkill {
+	id: number
+	level: number
+	exp: number
+}
+export interface Wife {
+	id: number
+	love: number
+	flower: number
+	exp: number
+	skill: WifeSkill[]
+}

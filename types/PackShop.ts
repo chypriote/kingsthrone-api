@@ -12,7 +12,7 @@ interface Pack {
 	price: number //displayed real price
 }
 
-export interface Shop {
+export interface PackShop {
 	cft: {
 		id: number //id/date of the shop
 		title: string
@@ -21,4 +21,18 @@ export interface Shop {
 		cd: { next: number, label: string }
 	}
 	list: Pack[]
+}
+export interface ItemShop {
+	id: number
+	islimit: number
+	item: Item
+	limit: number
+	need: number
+	price: number
+	totalnum: number
+	vip: number
+}
+export interface Shop {
+	packs: PackShop
+	items: ItemShop[]
 }

@@ -11,8 +11,10 @@ import { WeeklyRank } from './WeeklyRank'
 import { Event } from './Events'
 import { AllianceSiegeInfo } from './Challenges'
 import { PackageShop } from './Packages'
-import { Shop } from './Shop'
+import { PackShop } from './PackShop'
 import { LevyStatus } from './ThroneRoom'
+import { Wife } from './Maidens'
+import { Son } from './Children'
 
 export enum Sex {
 	MALE = 2,
@@ -118,53 +120,6 @@ interface Hanlin {
 	tip: number
 }
 
-interface WifeSkill {
-	id: number
-	level: number
-	exp: number
-}
-export interface Wife {
-	id: number
-	love: number
-	flower: number
-	exp: number
-	skill: WifeSkill[]
-}
-interface Spouse {
-	fuid: number
-	fname: string
-	sname: string
-	sonuid: number
-	honor: number
-	sex: Sex
-	ep: GameStats
-}
-export interface Son {
-	id: number
-	name: string
-	sex: Sex
-	mom: number
-	state: number
-	ep: GameStats
-	talent: number
-	cpoto: number
-	level: number
-	exp: number
-	power: number
-	cd: { next: number, label: string }
-	honor: number
-	tquid: number
-	tqitem: number
-	tqcd: { next: number, label: string }
-	sptime: number
-	spouse: Spouse
-	myqjadd: number
-	fqjadd: number
-	isxingqin: number
-	tc: number
-	available: boolean
-}
-
 interface SpecialOfferPack {
 	dc: number
 	items: Item[]
@@ -239,7 +194,7 @@ export type GameInfos = {
 		cfg: { level: {day: number, type:number}[], rwd: {id: number, items:Item[]}[] }
 		countdown: number
 	} //?event?
-	shop: { giftlist: Shop }
+	shop: { giftlist: PackShop }
 	son: { sonList: Son[] }
 	system: unknown
 	task: { tmain: Task }

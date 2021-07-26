@@ -10,7 +10,7 @@ interface Pack {
     totalnum: number;
     price: number;
 }
-export interface Shop {
+export interface PackShop {
     cft: {
         id: number;
         title: string;
@@ -22,5 +22,19 @@ export interface Shop {
         };
     };
     list: Pack[];
+}
+export interface ItemShop {
+    id: number;
+    islimit: number;
+    item: Item;
+    limit: number;
+    need: number;
+    price: number;
+    totalnum: number;
+    vip: number;
+}
+export interface Shop {
+    packs: PackShop;
+    items: ItemShop[];
 }
 export {};
