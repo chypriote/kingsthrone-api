@@ -5,7 +5,8 @@ import {
 	Mail, Picnic, Processions, Profile, Rankings, Renovation,
 	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
 	AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom,
-	Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience
+	Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience,
+	Shop, Grain, Quality, PathOfWealth
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -47,6 +48,7 @@ export class Goat {
 	profile: Profile
 	rankings: Rankings
 	rewards: Rewards
+	shop: Shop
 	throneRoom: ThroneRoom
 	tourney: Tourney
 	worldBoss: WorldBoss
@@ -57,21 +59,24 @@ export class Goat {
 		allianceSiege: AllianceSiege
 		allianceIntimacy: AllianceIntimacy
 		allianceExperience: AllianceExperience
+		grain: Grain
+		quality: Quality
 	}
 
 	events: {
 		blessedChest: BlessedChest
+		castle: Renovation
 		coronation: Coronation
 		darkCastle: DarkCastle
 		divining: Divining
+		dragonSlaying: DragonSlaying
 		gardenStroll: GardenStroll
 		giftOfTheFae: GiftOfTheFae
-		picnic: Picnic
-		treasureHunt: TreasureHunt
-		castle: Renovation
-		dragonSlaying: DragonSlaying
 		jewelsOfLuck: JewelsOfLuck
 		maidenPainting: MaidenPainting
+		pathOfWealth: PathOfWealth
+		picnic: Picnic
+		treasureHunt: TreasureHunt
 	}
 
 	constructor() {
@@ -100,6 +105,7 @@ export class Goat {
 		this.profile = new Profile(this)
 		this.rankings = new Rankings(this)
 		this.rewards = new Rewards(this)
+		this.shop = new Shop(this)
 		this.throneRoom = new ThroneRoom(this)
 		this.tourney = new Tourney(this)
 		this.worldBoss = new WorldBoss(this)
@@ -110,21 +116,24 @@ export class Goat {
 			allianceSiege: new AllianceSiege(this),
 			allianceIntimacy: new AllianceIntimacy(this),
 			allianceExperience: new AllianceExperience(this),
+			grain: new Grain(this),
+			quality: new Quality(this),
 		}
 
 		this.events = {
 			blessedChest: new BlessedChest(this),
+			castle: new Renovation(this),
 			coronation: new Coronation(this),
 			darkCastle: new DarkCastle(this),
 			divining: new Divining(this),
+			dragonSlaying: new DragonSlaying(this),
 			gardenStroll: new GardenStroll(this),
 			giftOfTheFae: new GiftOfTheFae(this),
-			picnic: new Picnic(this),
-			treasureHunt: new TreasureHunt(this),
-			castle: new Renovation(this),
-			dragonSlaying: new DragonSlaying(this),
 			jewelsOfLuck: new JewelsOfLuck(this),
 			maidenPainting: new MaidenPainting(this),
+			pathOfWealth: new PathOfWealth(this),
+			picnic: new Picnic(this),
+			treasureHunt: new TreasureHunt(this),
 		}
 	}
 	_getHost(): string { return this.host}
