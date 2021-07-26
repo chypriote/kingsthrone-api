@@ -1,5 +1,5 @@
 import { Item } from '../Item'
-import { EventChestReward, EventRwd } from './Event'
+import { EventChestReward, EventPointExchangeTotalLimit, EventRwd, GenericEventInfo } from './Event'
 
 export interface GardenStrollDrop { //Possible drops
 	id: number
@@ -9,18 +9,8 @@ export interface GardenStrollDrop { //Possible drops
 	is_baoji: number
 	add: number
 }
-
 interface GardenStrollInfo {
-	info: {
-		id: number
-		title: string
-		pindex: number
-		type: number
-		sTime: number
-		eTime: number
-		showTime: number
-		_act_id: string
-	}
+	info: GenericEventInfo
 	drop: GardenStrollDrop[]
 	baoxiang: EventChestReward[]
 	rank: EventRwd[]
@@ -45,16 +35,7 @@ export interface GardenStrollStatus {
 	free: number
 }
 
-interface GardenStrollExchange {
-	id: number
-	is_limit: number
-	items: Item
-	limit: number //items left
-	need: number //points cost
-	totalLimit: number //max buyable
-}
-
 export interface GardenStrollPointExchange {
-	cfg: { shop: { list: GardenStrollExchange[] } }
+	cfg: { shop: { list: EventPointExchangeTotalLimit[] } }
 	leftcons: number //points left
 }

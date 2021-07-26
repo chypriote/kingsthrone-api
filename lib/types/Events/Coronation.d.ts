@@ -1,4 +1,4 @@
-import { ClubEventRwd, EventRwd } from './Event';
+import { ClubEventRwd, EventPointExchange, EventPointExchangeTotalLimit, EventRwd, GenericEventInfo } from './Event';
 import { Item } from '../Item';
 export declare enum CORONATION_ITEM {
     BANNER = 1,
@@ -7,15 +7,8 @@ export declare enum CORONATION_ITEM {
     CROWN = 4
 }
 interface CoronationConfig {
-    info: {
-        id: number;
-        title: string;
-        type: number;
-        sTime: number;
-        eTime: number;
-        showTime: number;
+    info: GenericEventInfo & {
         no: number;
-        _act_id: string;
     };
     id?: any;
     rwd: {
@@ -44,22 +37,9 @@ export interface CoronationStatus {
         item: number;
         num: number;
     }[];
-    shop: {
-        id: number;
-        need: Item;
-        items: Item;
-        is_limit: number;
-        limit: number;
-    }[];
+    shop: EventPointExchange[];
     exchange: {
-        list: {
-            id: number;
-            need: number;
-            items: Item;
-            is_limit: number;
-            totalLimit: number;
-            limit: number;
-        }[];
+        list: EventPointExchangeTotalLimit[];
     };
     bag: Item[];
     cfg: CoronationConfig;

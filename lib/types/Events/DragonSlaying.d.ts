@@ -1,5 +1,20 @@
 import { Item } from '../Item';
-import { EventRwd } from './Event';
+import { EventPointExchangeAllLimit, EventRwd, GenericEventInfo } from './Event';
+interface DragonSlayingRank extends GenericEventInfo {
+    id: number;
+    title: string;
+    type: number;
+    sTime: number;
+    eTime: number;
+    showTime: number;
+    no: number;
+    _act_id: string;
+}
+interface DragonSlayingRank {
+    myScorerank: number;
+    myScore: number;
+    myName: string;
+}
 export interface DragonSlayingStatus {
     bag: {
         baozu: number;
@@ -16,14 +31,7 @@ export interface DragonSlayingStatus {
         limit: number;
     }[];
     exchange: {
-        list: {
-            id: number;
-            need: number;
-            items: Item;
-            is_limit: number;
-            limit: number;
-            all_limit: number;
-        }[];
+        list: EventPointExchangeAllLimit[];
     };
     score: {
         hdscore: number;
@@ -38,20 +46,13 @@ export interface DragonSlayingStatus {
     };
     rwdLog: {
         name: string;
+        uitem: number;
         item: number;
         num: number;
-        uitem: number;
     }[];
     cfg: {
-        info: {
-            id: number;
-            title: string;
-            type: number;
-            sTime: number;
-            eTime: number;
-            showTime: number;
+        info: GenericEventInfo & {
             no: number;
-            _act_id: string;
         };
         id: number;
         rwd: {
@@ -72,14 +73,7 @@ export interface DragonSlayingStatus {
         boss: number;
         is_kua: number;
     };
-    mydayRankRid: {
-        myScorerank: number;
-        myScore: number;
-        myName: string;
-    };
-    mytotalRankRid: {
-        myScorerank: number;
-        myScore: number;
-        myName: string;
-    };
+    mydayRankRid: DragonSlayingRank;
+    mytotalRankRid: DragonSlayingRank;
 }
+export {};

@@ -1,15 +1,9 @@
 import { Item } from '../Item'
+import { EventPointExchangeAllLimit, EventRwd } from './Event'
 
 interface DiviningShop {
 	hasScore: number
-	list: {
-		all_limit: number
-		id: number
-		is_limit: number
-		items: Item
-		limit: number
-		need: number
-	}[]
+	list: EventPointExchangeAllLimit[]
 }
 
 interface DiviningInfos {
@@ -25,10 +19,7 @@ interface DiviningConfig {
 	gxscore: number
 	itemCost: number
 	luckyStarList: { id: number, name: string }[]
-	rankRwd: {
-		member: { count: number, id: number }[]
-		rand: { re: number, rs: number }
-	}[]
+	rankRwd: EventRwd[]
 	rewards: Item[]
 	starSignList: { id: number, name: string }[]
 	updateSelect: number

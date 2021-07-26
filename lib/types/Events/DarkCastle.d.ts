@@ -1,55 +1,13 @@
-import { EventQuest, EventQuestCfg, EventShop, EventShopItem } from './Event';
+import { EventGrid, EventGridLapChest, EventGridRun, EventQuest, EventQuestCfg, EventShop, EventItemShop, GenericEventInfo } from './Event';
 import { Item } from '../Item';
-interface DarkCastleRun {
-    yao: number;
-    sid: number;
-    cons: number;
-    quan: number;
-    num: number;
-    gzzid: number;
-}
 interface DarkCastleShop extends EventShop {
-    wsItemShop: EventShopItem[];
-}
-interface DarkCastleChest {
-    id: number;
-    need: number;
-    items: Item[];
-    isGet: number;
-}
-declare enum GRID_ITEM {
-    NORMAL = 0,
-    BLUE_BAG = 1,
-    ORANGE_BAG = 2,
-    PURPLE_BAG = 3
-}
-interface DarkCastleGridSlot {
-    id: number;
-    items: Item;
-    type: GRID_ITEM;
-    sid: number;
-    isGet: boolean;
-}
-interface DarkCastleGrid {
-    gzzid: number;
-    min: number;
-    max: number;
-    list: DarkCastleGridSlot[];
+    wsItemShop: EventItemShop[];
 }
 interface DarkCastleInfo {
-    info: {
-        id: number;
-        title: string;
-        pindex: number;
-        type: number;
-        sTime: number;
-        eTime: number;
-        showTime: number;
-        _act_id: string;
-    };
+    info: GenericEventInfo;
     msg: string;
-    gezi: DarkCastleGrid;
-    rwd: DarkCastleChest[];
+    gezi: EventGrid;
+    rwd: EventGridLapChest[];
     image: Item[];
     wsScore: number;
     cd: {
@@ -59,7 +17,7 @@ interface DarkCastleInfo {
 }
 export interface DarkCastleStatus {
     wsInfo: DarkCastleInfo;
-    run: DarkCastleRun;
+    run: EventGridRun;
     wsShop: DarkCastleShop;
     wsTask: {
         taskscfg: EventQuestCfg[];

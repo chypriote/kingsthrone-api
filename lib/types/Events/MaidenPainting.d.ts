@@ -1,4 +1,4 @@
-import { EventChestReward, EventQuest, EventQuestCfg, EventRank, EventRwd, EventWheel, EventWheelConfig } from './Event';
+import { EventChestReward, EventPointExchangeTotalLimit, EventQuest, EventQuestCfg, EventRank, EventRwd, EventWheel, EventWheelConfig, GenericEventInfo } from './Event';
 import { Item } from '../Item';
 interface MaidenPaintingWheel extends EventWheel {
     cfg: EventWheelConfig & {
@@ -13,16 +13,7 @@ interface MaidenPaintingWheel extends EventWheel {
 interface MaidenPaintingChallenge {
     love: {
         cfg: {
-            info: {
-                id: number;
-                title: string;
-                pindex: number;
-                type: number;
-                sTime: number;
-                eTime: number;
-                showTime: number;
-                _act_id: string;
-            };
+            info: GenericEventInfo;
             kua_server: string[];
             showNeed: {
                 wang: number;
@@ -90,14 +81,7 @@ interface MaidenPainting {
 }
 interface MaidenPaintingShop {
     leftcons: number;
-    list: {
-        id: number;
-        is_limit: number;
-        items: Item;
-        limit: number;
-        need: number;
-        totalLimit: number;
-    }[];
+    list: EventPointExchangeTotalLimit[];
 }
 export interface MaidenPaintingStatus {
     wheel: MaidenPaintingWheel;

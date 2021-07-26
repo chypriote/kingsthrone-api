@@ -1,50 +1,33 @@
 import { Item } from '../Item';
+import { EventDailyQuest, GenericEventInfo } from './Event';
 export declare enum RWD_STATUS {
     NOT_READY = 0,
     READY = 1,
     CLAIMED = 2
 }
-declare type TreasureHuntReward = {
+interface TreasureHuntReward {
     id: number;
     isGet: number;
     items: Item[];
     need: number[];
     tid: number;
     type: number;
-};
-declare type TreasureHuntQuest = {
-    has: number;
-    id: number;
-    isGet: number;
-    items: Item[];
-    max: number;
-    msg: string;
-    type: number;
-};
-declare type TreasureHuntProba = {
+}
+interface TreasureHuntProba {
     count: number;
     id: number;
     kind: number;
     prob10000: number;
-};
-export declare type TreasureHuntStatus = {
+}
+export interface TreasureHuntStatus {
     cons: number;
     num: number;
     cfg: {
-        chutou: TreasureHuntQuest[];
-        info: {
-            _act_id: number;
-            eTime: number;
-            id: number;
-            pindex: number;
-            showTime: number;
-            sTime: number;
-            title: string;
-            type: number;
-        };
+        chutou: EventDailyQuest[];
+        info: GenericEventInfo;
         msg: string;
         rwd: TreasureHuntReward[];
         suiji: TreasureHuntProba[];
     };
-};
+}
 export {};

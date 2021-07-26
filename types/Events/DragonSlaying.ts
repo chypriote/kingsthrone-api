@@ -1,6 +1,23 @@
 import { Item } from '../Item'
-import { EventRwd } from './Event'
+import { EventPointExchangeAllLimit, EventRwd, GenericEventInfo } from './Event'
 
+
+interface DragonSlayingRank extends GenericEventInfo {
+	id: number
+	title: string
+	type: number
+	sTime: number
+	eTime: number
+	showTime: number
+	no: number
+	_act_id: string
+}
+
+interface DragonSlayingRank {
+	myScorerank: number
+	myScore: number
+	myName: string
+}
 export interface DragonSlayingStatus {
 	bag: {
 		baozu: number //IronClad arrow
@@ -17,37 +34,16 @@ export interface DragonSlayingStatus {
 		limit: number
 	}[]
 	exchange: {
-		list: {
-			id: number
-			need: number
-			items: Item
-			is_limit: number
-			limit: number
-			all_limit: number
-		}[]
+		list: EventPointExchangeAllLimit[]
 	}
 	score: { hdscore: number, score: number }
 	bossinfo: {
 		hp: number //current hps
 		cd: { next: number, label: string }
 	}
-	rwdLog: {
-		name: string
-		item: number
-		num: number
-		uitem: number
-	}[]
+	rwdLog: { name: string, uitem: number, item: number, num: number }[]
 	cfg:  {
-		info: {
-			id: number
-			title: string
-			type: number
-			sTime: number
-			eTime: number
-			showTime: number
-			no: number
-			_act_id: string
-		}
+		info: GenericEventInfo & { no: number }
 		id: number
 		rwd: {
 			everyday: EventRwd[]
@@ -58,14 +54,6 @@ export interface DragonSlayingStatus {
 		boss: number
 		is_kua: number
 	}
-	mydayRankRid:  {
-		myScorerank: number
-		myScore: number
-		myName: string
-	}
-	mytotalRankRid: {
-		myScorerank: number
-		myScore: number
-		myName: string
-	}
+	mydayRankRid: DragonSlayingRank
+	mytotalRankRid: DragonSlayingRank
 }

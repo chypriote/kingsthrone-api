@@ -1,4 +1,5 @@
 import { Item } from '../Item'
+import { EventRwd } from './Event'
 
 type SurpriseEggShop = {
 	id: number
@@ -22,10 +23,7 @@ export type SurpriseEgg = {
 			num: number
 			rewards: Item[]
 		}[]
-		rank: {
-			member: { count: number, id: number }[]
-			rand: { re: number, rs: number }
-		}[]
+		rank: EventRwd[]
 		score: number
 		shop: SurpriseEggShop[]
 	}

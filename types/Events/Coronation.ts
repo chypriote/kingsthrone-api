@@ -1,4 +1,4 @@
-import { ClubEventRwd, EventRwd } from './Event'
+import { ClubEventRwd, EventPointExchange, EventPointExchangeTotalLimit, EventRwd, GenericEventInfo } from './Event'
 import { Item } from '../Item'
 
 export enum CORONATION_ITEM {
@@ -9,16 +9,7 @@ export enum CORONATION_ITEM {
 }
 
 interface CoronationConfig {
-	info: {
-		id: number
-		title: string
-		type: number
-		sTime: number
-		eTime: number
-		showTime: number
-		no: number
-		_act_id: string
-	}
+	info: GenericEventInfo & { no: number }
 	id?: any
 	rwd: {
 		my: EventRwd[]
@@ -36,22 +27,9 @@ export interface CoronationStatus {
 	boss: { boss: number }
 	score: { hdscore: number, score: number, kill_rwd: number }
 	rwdLog: { name: string, uitem: number, item: number, num: number }[]
-	shop: {
-		id: number
-		need: Item
-		items: Item
-		is_limit: number
-		limit: number
-	}[]
+	shop: EventPointExchange[]
 	exchange: {
-		list: {
-			id: number
-			need: number
-			items: Item
-			is_limit: number
-			totalLimit: number
-			limit: number
-		}[]
+		list: EventPointExchangeTotalLimit[]
 	}
 	bag: Item[]
 	cfg: CoronationConfig

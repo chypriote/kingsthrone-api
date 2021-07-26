@@ -1,4 +1,5 @@
 import { Item } from '../Item';
+import { EventRwd } from './Event';
 declare type SurpriseEggShop = {
     id: number;
     is_limit: number;
@@ -20,16 +21,7 @@ export declare type SurpriseEgg = {
             num: number;
             rewards: Item[];
         }[];
-        rank: {
-            member: {
-                count: number;
-                id: number;
-            }[];
-            rand: {
-                re: number;
-                rs: number;
-            };
-        }[];
+        rank: EventRwd[];
         score: number;
         shop: SurpriseEggShop[];
     };

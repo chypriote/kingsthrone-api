@@ -1,13 +1,18 @@
 import { Item } from '../Item'
 
+export enum QUEST_STATUS {
+	ONGOING= 0,
+	FINISHED= 1,
+	CLAIMED= 2
+}
+
 export interface EventRank {
 	name: string
 	rid: number
 	score: number
 	uid: string
 }
-
-export interface EventRankWithServer {
+export interface EventRankWithServer extends EventRank {
 	sev: number
 }
 
@@ -16,7 +21,6 @@ export interface EventQuest {
 	num: number;
 	rwd: number;
 }
-
 export interface EventQuestCfg {
 	type: number;
 	dcCfg: {
@@ -25,24 +29,21 @@ export interface EventQuestCfg {
 		items: Item[];
 	}[];
 }
+export interface EventDailyQuest {
+	id: number
+	max: number
+	items: Item
+	msg: string
+	type: number
+	has: number
+	isGet: number
+}
 
 export interface EventChestReward {
 	id: number
 	jifen: number //event items required (picnic=steps)
 	items: Item[]
 	isGet: number //2=yes 0=no
-}
-
-export interface EventShopItem {
-	dc: number
-	/** example: need {id: 1, count: 100} = buy with 100gems
-	 * need 100 = buy with 100 event points
-	 */
-	need: number | Item
-	items: Item
-	limit: number //how many/buy
-	limitNum: number //max buyable
-	haslimitNum: number
 }
 
 export interface EventRwd {
@@ -55,12 +56,37 @@ export interface ClubEventRwd {
 	rand: { re: number, rs: number }
 }
 
+export interface EventItemShop {
+	dc?: number
+	/** example: need {id: 1, count: 100} = buy with 100gems
+	 * need 100 = buy with 100 event points
+	 */
+	need: number | Item
+	items: Item
+	limit: number //how many/buy
+	limitNum: number //max buyable
+	haslimitNum: number
+}
 export interface EventShop {
 	hasScore: number //current score
 	rank: EventRwd | EventRwd[]
-	wsShopcfg: EventShopItem[] //Point exchange
+	wsShopcfg: EventItemShop[] //Point exchange
+}
+export interface EventPointExchangeTotalLimit extends EventPointExchange { totalLimit: number }
+export interface EventPointExchangeAllLimit extends EventPointExchange { all_limit: number }
+export interface EventPointExchange {
+	id: number
+	items: Item
+	is_limit: number
+	limit: number //items left
+	need: number //points cost
 }
 
+/**
+ * Wheel event
+ * 	- Jewels of Luck
+ * 	- Maiden painting
+ */
 export interface EventWheelConfig {
 	wall_gache:  {
 		id: number
@@ -71,7 +97,6 @@ export interface EventWheelConfig {
 	cost: number
 	bili: number
 }
-
 export interface EventWheel {
 	info: {
 		chosen: {id: number, key: number}[]
@@ -80,12 +105,55 @@ export interface EventWheel {
 	cfg: EventWheelConfig
 }
 
-export enum QUEST_STATUS {
-	ONGOING= 0,
-	FINISHED= 1,
-	CLAIMED= 2
+/**
+ * Grid event
+ * 	- Path of Wealth
+ * 	- Dark Castle
+ */
+enum GRID_ITEM {
+	NORMAL = 0,
+	BLUE_BAG = 1,
+	ORANGE_BAG = 2,
+	PURPLE_BAG = 3,
+}
+interface EventGridSlot {
+	id: number
+	items: Item
+	type: GRID_ITEM
+	sid: number //1=portal
+	isGet: boolean
+}
+export interface EventGrid {
+	gzzid: number
+	min: number //??
+	max: number //number of tiles ?
+	list: EventGridSlot[]
+}
+export interface EventGridLapChest {
+	id: number
+	need: number //laps needed
+	items: Item[]
+	isGet: number //2=yes
+}
+export interface EventGridRun {
+	yao: number
+	sid: number
+	cons: number
+	quan: number //laps
+	num: number
+	gzzid: number
 }
 
+export interface GenericEventInfo {
+	id: number
+	title: string
+	pindex: number
+	type: number
+	sTime: number //start time
+	eTime: number //end time
+	showTime: number
+	_act_id: string
+}
 export interface Event {
 	id: number
 	title: string

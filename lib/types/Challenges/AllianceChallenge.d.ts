@@ -1,20 +1,20 @@
 import { Item } from '../Item';
-import { ClubEventRwd } from '../Events';
-export interface AllianceChallengeRwdStatus {
+import { ClubEventRwd, EventRwd } from '../Events';
+export interface ChallengeRwdStatus {
     rwd_stat: number;
 }
-export interface AllianceChallengeClubRid {
+export interface ChallengeRid {
+    name: string;
     rid: number;
     score: number;
-    name: string;
 }
-export interface AllianceChallengeClub {
+export interface ChallengeRank {
     uid: string;
     name: string;
     rid: number;
     score: number;
 }
-export interface AllianceChallengeCfg {
+export interface ChallengeCfg {
     info: {
         id: number;
         title: string;
@@ -33,22 +33,41 @@ export interface AllianceChallengeCfg {
         target: number;
         rewards: Item[];
     }[];
-    rwd: ClubEventRwd[];
+    rwd: EventRwd[];
     msg: string;
+}
+export interface AllianceChallengeCfg extends ChallengeCfg {
+    rwd: ClubEventRwd[];
 }
 export interface AllianceIntimacyStatus {
     clublove: {
         cfg: AllianceChallengeCfg;
     };
-    clublovelist: AllianceChallengeClub[];
-    myclubRid: AllianceChallengeClubRid;
-    myclubloveRwdStatus: AllianceChallengeRwdStatus;
+    clublovelist: ChallengeRank[];
+    myclubRid: ChallengeRid;
+    myclubloveRwdStatus: ChallengeRwdStatus;
 }
 export interface AllianceExperienceStatus {
     club: {
         cfg: AllianceChallengeCfg;
     };
-    clublist: AllianceChallengeClub[];
-    myclubRid: AllianceChallengeClubRid;
-    myclubloveRwdStatus: AllianceChallengeRwdStatus;
+    clublist: ChallengeRank[];
+    myclubRid: ChallengeRid;
+    myclubloveRwdStatus: ChallengeRwdStatus;
+}
+export interface QualityStatus {
+    zizhi: {
+        cfg: ChallengeCfg;
+    };
+    zizhilist: ChallengeRank[];
+    myZiZhiRid: ChallengeRid;
+    myZiZhiRwdStatus: ChallengeRwdStatus;
+}
+export interface GrainStatus {
+    liangshi: {
+        cfg: ChallengeCfg;
+    };
+    liangshilist: ChallengeRank[];
+    myLiangShiRid: ChallengeRid;
+    myLiangShiRwdStatus: ChallengeRwdStatus;
 }
