@@ -37,4 +37,5 @@ export { MaidenPainting } from './Events/MaidenPainting';
 export { PathOfWealth } from './Events/PathOfWealth';
 export { Picnic } from './Events/Picnic';
 export { Renovation } from './Events/Renovation';
+export { RenownedMerchant } from './Events/RenownedMerchant';
 export { TreasureHunt } from './Events/TreasureHunt';

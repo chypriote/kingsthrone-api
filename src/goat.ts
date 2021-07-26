@@ -6,7 +6,7 @@ import {
 	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
 	AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom,
 	Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience,
-	Shop, Grain, Quality, PathOfWealth
+	Shop, Grain, Quality, PathOfWealth, RenownedMerchant
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -77,6 +77,7 @@ export class Goat {
 		pathOfWealth: PathOfWealth
 		picnic: Picnic
 		treasureHunt: TreasureHunt
+		renownedMerchant: RenownedMerchant
 	}
 
 	constructor() {
@@ -134,6 +135,7 @@ export class Goat {
 			pathOfWealth: new PathOfWealth(this),
 			picnic: new Picnic(this),
 			treasureHunt: new TreasureHunt(this),
+			renownedMerchant: new RenownedMerchant(this),
 		}
 	}
 	_getHost(): string { return this.host}

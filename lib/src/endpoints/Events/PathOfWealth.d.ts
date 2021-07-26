@@ -5,4 +5,5 @@ export declare class PathOfWealth extends GoatResource {
     rollDice(): Promise<void>;
     claimDice(id: number): Promise<void>;
     claimAllDices(): Promise<void>;
+    openChest(id: number): Promise<void>;
 }

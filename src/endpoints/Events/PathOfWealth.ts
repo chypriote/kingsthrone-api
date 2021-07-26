@@ -19,4 +19,8 @@ export class PathOfWealth extends GoatResource {
 			await this.claimDice(i)
 		}
 	}
+
+	async openChest(id: number): Promise<void> {
+		await this.request({ 'huodong':{ 'hd293Rwd':{ 'id':id } },'rsn':'2myahmmhlyq' }	)
+	}
 }

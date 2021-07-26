@@ -12,3 +12,4 @@ export * from './PathOfWealth';
 export * from './Picnic';
 export * from './SurpriseEgg';
 export * from './TreasureHunt';
+export * from './RenownedMerchant';
