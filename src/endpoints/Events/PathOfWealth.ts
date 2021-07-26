@@ -4,7 +4,7 @@ import { PathOfWealthStatus } from '../../../types'
 export class PathOfWealth extends GoatResource {
 	async eventInfos(): Promise<PathOfWealthStatus> {
 		const data = await this.request({ 'huodong':{ 'hd293Info':[] },'rsn':'4cimihmcxf' })
-		return data.a.xbhuodong.xijiao
+		return data.a.xbhuodong
 	}
 
 	async rollDice(): Promise<void> {
