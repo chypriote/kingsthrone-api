@@ -5,8 +5,8 @@ export class KingsPass extends GoatResource {
 	async eventInfos(): Promise<EventPass> {
 		const data = await this.request({ 'huodong':{ 'hd1086Info':[] },'rsn':'7cogodsodg' })
 		return {
-			shop: data.a.anniversaryPullInWarOrderShop.shop,
-			pass: data.a.anniversaryPullInWarOrder,
+			shop: data.a.warOrderShop.shop,
+			pass: data.a.warOrder,
 		}
 	}
 
