@@ -61,7 +61,6 @@ export class GoatResource {
 				return await this._retry(RETRY_REASON.SERVER_BUSY)
 			}
 
-			console.trace()
 			throw new Error(msg)
 		}
 
