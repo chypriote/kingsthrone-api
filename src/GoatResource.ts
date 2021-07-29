@@ -3,6 +3,11 @@ require('dotenv').config()
 import axios from 'axios'
 import { Goat } from './goat'
 
+enum RETRY_REASON {
+	LOGIN= 0,
+	VERSION= 1,
+	SERVER_BUSY= 2,
+}
 export interface IAccount {
 	rsn: string
 	login: {
@@ -40,21 +45,24 @@ export class GoatResource {
 	private async _jsonResponseHandler(response: any): Promise<any> {
 		const msg = GoatResource._getErrorMessage(response)
 
+		if (response?.a?.system?.version) {
+			this._goat._setVersion(response.a.system.version.ver)
+			await this._login(true)
+			return await this._retry(RETRY_REASON.VERSION)
+		}
+
 		if (msg) {
 			if (msg === 'You have logged in elsewhere') {
 				console.warn('Provided token expired, reconnecting')
 				await this._login(true)
-				return await this._retry()
+				return await this._retry(RETRY_REASON.LOGIN)
 			}
 			if (msg === `Error: server_is_busyuser_${this._goat._getGid()}`) {
-				return await this._retry()
+				return await this._retry(RETRY_REASON.SERVER_BUSY)
 			}
-			throw new Error(msg)
-		}
 
-		if (response?.a?.system?.version) {
-			this._goat._setVersion(response.a.system.version.ver)
-			return await this._retry()
+			console.trace()
+			throw new Error(msg)
 		}
 
 		this._data = null
@@ -81,8 +89,8 @@ export class GoatResource {
 			'Connection': 'Keep-Alive',
 		}
 	}
-	private async _retry (): Promise<any> {
-		if (!this._data) { throw new Error('Nothing to retry') }
+	private async _retry (reason: RETRY_REASON|null = null): Promise<any> {
+		if (!this._data) { throw new Error(`${reason}: Nothing to retry`) }
 		return await this._request(this._data)
 	}
 	private async _request(data: any = null): Promise<any> {

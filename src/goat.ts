@@ -11,7 +11,7 @@ import {
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
 
-const VERSION = 'V1.3.564'
+const VERSION = process.env.VERSION || 'V1.3.564'
 const COOKIE = 'lyjxncc=c3ac4e77dff349b66c7aeed276e3eb6c'
 const DEFAULT_HOST = 'ksrus.gtbackoverseas.com'
 // const OLD_HOST = 'zsjefunbm.zwformat.com'
