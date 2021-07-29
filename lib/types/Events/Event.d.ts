@@ -161,6 +161,73 @@ export interface EventGridRun {
     num: number;
     gzzid: number;
 }
+/**
+ * Pass event
+ * 	- King's Pass
+ * 	- Venetian Pass
+ */
+interface EventPassShopItem {
+    dc: number;
+    haslimitNum: number;
+    items: Item;
+    limit: number;
+    limitLevel: number;
+    limitNum: number;
+    need: number;
+}
+interface EventPassTask {
+    id: number;
+    num: number;
+    rwd: number;
+    week: number;
+    is_lock: number;
+    status: number;
+    cost: number;
+    nums: number;
+    rwds: unknown;
+}
+interface EventPassConfig {
+    score: number;
+    point: number;
+    rwds: {
+        id: number;
+        rwd: number;
+    }[];
+    tasks: EventPassTask[];
+    level: number;
+    type: number;
+    max_level: {
+        low: number;
+        middle: number;
+    };
+    hundred_exp: number;
+    week_times: number;
+    countdown: number;
+    rwd_preview: {
+        premium: {
+            level: number;
+            item: Item;
+        }[];
+        advanced: {
+            level: number;
+            item: Item;
+        }[];
+        decorate1: unknown[];
+        item_rwd1: Item[];
+        decorate2: unknown[];
+        item_rwd2: Item[];
+        decorate3: unknown[];
+        item_rwd3: Item[];
+        show_main_hero: number;
+        show_hero: number;
+        show_wife: number;
+        show_castle: number;
+    };
+}
+export interface EventPass {
+    shop: EventPassShopItem[];
+    pass: EventPassConfig;
+}
 export interface GenericEventInfo {
     id: number;
     title: string;
