@@ -1,12 +1,12 @@
 import {
 	Account, Alliance, Children, DarkCastle, Deathmatch,
 	DragonSlaying, Expeditions, Feasts, GardenStroll, Heroes,
-	HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens,
+	HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, VenetianPass,
 	Mail, Picnic, Processions, Profile, Rankings, Renovation,
 	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
 	AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom,
 	Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience,
-	Shop, Grain, Quality, PathOfWealth, RenownedMerchant
+	Shop, Grain, Quality, PathOfWealth, RenownedMerchant, KingsPass
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -73,11 +73,13 @@ export class Goat {
 		gardenStroll: GardenStroll
 		giftOfTheFae: GiftOfTheFae
 		jewelsOfLuck: JewelsOfLuck
+		kingsPass: KingsPass
 		maidenPainting: MaidenPainting
 		pathOfWealth: PathOfWealth
 		picnic: Picnic
-		treasureHunt: TreasureHunt
 		renownedMerchant: RenownedMerchant
+		treasureHunt: TreasureHunt
+		venetianPass: VenetianPass
 	}
 
 	constructor() {
@@ -131,11 +133,13 @@ export class Goat {
 			gardenStroll: new GardenStroll(this),
 			giftOfTheFae: new GiftOfTheFae(this),
 			jewelsOfLuck: new JewelsOfLuck(this),
+			kingsPass: new KingsPass(this),
 			maidenPainting: new MaidenPainting(this),
 			pathOfWealth: new PathOfWealth(this),
 			picnic: new Picnic(this),
-			treasureHunt: new TreasureHunt(this),
 			renownedMerchant: new RenownedMerchant(this),
+			treasureHunt: new TreasureHunt(this),
+			venetianPass: new VenetianPass(this),
 		}
 	}
 	_getHost(): string { return this.host}

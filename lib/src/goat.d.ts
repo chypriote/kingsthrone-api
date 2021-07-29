@@ -1,4 +1,4 @@
-import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, Heroes, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney, AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom, Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience, Shop, Grain, Quality, PathOfWealth, RenownedMerchant } from './endpoints';
+import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, Heroes, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, VenetianPass, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney, AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom, Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience, Shop, Grain, Quality, PathOfWealth, RenownedMerchant, KingsPass } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -51,11 +51,13 @@ export declare class Goat {
         gardenStroll: GardenStroll;
         giftOfTheFae: GiftOfTheFae;
         jewelsOfLuck: JewelsOfLuck;
+        kingsPass: KingsPass;
         maidenPainting: MaidenPainting;
         pathOfWealth: PathOfWealth;
         picnic: Picnic;
-        treasureHunt: TreasureHunt;
         renownedMerchant: RenownedMerchant;
+        treasureHunt: TreasureHunt;
+        venetianPass: VenetianPass;
     };
     constructor();
     _getHost(): string;
