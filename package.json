@@ -1,7 +1,7 @@
 {
   "name": "kingsthrone-api",
   "private": false,
-  "version": "0.14.4",
+  "version": "0.14.5",
   "main": "lib",
   "types": "types/index.d.ts",
   "dependencies": {
