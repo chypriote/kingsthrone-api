@@ -3,8 +3,8 @@ import {
 	BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining,
 	DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae,
 	Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass,
-	MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic,
-	Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant,
+	LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch,
+	Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant,
 	Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney
 } from './endpoints'
 import { IAccount } from './GoatResource'
@@ -41,6 +41,7 @@ export class Goat {
 	heroes: Heroes
 	items: Items
 	kingdom: Kingdom
+	limitedTimeQuests: LimitedTimeQuests
 	maidens: Maidens
 	mail: Mail
 	processions: Processions
@@ -107,6 +108,7 @@ export class Goat {
 		this.heroes = new Heroes(this)
 		this.items = new Items(this)
 		this.kingdom = new Kingdom(this)
+		this.limitedTimeQuests = new LimitedTimeQuests(this)
 		this.maidens = new Maidens(this)
 		this.mail = new Mail(this)
 		this.processions = new Processions(this)

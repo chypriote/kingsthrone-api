@@ -20,6 +20,9 @@ export class Alchemy extends GoatResource {
 	async sendGift(uid: number, son: number): Promise<void> {
 		await this.request({ 'huodong':{ 'hd1092Social':{ 'type':'send','uid':uid,'id': son } },'rsn':'9mrrtnitcsi' })
 	}
+	async claimCompleteReward(): Promise<void> {
+		await this.request({ 'huodong':{ 'hd1092GetCompleteRwd':[] },'rsn':'1kttueqirbr' })
+	}
 
 	async trade(iron = 0, bottle = 0, maiden: number): Promise<void> {
 		await this.request({ 'huodong':{ 'hd1092GiveGift':{ 'milk_num':iron,'biscuits_num':bottle,'id': maiden } },'rsn':'3ehhpkwhrke' })
