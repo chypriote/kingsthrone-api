@@ -11,7 +11,7 @@ export interface GiftingTreeStatus {
         needCost: number;
         chosen_pool: {
             key: number;
-            item: Item;
+            rwd: Item;
         }[];
         rewards: {
             id: number;

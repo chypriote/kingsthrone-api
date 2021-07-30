@@ -1,4 +1,4 @@
-import { EventPointExchangeAllLimit, EventRwd, GenericEventInfo } from './Event';
+import { EventDropWithProbability, EventPointExchangeAllLimit, EventRwd, GenericEventInfo } from './Event';
 import { Item } from '../Item';
 export interface RenownedMerchantEvent {
     renownedMerchant: RenownedMerchantStatus;
@@ -136,12 +136,7 @@ export interface RenownedMerchantStatus {
         score: number;
     };
     cfg: {
-        list: {
-            dc: number;
-            items: Item;
-            prob_10000: number;
-            tip: number;
-        }[];
+        list: EventDropWithProbability[];
         rankRwd: EventRwd[];
     };
     shop: {

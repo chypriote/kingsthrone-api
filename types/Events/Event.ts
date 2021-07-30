@@ -82,6 +82,13 @@ export interface EventPointExchange {
 	need: number //points cost
 }
 
+export interface EventDropWithProbability {
+	dc: number
+	items: Item
+	prob_10000: number
+	tip: number
+}
+
 /**
  * Wheel event
  * 	- Jewels of Luck

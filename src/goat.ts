@@ -1,52 +1,11 @@
 import {
-	Account,
-	Alliance,
-	Children,
-	DarkCastle,
-	Deathmatch,
-	DragonSlaying,
-	Expeditions,
-	Feasts,
-	GardenStroll,
-	Heroes,
-	HallOfFame,
-	Items,
-	JewelsOfLuck,
-	Kingdom,
-	Maidens,
-	VenetianPass,
-	Mail,
-	Picnic,
-	Processions,
-	Profile,
-	Rankings,
-	Renovation,
-	Rewards,
-	Tourney,
-	TreasureHunt,
-	WorldBoss,
-	XServerTourney,
-	AllianceSiege,
-	MaidenPainting,
-	Divining,
-	Coronation,
-	ThroneRoom,
-	Campaign,
-	BlessedChest,
-	GiftOfTheFae,
-	AllianceIntimacy,
-	AllianceExperience,
-	Shop,
-	Grain,
-	Quality,
-	PathOfWealth,
-	RenownedMerchant,
-	KingsPass,
-	MaidenExp,
-	RaiseChildren,
-	HeroesTrial,
-	PeoplesMonarch,
-	GiftingTree
+	Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege,
+	BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining,
+	DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae,
+	Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass,
+	MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic,
+	Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant,
+	Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -106,6 +65,7 @@ export class Goat {
 	}
 
 	events: {
+		alchemy: Alchemy
 		blessedChest: BlessedChest
 		castle: Renovation
 		coronation: Coronation
@@ -172,6 +132,7 @@ export class Goat {
 
 		this.events = {
 			blessedChest: new BlessedChest(this),
+			alchemy: new Alchemy(this),
 			castle: new Renovation(this),
 			coronation: new Coronation(this),
 			darkCastle: new DarkCastle(this),

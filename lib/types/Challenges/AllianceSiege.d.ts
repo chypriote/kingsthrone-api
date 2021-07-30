@@ -1,7 +1,7 @@
 import { User } from '../User';
 import { Alliance } from '../Alliance';
 import { Item } from '../Item';
-import { ClubEventRwd, EventRwd } from '../Events';
+import { ClubEventRwd, EventQuest, EventQuestCfg, EventRwd } from '../Events';
 interface AllianceSiegeRank {
     generalName: string;
     shili: number;
@@ -53,14 +53,8 @@ export interface AllianceSiegeBattle {
         };
         wall_alliance_rank: ClubEventRwd[];
         wall_personal_rank: EventRwd[];
-        taskscfg: {
-            type: number;
-            dcCfg: {
-                id: number;
-                max: number;
-                items: Item[];
-            }[];
-        }[];
+        taskscfg: EventQuestCfg[];
+        tasks: EventQuest[];
         wall_shop: {
             id: number;
             need_score: number;
@@ -83,11 +77,6 @@ export interface AllianceSiegeBattle {
             })[];
         }[];
     };
-    tasks: {
-        id: number;
-        num: number;
-        rwd: number;
-    }[];
     info: AllianceSiegeInfo;
     data: {
         type: number;

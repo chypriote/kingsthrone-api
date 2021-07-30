@@ -29,6 +29,7 @@ export { Quality } from './Challenges/Quality'
 export { RaiseChildren } from './Challenges/RaiseChildren'
 export { MaidenExp } from './Challenges/MaidenExp'
 
+export { Alchemy } from './Events/Alchemy'
 export { BlessedChest } from './Events/BlessedChest'
 export { Coronation } from './Events/Coronation'
 export { DarkCastle } from './Events/DarkCastle'

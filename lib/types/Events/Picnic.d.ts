@@ -1,5 +1,5 @@
 import { Item } from '../Item';
-import { EventQuest, EventQuestCfg, EventShop } from './Event';
+import { EventDropWithProbability, EventQuest, EventQuestCfg, EventShop } from './Event';
 export interface PicnicStatus {
     info: {
         cons: number;
@@ -8,12 +8,7 @@ export interface PicnicStatus {
         quandNeedTen: number;
         score: number;
         image: Item[];
-        list: {
-            dc: number;
-            items: Item;
-            prob_10000: number;
-            tip: number;
-        }[];
+        list: EventDropWithProbability[];
     };
     shop: EventShop;
     task: {

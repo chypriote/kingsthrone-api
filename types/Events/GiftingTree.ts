@@ -10,7 +10,7 @@ export interface GiftingTreeStatus {
 	}
 	cfg: {
 		needCost: number
-		chosen_pool: {key: number, item: Item}[]
+		chosen_pool: {key: number, rwd: Item}[]
 		rewards: { id: number, rwd: Item }[]
 		costByTimes: { id: number, rwd: Item }[]
 		image: Item[]

@@ -1,5 +1,6 @@
 export * from './Event'
 
+export * from './Alchemy'
 export * from './BlessedChest'
 export * from './Coronation'
 export * from './Divining'
