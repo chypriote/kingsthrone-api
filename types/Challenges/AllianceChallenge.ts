@@ -62,4 +62,16 @@ export interface GrainStatus {
 	myLiangShiRid: ChallengeRid
 	myLiangShiRwdStatus: ChallengeRwdStatus
 }
+export interface RaiseChildrenStatus {
+	zsshili: { cfg: ChallengeCfg }
+	zsshililist: ChallengeRank[]
+	myzsShiliRid: ChallengeRid
+	myzsShiliRwdStatus: ChallengeRwdStatus
+}
+export interface MaidenExpStatus {
+	jiaren: { cfg: ChallengeCfg }
+	jiarenlist: ChallengeRank[]
+	myJiaRenRid: ChallengeRid
+	myJiaRenRwdStatus: ChallengeRwdStatus
+}
 

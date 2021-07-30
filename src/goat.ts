@@ -6,12 +6,12 @@ import {
 	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
 	AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom,
 	Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience,
-	Shop, Grain, Quality, PathOfWealth, RenownedMerchant, KingsPass
+	Shop, Grain, Quality, PathOfWealth, RenownedMerchant, KingsPass, MaidenExp, RaiseChildren, HeroesTrial, PeoplesMonarch
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
 
-const VERSION = process.env.VERSION || 'V1.3.564'
+const VERSION = process.env.VERSION || 'V1.3.571'
 const COOKIE = 'lyjxncc=c3ac4e77dff349b66c7aeed276e3eb6c'
 const DEFAULT_HOST = 'ksrus.gtbackoverseas.com'
 // const OLD_HOST = 'zsjefunbm.zwformat.com'
@@ -61,6 +61,8 @@ export class Goat {
 		allianceExperience: AllianceExperience
 		grain: Grain
 		quality: Quality
+		maidenExp: MaidenExp
+		raiseChildren: RaiseChildren
 	}
 
 	events: {
@@ -72,10 +74,12 @@ export class Goat {
 		dragonSlaying: DragonSlaying
 		gardenStroll: GardenStroll
 		giftOfTheFae: GiftOfTheFae
+		heroesTrial: HeroesTrial
 		jewelsOfLuck: JewelsOfLuck
 		kingsPass: KingsPass
 		maidenPainting: MaidenPainting
 		pathOfWealth: PathOfWealth
+		peoplesMonarch: PeoplesMonarch
 		picnic: Picnic
 		renownedMerchant: RenownedMerchant
 		treasureHunt: TreasureHunt
@@ -121,6 +125,8 @@ export class Goat {
 			allianceExperience: new AllianceExperience(this),
 			grain: new Grain(this),
 			quality: new Quality(this),
+			maidenExp: new MaidenExp(this),
+			raiseChildren: new RaiseChildren(this),
 		}
 
 		this.events = {
@@ -132,10 +138,12 @@ export class Goat {
 			dragonSlaying: new DragonSlaying(this),
 			gardenStroll: new GardenStroll(this),
 			giftOfTheFae: new GiftOfTheFae(this),
+			heroesTrial: new HeroesTrial(this),
 			jewelsOfLuck: new JewelsOfLuck(this),
 			kingsPass: new KingsPass(this),
 			maidenPainting: new MaidenPainting(this),
 			pathOfWealth: new PathOfWealth(this),
+			peoplesMonarch: new PeoplesMonarch(this),
 			picnic: new Picnic(this),
 			renownedMerchant: new RenownedMerchant(this),
 			treasureHunt: new TreasureHunt(this),
