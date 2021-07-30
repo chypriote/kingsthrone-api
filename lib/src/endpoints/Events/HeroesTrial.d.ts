@@ -1,4 +1,5 @@
-import { GoatResource, HeroesTrialFightResult, HeroesTrialStatus } from '../../../types';
+import { GoatResource } from '../../GoatResource';
+import { HeroesTrialFightResult, HeroesTrialStatus } from '../../../types';
 export declare class HeroesTrial extends GoatResource {
     eventInfos(): Promise<HeroesTrialStatus>;
     selectHero(id: number): Promise<void>;
