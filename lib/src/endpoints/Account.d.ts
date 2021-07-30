@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource';
-import { GameInfos } from '../../types';
+import { FriendsStatus, GameInfos } from '../../types';
 export declare class Account extends GoatResource {
     createAccount(server: string): Promise<void | GameInfos>;
     getGeneratedName(): Promise<string>;
@@ -8,4 +8,5 @@ export declare class Account extends GoatResource {
     getThrone(): Promise<void>;
     doCampaignGuide(smap: number, bmap: number, mmap: number): Promise<void>;
     doGuide(id: number): Promise<void>;
+    getFriendList(): Promise<FriendsStatus>;
 }

@@ -53,3 +53,27 @@ export interface UserProfile extends User {
     vipStatus: number;
     set?: number;
 }
+interface InLaw extends User {
+    num: number;
+    num2: number;
+    num3: number;
+    tip: number;
+}
+interface Friend extends User {
+    num2: string;
+    num3: number;
+}
+export interface FriendsStatus {
+    flist: Friend[];
+    fapplylist: any[];
+    fsendlist: {
+        list: any[];
+        num: number;
+    };
+    pclist: any[];
+    qjlist: InLaw[];
+    sonshili: {
+        num: number;
+    };
+}
+export {};

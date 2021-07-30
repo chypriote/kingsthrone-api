@@ -18,7 +18,7 @@ export interface AlchemyStatus {
 		completeNum: number
 		getCompleteNum: number
 		receiveNum: number
-		send: any[]
+		send: { status: number, uid: string }[]
 		receive:  {
 			uid: number
 			status: number

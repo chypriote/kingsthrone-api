@@ -56,3 +56,26 @@ export interface UserProfile extends User {
 	vipStatus: number
 	set?: number
 }
+interface InLaw extends User {
+	num: number //likability
+	num2: number; //married
+	num3: number; //visited?
+	tip: number;
+}
+interface Friend extends User {
+	num2: string;
+	num3: number; //last seen
+}
+export interface FriendsStatus {
+	flist: Friend[];
+	fapplylist: any[];
+	fsendlist:  {
+		list: any[];
+		num: number;
+	};
+	pclist: any[];
+	qjlist: InLaw[];
+	sonshili: {
+		num: number;
+	};
+}

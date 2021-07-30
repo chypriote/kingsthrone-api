@@ -1,6 +1,6 @@
 import { sample } from 'lodash'
 import { GoatResource } from '../GoatResource'
-import { GameInfos } from '../../types'
+import { FriendsStatus, GameInfos } from '../../types'
 
 export class Account extends GoatResource {
 	async createAccount(server: string): Promise<void | GameInfos> {
@@ -109,5 +109,10 @@ export class Account extends GoatResource {
 		await this.request({ 'guide':{ 'guide':{ 'gnew': id } }, 'rsn': sample([
 			'8maoemroaam', '8maoemroaam', '2myabnqqxnb',
 		]) })
+	}
+
+	async getFriendList(): Promise<FriendsStatus> {
+		const data = await this.request({ 'friends':{ 'getPrivateChatData':[] },'rsn':'3zeeheeewsn' })
+		return data.a.friends
 	}
 }
