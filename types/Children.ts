@@ -10,11 +10,11 @@ export enum CHILDREN_STATUS {
 }
 
 export interface Spouse {
-	fuid: number
-	fname: string
-	sname: string
-	sonuid: number
-	honor: number
+	fuid: number //user id
+	fname: string //user name
+	sname: string //son name
+	sonuid: number //id
+	honor: number //stars
 	sex: Sex
 	ep: GameStats
 }

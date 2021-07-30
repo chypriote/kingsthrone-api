@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { InLaw, Proposal } from '../../types'
+import { InLaw, Spouse } from '../../types'
 
 export class Children extends GoatResource {
 	//Sons
@@ -45,7 +45,7 @@ export class Children extends GoatResource {
 	}
 
 	//Marriage
-	async getProposals(): Promise<Proposal[]> {
+	async getProposals(): Promise<Spouse[]> {
 		const data = await this.request({ 'rsn':'8maaovakrxm','son':{ 'getTiqin':[] } })
 		return data.a.son.qList
 	}
@@ -53,7 +53,7 @@ export class Children extends GoatResource {
 		//type 2= dowry, 1= gems ?
 		await this.request({ 'rsn':'5wppjpvrae','son':{ 'agree':{ 'mysid':son,'sid':partner,'uid':uid,'type': type } } })
 	}
-	async matchMaker(son: number): Promise<Proposal[]> {
+	async matchMaker(son: number): Promise<Spouse[]> {
 		const data = await this.request({ 'rsn':'9mrrtjrjtrc','son':{ 'zhaoqin':{ 'id':son } } })
 		return data.a.son.cList.list
 	}
