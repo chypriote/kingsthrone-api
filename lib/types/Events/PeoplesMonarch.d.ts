@@ -1,10 +1,10 @@
 import { ClubEventRwd, EventPointExchange, EventPointExchangeTotalLimit, EventRwd, GenericEventInfo } from './Event';
 import { Item } from '../Item';
 export declare enum PEOPLES_MONARCH_ITEM {
-    BANNER = 1,
-    TRUMPET = 2,
-    DRUMS = 3,
-    CROWN = 4
+    CAP = 1,
+    SWORD = 2,
+    ROSE = 3,
+    RING = 4
 }
 interface PeoplesMonarchConfig {
     info: GenericEventInfo & {
