@@ -11,7 +11,7 @@ export declare class RenownedMerchant extends GoatResource {
     getTaskReward(day: number, type: number): Promise<void>;
     /** Wish tree */
     wishTreeInfos(): Promise<CherishedWishStatus>;
-    setWishTreeReward(id: number, day: number, pos: number): Promise<void>;
+    setWishTreeReward(id: number, day: number, pos: number, type: CHERISHED_WISH_TYPE): Promise<void>;
     getWishTreeReward(type: CHERISHED_WISH_TYPE): Promise<void>;
     /** Top Up */
     continualTopUpInfos(): Promise<ContinualTopUpStatus>;

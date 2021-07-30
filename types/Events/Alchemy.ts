@@ -10,14 +10,14 @@ export interface AlchemyLuckBoost {
 
 export interface AlchemyStatus {
 	info: {
-		milkNum: number
-		biscuitsNum: number
-		coalNum: number
-		refineNum: number
-		score: number
-		completeNum: number
-		getCompleteNum: number
-		receiveNum: number
+		milkNum: number //iron
+		biscuitsNum: number //quicksilver bottles
+		coalNum: number //ore
+		refineNum: number //shard
+		score: number //points
+		completeNum: number //traded to alchemist
+		getCompleteNum: number //got reward for alchemist ?
+		receiveNum: number //gifts received
 		send: { status: number, uid: string }[]
 		receive:  {
 			uid: number

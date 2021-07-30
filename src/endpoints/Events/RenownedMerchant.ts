@@ -50,8 +50,8 @@ export class RenownedMerchant extends GoatResource {
 		const data = await this.request({ 'huodong2':{ 'hd1209Info':[] },'rsn':'7ycclycpvyp' })
 		return data.a.anniversaryPullInWishTree
 	}
-	async setWishTreeReward(id: number, day: number, pos: number): Promise<void> {
-		await this.request({ 'huodong2':{ 'hd1209SelectRwd':{ 'type':0,'pos':pos,'dc':day,'id':id } },'rsn':'1tbbtuqbwa' }	)
+	async setWishTreeReward(id: number, day: number, pos: number, type: CHERISHED_WISH_TYPE): Promise<void> {
+		await this.request({ 'huodong2':{ 'hd1209SelectRwd':{ 'type': type,'pos':pos,'dc':day,'id':id } },'rsn':'1tbbtuqbwa' }	)
 	}
 	async getWishTreeReward(type: CHERISHED_WISH_TYPE): Promise<void> {
 		await this.request({ 'huodong2':{ 'hd1209Rwd':{ 'type': type } },'rsn':'1kttuktrwua' })

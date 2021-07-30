@@ -5,7 +5,7 @@ export declare class Alchemy extends GoatResource {
     getRanking(): Promise<EventRank[]>;
     claimQuest(id: number): Promise<void>;
     receiveGift(uid: number, son: number): Promise<void>;
-    sengGift(uid: number, son: number): Promise<void>;
+    sendGift(uid: number, son: number): Promise<void>;
     trade(iron: number, bottle: number, maiden: number): Promise<void>;
     forge(shard: number, ore: number, hero: number): Promise<void>;
 }

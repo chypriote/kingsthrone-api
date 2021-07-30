@@ -10,7 +10,7 @@ async function handleQuest(info: CherishedWishInfo, rewards: CherishedWishReward
 		if (!options) { return console.log(`Could not find options for day ${today}, type ${type}`) }
 
 		for (const rwd of options.optionRwd) {
-			await goat.events.renownedMerchant.setWishTreeReward(1, today, rwd.pos)
+			await goat.events.renownedMerchant.setWishTreeReward(1, today, rwd.pos, type)
 			console.log('Set wish tree reward')
 		}
 	}

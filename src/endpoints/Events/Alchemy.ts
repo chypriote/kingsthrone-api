@@ -17,7 +17,7 @@ export class Alchemy extends GoatResource {
 	async receiveGift(uid: number, son: number): Promise<void> {
 		await this.request({ 'huodong':{ 'hd1092Social':{ 'type':'receive','uid':uid,'id': son } },'rsn':'2myyaabqbhh' })
 	}
-	async sengGift(uid: number, son: number): Promise<void> {
+	async sendGift(uid: number, son: number): Promise<void> {
 		await this.request({ 'huodong':{ 'hd1092Social':{ 'type':'send','uid':uid,'id': son } },'rsn':'9mrrtnitcsi' })
 	}
 
