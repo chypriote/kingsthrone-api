@@ -37,7 +37,7 @@ export class Children extends GoatResource {
 		const friends = await this.request({ 'friends': { 'getPrivateChatData': [] }, 'rsn': '7yvovxpxyp' })
 		return friends.a.friends.qjlist
 	}
-	async visitInLaw(uid: string): Promise<void> {
+	async visitInLaw(uid: number): Promise<void> {
 		await this.request({ 'friends': { 'qjvisit': { 'fuid': uid } }, 'rsn': '3hzewhwzkp' })
 	}
 	async visitInLaws(): Promise<void> {
@@ -49,7 +49,7 @@ export class Children extends GoatResource {
 		const data = await this.request({ 'rsn':'8maaovakrxm','son':{ 'getTiqin':[] } })
 		return data.a.son.qList
 	}
-	async acceptProposal(son: number, partner: number, uid: string, type = 2): Promise<void> {
+	async acceptProposal(son: number, partner: number, uid: number, type = 2): Promise<void> {
 		//type 2= dowry, 1= gems ?
 		await this.request({ 'rsn':'5wppjpvrae','son':{ 'agree':{ 'mysid':son,'sid':partner,'uid':uid,'type': type } } })
 	}
@@ -57,7 +57,7 @@ export class Children extends GoatResource {
 		const data = await this.request({ 'rsn':'9mrrtjrjtrc','son':{ 'zhaoqin':{ 'id':son } } })
 		return data.a.son.cList.list
 	}
-	async marry(son: number, partner: number, uid: string, type = 2): Promise<void> {
+	async marry(son: number, partner: number, uid: number, type = 2): Promise<void> {
 		await this.request({ 'rsn':'7xyycgxgscy','son':{ 'jiehun':{ 'mysid':son,'sid':partner,'uid':uid,'type': type } } })
 	}
 	async propose(son: number, type = 2): Promise<void> {

@@ -8,11 +8,11 @@ export declare class Children extends GoatResource {
     useEnergyDraught(son: number, num: number): Promise<void>;
     evaluateSon(son: number): Promise<void>;
     getInLaws(): Promise<InLaw[]>;
-    visitInLaw(uid: string): Promise<void>;
+    visitInLaw(uid: number): Promise<void>;
     visitInLaws(): Promise<void>;
     getProposals(): Promise<Spouse[]>;
-    acceptProposal(son: number, partner: number, uid: string, type?: number): Promise<void>;
+    acceptProposal(son: number, partner: number, uid: number, type?: number): Promise<void>;
     matchMaker(son: number): Promise<Spouse[]>;
-    marry(son: number, partner: number, uid: string, type?: number): Promise<void>;
+    marry(son: number, partner: number, uid: number, type?: number): Promise<void>;
     propose(son: number, type?: number): Promise<void>;
 }
