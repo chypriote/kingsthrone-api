@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { InLaw } from '../../types'
+import { InLaw, Proposal } from '../../types'
 
 export class Children extends GoatResource {
 	//Sons
@@ -42,5 +42,25 @@ export class Children extends GoatResource {
 	}
 	async visitInLaws(): Promise<void> {
 		await this.request({ 'friends':{ 'qjvisit':{ 'fuid':0 } },'rsn':'4acbmmxgfmg' })
+	}
+
+	//Marriage
+	async getProposals(): Promise<Proposal[]> {
+		const data = await this.request({ 'rsn':'8maaovakrxm','son':{ 'getTiqin':[] } })
+		return data.a.son.qList
+	}
+	async acceptProposal(son: number, partner: number, uid: string, type = 2): Promise<void> {
+		//type 2= dowry, 1= gems ?
+		await this.request({ 'rsn':'5wppjpvrae','son':{ 'agree':{ 'mysid':son,'sid':partner,'uid':uid,'type': type } } })
+	}
+	async matchMaker(son: number): Promise<Proposal[]> {
+		const data = await this.request({ 'rsn':'9mrrtjrjtrc','son':{ 'zhaoqin':{ 'id':son } } })
+		return data.a.son.cList.list
+	}
+	async marry(son: number, partner: number, uid: string, type = 2): Promise<void> {
+		await this.request({ 'rsn':'7xyycgxgscy','son':{ 'jiehun':{ 'mysid':son,'sid':partner,'uid':uid,'type': type } } })
+	}
+	async propose(son: number, type = 2): Promise<void> {
+		await this.request({ 'rsn':'7cooxvygsg','son':{ 'tiqin':{ 'type':type,'isPush':1,'uid':0,'sid':son } } })
 	}
 }

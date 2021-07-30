@@ -1,3 +1,4 @@
+import { InLaw } from './InLaw';
 export interface User {
     uid: string;
     name: string;
@@ -52,12 +53,6 @@ export interface UserProfile extends User {
     headId: number;
     vipStatus: number;
     set?: number;
-}
-interface InLaw extends User {
-    num: number;
-    num2: number;
-    num3: number;
-    tip: number;
 }
 interface Friend extends User {
     num2: string;

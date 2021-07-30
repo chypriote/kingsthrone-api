@@ -1,5 +1,13 @@
 import { GameStats, Sex } from './GameInfos';
-interface Spouse {
+export declare enum CHILDREN_STATUS {
+    UNNAMED = 1,
+    GROWING = 2,
+    GROWNUP = 3,
+    EVALUATED = 4,
+    FINDING_SPOUSE = 5,
+    MARRIED = 9
+}
+export interface Spouse {
     fuid: number;
     fname: string;
     sname: string;
@@ -13,7 +21,7 @@ export interface Son {
     name: string;
     sex: Sex;
     mom: number;
-    state: number;
+    state: CHILDREN_STATUS;
     ep: GameStats;
     talent: number;
     cpoto: number;
@@ -39,4 +47,3 @@ export interface Son {
     tc: number;
     available: boolean;
 }
-export {};
