@@ -1,6 +1,5 @@
 import { Item } from '../Item'
 
-
 export interface HeroesTrialFightResult {
 	fight: {
 		log: {aid: number, damge: number, type: number }[]

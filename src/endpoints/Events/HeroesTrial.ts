@@ -1,10 +1,9 @@
 import { GoatResource } from '../../GoatResource'
 import { HeroesTrialFightResult, HeroesTrialStatus } from '../../../types'
 
-
 export class HeroesTrial extends GoatResource {
 	async eventInfos(): Promise<HeroesTrialStatus> {
-		const data = await this.request({ 'huodong2':{ 'hd1299Info':[] },'rsn':'8maoejkjoam' })
+		const data = await this.request({ 'huodong': { 'hd1083Info': [] }, 'rsn': '4ciifhmxhf' })
 		return data.a.brave
 	}
 

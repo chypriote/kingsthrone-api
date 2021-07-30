@@ -4,4 +4,5 @@ export declare class PeoplesMonarch extends GoatResource {
     eventInfos(): Promise<PeoplesMonarchStatus>;
     buyShopItem(id: PEOPLES_MONARCH_ITEM): Promise<void>;
     useItem(id: PEOPLES_MONARCH_ITEM): Promise<void>;
+    exchangeItem(id: number): Promise<void>;
 }

@@ -1,12 +1,52 @@
 import {
-	Account, Alliance, Children, DarkCastle, Deathmatch,
-	DragonSlaying, Expeditions, Feasts, GardenStroll, Heroes,
-	HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, VenetianPass,
-	Mail, Picnic, Processions, Profile, Rankings, Renovation,
-	Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney,
-	AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom,
-	Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience,
-	Shop, Grain, Quality, PathOfWealth, RenownedMerchant, KingsPass, MaidenExp, RaiseChildren, HeroesTrial, PeoplesMonarch
+	Account,
+	Alliance,
+	Children,
+	DarkCastle,
+	Deathmatch,
+	DragonSlaying,
+	Expeditions,
+	Feasts,
+	GardenStroll,
+	Heroes,
+	HallOfFame,
+	Items,
+	JewelsOfLuck,
+	Kingdom,
+	Maidens,
+	VenetianPass,
+	Mail,
+	Picnic,
+	Processions,
+	Profile,
+	Rankings,
+	Renovation,
+	Rewards,
+	Tourney,
+	TreasureHunt,
+	WorldBoss,
+	XServerTourney,
+	AllianceSiege,
+	MaidenPainting,
+	Divining,
+	Coronation,
+	ThroneRoom,
+	Campaign,
+	BlessedChest,
+	GiftOfTheFae,
+	AllianceIntimacy,
+	AllianceExperience,
+	Shop,
+	Grain,
+	Quality,
+	PathOfWealth,
+	RenownedMerchant,
+	KingsPass,
+	MaidenExp,
+	RaiseChildren,
+	HeroesTrial,
+	PeoplesMonarch,
+	GiftingTree
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -74,6 +114,7 @@ export class Goat {
 		dragonSlaying: DragonSlaying
 		gardenStroll: GardenStroll
 		giftOfTheFae: GiftOfTheFae
+		giftingTree: GiftingTree
 		heroesTrial: HeroesTrial
 		jewelsOfLuck: JewelsOfLuck
 		kingsPass: KingsPass
@@ -138,6 +179,7 @@ export class Goat {
 			dragonSlaying: new DragonSlaying(this),
 			gardenStroll: new GardenStroll(this),
 			giftOfTheFae: new GiftOfTheFae(this),
+			giftingTree: new GiftingTree(this),
 			heroesTrial: new HeroesTrial(this),
 			jewelsOfLuck: new JewelsOfLuck(this),
 			kingsPass: new KingsPass(this),

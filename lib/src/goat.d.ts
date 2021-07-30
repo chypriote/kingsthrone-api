@@ -1,4 +1,4 @@
-import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, Heroes, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, VenetianPass, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney, AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom, Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience, Shop, Grain, Quality, PathOfWealth, RenownedMerchant, KingsPass, MaidenExp, RaiseChildren, HeroesTrial, PeoplesMonarch } from './endpoints';
+import { Account, Alliance, Children, DarkCastle, Deathmatch, DragonSlaying, Expeditions, Feasts, GardenStroll, Heroes, HallOfFame, Items, JewelsOfLuck, Kingdom, Maidens, VenetianPass, Mail, Picnic, Processions, Profile, Rankings, Renovation, Rewards, Tourney, TreasureHunt, WorldBoss, XServerTourney, AllianceSiege, MaidenPainting, Divining, Coronation, ThroneRoom, Campaign, BlessedChest, GiftOfTheFae, AllianceIntimacy, AllianceExperience, Shop, Grain, Quality, PathOfWealth, RenownedMerchant, KingsPass, MaidenExp, RaiseChildren, HeroesTrial, PeoplesMonarch, GiftingTree } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -52,6 +52,7 @@ export declare class Goat {
         dragonSlaying: DragonSlaying;
         gardenStroll: GardenStroll;
         giftOfTheFae: GiftOfTheFae;
+        giftingTree: GiftingTree;
         heroesTrial: HeroesTrial;
         jewelsOfLuck: JewelsOfLuck;
         kingsPass: KingsPass;
