@@ -51,7 +51,6 @@ export interface AllianceSiegeBattle {
 		wall_alliance_rank: ClubEventRwd[]
 		wall_personal_rank: EventRwd[]
 		taskscfg: EventQuestCfg[]
-		tasks: EventQuest[]
 		wall_shop: {
 			id: number
 			need_score: number
@@ -72,6 +71,7 @@ export interface AllianceSiegeBattle {
 			rand: (Item & { pro: number })[]
 		}[]
 	}
+	tasks: EventQuest[]
 	info: AllianceSiegeInfo
 	data: {
 		type: number //2=wall, 3=general
