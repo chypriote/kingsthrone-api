@@ -126,8 +126,8 @@ export class GoatResource {
 			&& process.env.TOKEN_1094
 			&& !reconnect
 		) {
-			this._goat._setToken(process.env.TOKEN)
-			this._goat._setGid('699002934')
+			this._goat._setToken(process.env.TOKEN_1094)
+			this._goat._setGid('1094003443')
 			return
 		}
 
