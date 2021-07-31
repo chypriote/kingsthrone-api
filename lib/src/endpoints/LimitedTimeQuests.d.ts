@@ -1,10 +1,16 @@
 import { GoatResource } from '../GoatResource';
 import { LTQ_TYPES, LTQStatus } from '../../types';
 export declare class LimitedTimeQuests extends GoatResource {
-    loginQuest(): Promise<LTQStatus>;
-    gemsQuest(): Promise<LTQStatus>;
-    marriageQuest(): Promise<LTQStatus>;
-    randomVisitsQuest(): Promise<LTQStatus>;
+    spendGems(): Promise<LTQStatus>;
+    loseSoldiers(): Promise<LTQStatus>;
+    spendGold(): Promise<LTQStatus>;
+    studyManuscripts(): Promise<LTQStatus>;
+    increaseKP(): Promise<LTQStatus>;
+    enactDecrees(): Promise<LTQStatus>;
+    login(): Promise<LTQStatus>;
+    tourneyScore(): Promise<LTQStatus>;
+    arrangeMarriages(): Promise<LTQStatus>;
     energyDraughtQuest(): Promise<LTQStatus>;
+    randomVisitsQuest(): Promise<LTQStatus>;
     claimRewards(type: LTQ_TYPES): Promise<void>;
 }

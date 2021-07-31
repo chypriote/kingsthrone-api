@@ -1,5 +1,6 @@
 import { goat } from './index'
 import { DECREE_TYPE } from './types/ThroneRoom'
+import { ACCOUNT_GAUTIER } from './src/accounts/gautier'
 
 const handleAccount = async (server: string) => {
 	if (goat.isLoggedIn) { goat._logout() }
@@ -104,7 +105,9 @@ const levelUp = async () => {
 	// 		console.log(`Error ${server}`, e)
 	// 	}
 	// }
-	await handleAccount('427')
+	goat._setAccount(ACCOUNT_GAUTIER)
+	goat._logout()
+	await handleAccount('1094')
 
 	console.log('Finished !')
 }
