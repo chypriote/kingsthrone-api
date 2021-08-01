@@ -3,7 +3,7 @@ import { EventPass } from '../../../types'
 
 export class VenetianPass extends GoatResource {
 	async eventInfos(): Promise<EventPass> {
-		const data = await this.request({ 'huodong2':{ 'hd1241Info':[] },'rsn':'9zmrizisrbm' })
+		const data = await this.request({ huodong2: { hd1241Info: [] } })
 		return {
 			shop: data.a.anniversaryPullInWarOrderShop.shop,
 			pass: data.a.anniversaryPullInWarOrder,
@@ -11,9 +11,9 @@ export class VenetianPass extends GoatResource {
 	}
 
 	async claimLevel(id: number): Promise<void> {
-		await this.request({ 'huodong2':{ 'hd1241getrwd':{ 'type':0,'id':id } },'rsn':'3hkfksrfrf' }	)
+		await this.request({ huodong2: { hd1241getrwd: { type: 0, id: id } } })
 	}
 	async claimAllLevels(): Promise<void> {
-		await this.request({ 'huodong2':{ 'hd1241getrwd':{ 'type':0,'id':0 } },'rsn':'6xwblwlubgk' })
+		await this.request({ huodong2: { hd1241getrwd: { type: 0, id: 0 } } })
 	}
 }

@@ -3,16 +3,16 @@ import { PathOfWealthStatus } from '../../../types'
 
 export class PathOfWealth extends GoatResource {
 	async eventInfos(): Promise<PathOfWealthStatus> {
-		const data = await this.request({ 'huodong':{ 'hd293Info':[] },'rsn':'4cimihmcxf' })
+		const data = await this.request({ huodong: { hd293Info: [] } })
 		return data.a.xbhuodong
 	}
 
 	async rollDice(): Promise<void> {
-		await this.request({ 'huodong':{ 'hd293Run':[] },'rsn':'6sxwksbgwsy' })
+		await this.request({ huodong: { hd293Run: [] } })
 	}
 
 	async claimDice(id: number): Promise<void> {
-		await this.request({ 'huodong':{ 'hd293Task':{ 'id': id } },'rsn':'5jywrjhjver' })
+		await this.request({ huodong: { hd293Task: { id: id } } })
 	}
 	async claimAllDices(): Promise<void> {
 		for (let i = 1; i < 15; i++) {
@@ -21,6 +21,6 @@ export class PathOfWealth extends GoatResource {
 	}
 
 	async openChest(id: number): Promise<void> {
-		await this.request({ 'huodong':{ 'hd293Rwd':{ 'id':id } },'rsn':'2myahmmhlyq' }	)
+		await this.request({ huodong: { hd293Rwd: { id: id } } })
 	}
 }

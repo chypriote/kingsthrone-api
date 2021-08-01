@@ -3,7 +3,7 @@ import { MaidenPaintingStatus } from '../../../types'
 
 export class MaidenPainting extends GoatResource {
 	async eventInfos(): Promise<MaidenPaintingStatus> {
-		const data = await this.request({ 'huodong2':{ 'hd1258Info':[] },'rsn':'6xwbypxkpwy' })
+		const data = await this.request({ huodong2: { hd1258Info: [] } })
 		return {
 			wheel: data.a.beautyDrawingMarket,
 			challenge: data.a.beautyDrawingLove,
@@ -13,17 +13,17 @@ export class MaidenPainting extends GoatResource {
 		}
 	}
 	async buyPaint(count: number): Promise<void> {
-		await this.request({ 'huodong2':{ 'hd1258buy':{ 'num':count } },'rsn':'1tbabueuta' })
+		await this.request({ huodong2: { hd1258buy: { num: count } } })
 	}
 	async spinWheel(count: number): Promise<void> {
-		await this.request({ 'huodong2':{ 'hd1259Chou':{ 'num':count } },'rsn':'6wugubpblk' })
+		await this.request({ huodong2: { hd1259Chou: { num: count } } })
 	}
 
 	async getShopItem(id: number): Promise<void> {
-		await this.request({ 'huodong2':{ 'hd1258exchange':{ 'id':id } },'rsn':'9rnsntcist' })
+		await this.request({ huodong2: { hd1258exchange: { id: id } } })
 	}
 
 	async getBoxReward(): Promise<void> {
-		await this.request({ 'huodong2':{ 'hd1258GetBoxRwd':[] },'rsn':'7xycplydlov' })
+		await this.request({ huodong2: { hd1258GetBoxRwd: [] } })
 	}
 }
