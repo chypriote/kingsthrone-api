@@ -1,11 +1,16 @@
 import { Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney } from './endpoints';
-import { GoatConfig } from './AccountConfig';
-export { GoatConfig };
+import { IAccount } from './GoatResource';
+export { ACCOUNT_GAUTIER } from './accounts/gautier';
+export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
+export { ACCOUNT_RAYMUNDUS } from './accounts/raymundus';
 export declare class Goat {
-    private readonly _cookie;
-    private readonly _host;
-    private _version;
-    protected _config: GoatConfig;
+    private readonly cookie;
+    private token;
+    private gid;
+    private readonly host;
+    private server;
+    private version;
+    private loginAccount;
     isLoggedIn: boolean;
     account: Account;
     alliance: Alliance;
@@ -61,23 +66,25 @@ export declare class Goat {
         treasureHunt: TreasureHunt;
         venetianPass: VenetianPass;
     };
-    constructor(config?: GoatConfig | null);
-    get host(): string;
-    get cookie(): string;
-    get version(): string;
-    set version(version: string);
-    get baseUrl(): string;
-    get server(): string;
-    set server(server: string);
-    get gid(): string | null;
-    get token(): string | null;
-    get config(): GoatConfig;
-    set config(config: GoatConfig);
-    set login({ token, uid }: {
+    constructor();
+    _getHost(): string;
+    _getCookie(): string;
+    _getServer(): string;
+    _setServer(server: string): this;
+    _getVersion(): string;
+    _setVersion(version: string): this;
+    _getGid(): string | null;
+    _setGid(gid: string): this;
+    _getToken(): string | null;
+    _setToken(token: string): this;
+    _getBaseUrl(): string;
+    _isGautier(): boolean;
+    _getAccount(): IAccount;
+    _setAccount(account: IAccount): this;
+    _login({ token, uid }: {
         token: any;
         uid: any;
-    });
-    _isGautier(): boolean;
+    }): void;
     _logout(): void;
 }
 export declare const goat: Goat;

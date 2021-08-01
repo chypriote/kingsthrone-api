@@ -1,14 +1,13 @@
 {
   "name": "kingsthrone-api",
   "private": false,
-  "version": "1.0.3",
+  "version": "0.15.1",
   "main": "lib",
   "types": "types/index.d.ts",
   "dependencies": {
     "axios": "^0.21",
     "dotenv": "^10.0",
-    "lodash": "^4.17",
-    "short-unique-id": "^4.3.3"
+    "lodash": "^4.17"
   },
   "devDependencies": {
     "@types/axios": "^0.14",
@@ -35,9 +34,7 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "prepare": "husky install",
-    "lint": "eslint --ext \".ts\" --ignore-path .gitignore .",
-    "lint:fix": "yarn lint --fix"
+    "prepare": "husky install"
   },
   "author": {
     "name": "Chypriote"

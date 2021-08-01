@@ -1,8 +1,9 @@
 import { goat } from './index'
 import { DECREE_TYPE } from './types/ThroneRoom'
+import { ACCOUNT_GAUTIER } from './src/accounts/gautier'
 
 const handleAccount = async (server: string) => {
-	goat._logout()
+	if (goat.isLoggedIn) { goat._logout() }
 	await goat.account.createAccount(server)
 
 	//upgrade oliver
@@ -104,12 +105,11 @@ const levelUp = async () => {
 	// 		console.log(`Error ${server}`, e)
 	// 	}
 	// }
+	goat._setAccount(ACCOUNT_GAUTIER)
 	goat._logout()
 	await handleAccount('1094')
 
 	console.log('Finished !')
 }
 
-levelUp().then(() => {
-	process.exit()
-})
+levelUp().then(() => { process.exit() })

@@ -4,7 +4,7 @@ import { FIGHT_STATUS } from '../../types/WorldBoss'
 export class WorldBoss extends GoatResource {
 	async attackMinion(id: number): Promise<FIGHT_STATUS> {
 		try {
-			await this.request({ wordboss: { hitmenggu: { id } } })
+			await this.request({ 'wordboss': { 'hitmenggu': { id } }, 'rsn': '4fxvghbbxf' })
 		} catch (e) {
 			const msg = e.toString()
 			if (msg === 'Error: The battle has ended') {
@@ -20,7 +20,7 @@ export class WorldBoss extends GoatResource {
 
 	async attackBoss(id: number): Promise<FIGHT_STATUS> {
 		try {
-			await this.request({ wordboss: { hitgeerdan: { id } } })
+			await this.request({ 'wordboss': { 'hitgeerdan': { id } }, 'rsn': '8mxiaxameo' })
 		} catch (e) {
 			const msg = e.toString()
 			if (msg === 'Error: The battle has ended') {
@@ -35,10 +35,10 @@ export class WorldBoss extends GoatResource {
 	}
 
 	async recoverHero(id: number): Promise<void> {
-		await this.request({ wordboss: { comebackmg: { id: id } } })
+		await this.request({ 'wordboss': { 'comebackmg': { 'id': id } }, 'rsn': '1ktubatqtaa' })
 	}
 
 	async buyItem(id: number): Promise<void> {
-		await this.request({ wordboss: { shopBuy: { id: id } } })
+		await this.request({ 'wordboss':{ 'shopBuy':{ 'id': id } },'rsn':'8jmamkkvrkk' })
 	}
 }

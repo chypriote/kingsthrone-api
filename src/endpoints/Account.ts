@@ -4,7 +4,7 @@ import { FriendsStatus, GameInfos } from '../../types'
 
 export class Account extends GoatResource {
 	async createAccount(server: string): Promise<void | GameInfos> {
-		this._goat.server = server
+		this._goat._setServer(server)
 		const player = await this._goat.profile.getGameInfos(true)
 
 		if (player.user.user.name) {
@@ -19,93 +19,100 @@ export class Account extends GoatResource {
 				console.log('exiting')
 				process.exit()
 			}
-		} catch (e) {
-			console.log('catching name error')
-		}
+		} catch (e) {console.log('catching name error')}
 
 		console.debug('Skipping guide')
-		await this.request({ user: { adok: { label: '' } } })
-		await this.request({ fuli: { answer: { code: 'tg' } } })
-		await this.request({ guide: { guideUpguan: [] } })
-		await this.request({ guide: { guide: { gnew: 1 } } })
+		await this.request({ 'user': { 'adok': { 'label': '' } }, 'rsn': '8ajixearke' })
+		await this.request({ 'fuli': { 'answer': { 'code': 'tg' } }, 'rsn': '2ylhaxxbwy' })
+		await this.request({ 'rsn': '9zrsjbmimms', 'guide': { 'guideUpguan': [] } })
+		await this.request({ 'rsn': '8mvjxiivxm', 'guide': { 'guide': { 'gnew': 1 } } })
 
 		console.debug('Getting levies')
-		await this.request({ guide: { guide: { gnew: 2 } } })
-		await this.request({ fuli: { auto_supreme: [] } })
-		await this.request({ user: { refjingying: [] } })
-		await this.request({ user: { jingYing: { jyid: 2 } } })
-		await this.request({ guide: { guide: { gnew: 3 } } })
-		await this.request({ user: { jingYing: { jyid: 3 } } })
-		await this.request({ guide: { guide: { gnew: 4 } } })
-		await this.request({ user: { jingYing: { jyid: 4 } } })
-		await this.request({ guide: { guide: { gnew: 5 } } })
-		await this.request({ user: { adok: { label: '' } } })
-		await this.request({ user: { adok: { label: 'jingying' } } })
-		await this.request({ guide: { guide: { smap: 0, bmap: 1, mmap: 1 } } })
+		await this.request({ 'rsn': '5yvjaevaeh', 'guide': { 'guide': { 'gnew': 2 } } })
+		await this.request({ 'fuli': { 'auto_supreme': [] }, 'rsn': '8ajixejxxe' })
+		await this.request({ 'user': { 'refjingying': [] }, 'rsn': '1tqrwiautk' })
+		await this.request({ 'user': { 'jingYing': { 'jyid': 2 } }, 'rsn': '6wsylkxyxx' })
+		await this.request({ 'rsn': '2maxwlmbmay', 'guide': { 'guide': { 'gnew': 3 } } })
+		await this.request({ 'user': { 'jingYing': { 'jyid': 3 } }, 'rsn': '6xpslyusbk' })
+		await this.request({ 'rsn': '1tqrwiatqu', 'guide': { 'guide': { 'gnew': 4 } } })
+		await this.request({ 'user': { 'jingYing': { 'jyid': 4 } }, 'rsn': '4acmhxagbgb' })
+		await this.request({ 'rsn': '3hznswfhrf', 'guide': { 'guide': { 'gnew': 5 } } })
+		await this.request({ 'user': { 'adok': { 'label': '' } }, 'rsn': '8ajixekaxi' })
+		await this.request({ 'user': { 'adok': { 'label': 'jingying' } }, 'rsn': '2maxwlmbhqq' })
+		await this.request({ 'rsn': '6wsylkgxxx', 'guide': { 'guide': { 'smap': 0, 'bmap': 1, 'mmap': 1 } } })
 
 		console.debug('Campaign')
-		await this.request({ user: { pve: [] } })
-		await this.request({ guide: { guide: { gnew: 6 } } })
-		await this.request({ user: { adok: { label: 'jingying' } } })
-		await this.request({ user: { adok: { label: '' } } })
-		await this.request({ user: { adok: { label: 'jingying' } } })
-		await this.request({ guide: { guide: { gnew: 7 } } })
+		await this.request({ 'user': { 'pve': [] }, 'rsn': '5jwfvajwyyf' })
+		await this.request({ 'rsn': '8mvjxiekxm', 'guide': { 'guide': { 'gnew': 6 } } })
+		await this.request({ 'user': { 'adok': { 'label': 'jingying' } }, 'rsn': '3hznswfeke' })
+		await this.request({ 'user': { 'adok': { 'label': '' } }, 'rsn': '4cavxbmfhv' })
+		await this.request({ 'user': { 'adok': { 'label': 'jingying' } }, 'rsn': '5yvjaerpay' })
+		await this.request({ 'rsn': '5yvjaereyf', 'guide': { 'guide': { 'gnew': 7 } } })
 
 		console.debug('Upgrade Gerard')
-		await this.request({ hero: { upgrade: { id: 2 } } })
-		await this.request({ guide: { guide: { gnew: 7 } } })
-		await this.request({ user: { adok: { label: '' } } })
+		await this.request({ 'hero': { 'upgrade': { 'id': 2 } }, 'rsn': '1qtaewqtqwk' })
+		await this.request({ 'rsn': '5yvjaereyf', 'guide': { 'guide': { 'gnew': 7 } } })
+		await this.request({ 'user': { 'adok': { 'label': '' } }, 'rsn': '8ajixekkoe' })
+
 
 		console.debug('Fight Boss')
-		await this.request({ user: { pvb: { is_guide: 1, id: 2 } } })
-		await this.request({ user: { adok: { label: '' } } })
-		await this.request({ user: { adok: { label: '' } } })
+		await this.request({ 'user': { 'pvb': { 'is_guide': 1, 'id': 2 } }, 'rsn': '4acmhxacvgb' })
+		await this.request({ 'user': { 'adok': { 'label': '' } }, 'rsn': '5jwfvajvrhh' })
+		await this.request({ 'user': { 'adok': { 'label': '' } }, 'rsn': '9zrsjbzjics' })
 
 		console.debug('Collect quest 1')
-		await this.request({ task: { taskdo: { id: 1 } } })
-		await this.request({ guide: { guide: { gnew: 8 } } })
+		await this.request({ 'task': { 'taskdo': { 'id': 1 } }, 'rsn': '6swgplswlux' })
+		await this.request({ 'rsn': '5jwfvajvaff', 'guide': { 'guide': { 'gnew': 8 } } })
 
 		console.log(`Created ${name} on server ${server}`)
 	}
 
 	async getGeneratedName(): Promise<string> {
-		const name = await this.request({ guide: { randName: { sex: 1 } } })
+		const name = await this.request({ 'rsn': '6xpsluwksy', 'guide': { 'randName': { 'sex': 1 } } })
 
 		return name.a.system.randname.name
 	}
 
 	async setName(name: string): Promise<string> {
-		await this.request({ guide: { setUinfo: { sex: 1, name, job: 7 } } })
+		await this.request({ 'rsn': '6xpsluwkyk', 'guide': { 'setUinfo': { 'sex': 1, name, 'job': 7 } } })
 
 		return name
 	}
 
 	async doMainQuestTask(id: number): Promise<void> {
-		await this.request({ task: { taskdo: { id: id } } })
+		await this.request({ 'task':{ 'taskdo':{ 'id': id } }, 'rsn':sample([
+			'5jywefaefyf', '2yaqhyxlaab', '8jmairooamo', '9zmrcntmjis', '6sxwyubsbuy',
+			'7cogcyopyv', '3ehpwekhrsn', '5wpfwypayf', '6sxwyubgxgk', '4cimcfvccg',
+			'6xwbkxuxswy', '9mrtimnmbts', '9zmrcntnbzc', '4afcvighgbb', '1ktuikbqrua',
+		]) })
 	}
 
 	async getThrone(): Promise<void> {
-		const status = await this.request({ user: { refjingying: [] } })
+		const status = await this.request({ 'user':{ 'refjingying':[] },'rsn':'5jywefajvyr' })
 
-		for (let i = 0; i < status.a.jingYing.army.num; i++) {
-			await this.request({ user: { jingYing: { jyid: 4 } } })
+		for (let i=0; i < status.a.jingYing.army.num; i++) {
+			await this.request({ 'user':{ 'jingYing':{ 'jyid':4 } },'rsn':'6sxwyglskxg' })
 		}
-		for (let i = 0; i < status.a.jingYing.coin.num; i++) {
-			await this.request({ user: { jingYing: { jyid: 2 } } })
+		for (let i=0; i < status.a.jingYing.coin.num; i++) {
+			await this.request({ 'user':{ 'jingYing':{ 'jyid':2 } },'rsn':'7cogcyxgoy' })
 		}
-		for (let i = 0; i < status.a.jingYing.food.num; i++) {
-			await this.request({ user: { jingYing: { jyid: 3 } } })
+		for (let i=0; i < status.a.jingYing.food.num; i++) {
+			await this.request({ 'user':{ 'jingYing':{ 'jyid':3 } },'rsn':'3hkfhezfke' })
 		}
 	}
 	async doCampaignGuide(smap: number, bmap: number, mmap: number): Promise<void> {
-		await this.request({ guide: { guide: { smap, bmap, mmap } } })
+		await this.request({ 'guide':{ 'guide':{ smap, bmap, mmap } }, 'rsn': sample([
+			'6wugwxgwly', '6wugwxgwly', '8maoemkekio', '8jmaikxvakk', '2anxayxmmx', '6sxwyglppbg', '1ktuikaiwek',
+		]) })
 	}
 	async doGuide(id: number): Promise<void> {
-		await this.request({ guide: { guide: { gnew: id } } })
+		await this.request({ 'guide':{ 'guide':{ 'gnew': id } }, 'rsn': sample([
+			'8maoemroaam', '8maoemroaam', '2myabnqqxnb',
+		]) })
 	}
 
 	async getFriendList(): Promise<FriendsStatus> {
-		const data = await this.request({ friends: { getPrivateChatData: [] } })
+		const data = await this.request({ 'friends':{ 'getPrivateChatData':[] },'rsn':'3zeeheeewsn' })
 		return data.a.friends
 	}
 }

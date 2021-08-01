@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Goat } from '../src/goat'
-export { GoatResource } from '../src/GoatResource'
-export { AccountConfig } from '../src/AccountConfig'
+export { GoatResource, IAccount } from '../src/GoatResource'
+
 export const goat: Goat
 
 export * from './Alliance'

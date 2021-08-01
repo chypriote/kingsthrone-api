@@ -3,12 +3,12 @@ import { StaminaResult, VisitsStatus, Wife } from '../../types'
 
 export class Maidens extends GoatResource {
 	async visitRandomMaiden(): Promise<Wife> {
-		const visit = await this.request({ wife: { sjxo: [] } })
+		const visit = await this.request({ 'wife': { 'sjxo': [] }, 'rsn': '9rzrtbtsrs' })
 		return visit.u.wife.wifeList[0]
 	}
 
 	async useStaminaDraught(num = 1): Promise<StaminaResult> {
-		const items = await this.request({ wife: { weige: { num } } })
+		const items = await this.request({ 'wife': { 'weige': { num } }, 'rsn': '3zhwezreeef' })
 
 		return {
 			items: items.u.item.itemList[0],
@@ -17,12 +17,12 @@ export class Maidens extends GoatResource {
 	}
 
 	async getAvailableVisits(): Promise<VisitsStatus> {
-		const next = await this.request({ user: { refwife: [] } })
+		const next = await this.request({ 'user': { 'refwife': [] }, 'rsn': '9zrimzcbbis' })
 
 		return next.a.wife.jingLi
 	}
 	async payVisit(id: number): Promise<Wife> {
-		const visit = await this.request({ wife: { xxoo: { id: id } } })
+		const visit = await this.request({ 'wife':{ 'xxoo':{ 'id':id } },'rsn':'6wugwgwpuk' })
 		return visit.u.wife.wifeList[0]
 	}
 }

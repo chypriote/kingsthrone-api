@@ -1,4 +1,14 @@
 import { Goat } from './goat';
+export interface IAccount {
+    rsn: string;
+    login: {
+        loginAccount: {
+            platform: string;
+            openkey: string;
+            openid: string;
+        };
+    };
+}
 export declare class GoatResource {
     _goat: Goat;
     _data: string | null;
@@ -9,7 +19,7 @@ export declare class GoatResource {
     private _makeHeaders;
     private _retry;
     private _request;
-    protected request(data?: any): Promise<any>;
     private _login;
+    protected request(data?: any): Promise<any>;
     _unsafe(data: any): Promise<any>;
 }
