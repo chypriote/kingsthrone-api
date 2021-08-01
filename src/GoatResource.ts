@@ -2,11 +2,16 @@
 require('dotenv').config()
 import axios from 'axios'
 import { Goat } from './goat'
+import ShortUniqueId from 'short-unique-id'
 
+const uid = new ShortUniqueId({
+	dictionary: 'alphanum_lower',
+	length: 10,
+})
 enum RETRY_REASON {
-	LOGIN= 0,
-	VERSION= 1,
-	SERVER_BUSY= 2,
+	LOGIN = 0,
+	VERSION = 1,
+	SERVER_BUSY = 2,
 }
 export interface IAccount {
 	rsn: string
@@ -25,13 +30,13 @@ export interface IAccount {
 
 export class GoatResource {
 	_goat: Goat
-	_data: string|null = null
+	_data: string | null = null
 
 	constructor(goat: Goat) {
 		this._goat = goat
 	}
 
-	private static _getErrorMessage(response: any): string|null {
+	private static _getErrorMessage(response: any): string | null {
 		if (response?.a?.system?.errror) {
 			return response.a.system.errror.msg
 		}
@@ -54,6 +59,10 @@ export class GoatResource {
 		if (msg) {
 			if (msg === 'You have logged in elsewhere') {
 				console.warn('Provided token expired, reconnecting')
+				await this._login(true)
+				return await this._retry(RETRY_REASON.LOGIN)
+			}
+			if (msg === 'Login expired, please login again') {
 				await this._login(true)
 				return await this._retry(RETRY_REASON.LOGIN)
 			}
@@ -83,49 +92,39 @@ export class GoatResource {
 			'Accept-Encoding': 'identity',
 			'Content-Type': 'application/x-www-form-urlencoded',
 			'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 7.1.1; ONEPLUS A5000 Build/NMF26X)',
-			'Host': this._goat._getHost(),
-			'Cookie': this._goat._getCookie(),
-			'Connection': 'Keep-Alive',
+			Host: this._goat._getHost(),
+			Cookie: this._goat._getCookie(),
+			Connection: 'Keep-Alive',
 		}
 	}
-	private async _retry (reason: RETRY_REASON|null = null): Promise<any> {
-		if (!this._data) { throw new Error(`${reason}: Nothing to retry`) }
+	private async _retry(reason: RETRY_REASON | null = null): Promise<any> {
+		if (!this._data) {
+			throw new Error(`${reason}: Nothing to retry`)
+		}
 		return await this._request(this._data)
 	}
 	private async _request(data: any = null): Promise<any> {
-		const makeRequest = async (data: string) => {
-
-			return await axios.post(
-				this._goat._getBaseUrl(),
-				data,
-				{
+		const makeRequest = async (data: Record<string, unknown>) => {
+			return await axios
+				.post(this._goat._getBaseUrl(), JSON.stringify({ ...data, rsn: uid.randomUUID() }), {
 					params: this._makeParams(),
 					headers: this._makeHeaders(),
-				}).then(response => response.data)
+				})
+				.then((response) => response.data)
 		}
 
-		return await makeRequest(JSON.stringify(data || {}))
+		return await makeRequest(data)
 	}
 	private async _login(reconnect = false): Promise<void> {
 		const user = this._goat._getAccount()
 
 		//prevent relogin on gautier
-		if (
-			user.rsn === '2ylxannmqx'
-			&& this._goat._getServer() === '699'
-			&& process.env.TOKEN
-			&& !reconnect
-		) {
+		if (user.rsn === '2ylxannmqx' && this._goat._getServer() === '699' && process.env.TOKEN && !reconnect) {
 			this._goat._setToken(process.env.TOKEN)
 			this._goat._setGid('699002934')
 			return
 		}
-		if (
-			user.rsn === '2ylxannmqx'
-			&& this._goat._getServer() === '1094'
-			&& process.env.TOKEN_1094
-			&& !reconnect
-		) {
+		if (user.rsn === '2ylxannmqx' && this._goat._getServer() === '1094' && process.env.TOKEN_1094 && !reconnect) {
 			this._goat._setToken(process.env.TOKEN_1094)
 			this._goat._setGid('1094003443')
 			return
@@ -135,15 +134,19 @@ export class GoatResource {
 		const response = await this._request(user)
 
 		if (!response?.a?.loginMod) {
-			 throw new Error(`LoginError: ${response?.a?.system?.errror.msg}`)
+			throw new Error(`LoginError: ${response?.a?.system?.errror.msg}`)
 		}
 
 		this._goat._login(response.a.loginMod.loginAccount)
 	}
 
 	protected async request(data: any = null): Promise<any> {
-		if (!this._data) {this._data = data}
-		if (!this._goat.isLoggedIn) { await this._login() }
+		if (!this._data) {
+			this._data = data
+		}
+		if (!this._goat.isLoggedIn) {
+			await this._login()
+		}
 		return await this._jsonResponseHandler(await this._request(data))
 	}
 	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -151,4 +154,3 @@ export class GoatResource {
 		return await this._request(data)
 	}
 }
-
