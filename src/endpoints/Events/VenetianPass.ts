@@ -16,4 +16,7 @@ export class VenetianPass extends GoatResource {
 	async claimAllLevels(): Promise<void> {
 		await this.request({ huodong2: { hd1241getrwd: { type: 0, id: 0 } } })
 	}
+	async buyShopItem(id: number): Promise<void> {
+		await this.request({ huodong2:{ hd1241BoxExchange:{ num:1, id: id } } })
+	}
 }

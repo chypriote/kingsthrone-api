@@ -16,4 +16,7 @@ export class KingsPass extends GoatResource {
 	async claimAllLevels(): Promise<void> {
 		await this.request({ huodong: { hd1086getrwd: { type: 0, id: 0 } } })
 	}
+	async buyShopItem(id: number): Promise<void> {
+		await this.request({ 'huodong':{ 'hd1086BoxExchange':{ 'num':1,'id':id } } })
+	}
 }

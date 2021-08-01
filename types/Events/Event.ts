@@ -203,7 +203,10 @@ interface EventPassConfig {
 	}
 }
 export interface EventPass {
-	shop: EventPassShopItem[]
+	shop: {
+		hasScore: number
+		wsShopcfg: EventPassShopItem[]
+	}
 	pass: EventPassConfig
 }
 
