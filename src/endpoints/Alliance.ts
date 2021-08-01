@@ -10,7 +10,7 @@ interface UsedHero {
 
 export class Alliance extends GoatResource {
 	async getAllianceInfos(): Promise<AllianceFull> {
-		const data = await this.request({ club: { shopList: [], clubInfo: [] }, rsn: '4fcghcixmfb' })
+		const data = await this.request({ club: { shopList: [], clubInfo: [] } })
 		return data.a.club
 	}
 	async contributeAlliance(): Promise<boolean> {
@@ -64,20 +64,20 @@ export class Alliance extends GoatResource {
 		return data.a.club.clubKuaInfo
 	}
 	async getXServerFight(): Promise<XSBattleStatus> {
-		const data = await this.request({ club: { kuaPKCszr: [] }, rsn: '6sxwgxpbwbg' })
+		const data = await this.request({ club: { kuaPKCszr: [] } })
 		return {
 			status: data.a.club.clubKuaCszr,
 			heroes: data.a.club.kuaHeroList,
 		}
 	}
 	async dispatchXServerHero(id: number): Promise<void> {
-		await this.request({ club: { kuaPKAdd: { hid: id } }, rsn: '2myaxyxlabq' })
+		await this.request({ club: { kuaPKAdd: { hid: id } } })
 	}
 	async getXServerRewardInfos(): Promise<XSRewardInfos> {
-		const data = await this.request({ club: { kuaPKrwdinfo: [] }, rsn: '1qktbbkqiiu' })
+		const data = await this.request({ club: { kuaPKrwdinfo: [] } })
 		return data.a.club.clubKuapkrwd
 	}
 	async claimXServerReward(): Promise<void> {
-		await this.request({ club: { kuaPKrwdget: { id: 1 } }, rsn: '8arjeeoxeo' })
+		await this.request({ club: { kuaPKrwdget: { id: 1 } } })
 	}
 }

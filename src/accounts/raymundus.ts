@@ -1,7 +1,7 @@
 import { IAccount } from '../GoatResource'
 
 export const ACCOUNT_RAYMUNDUS: IAccount = {
-	rsn: '7xcxcypvslg',
+	name: 'Raymundus',
 	login: {
 		loginAccount: {
 			platform: 'gaotukc',

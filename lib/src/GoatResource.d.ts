@@ -1,6 +1,6 @@
 import { Goat } from './goat';
 export interface IAccount {
-    rsn: string;
+    name: string;
     login: {
         loginAccount: {
             platform: string;

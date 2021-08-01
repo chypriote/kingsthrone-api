@@ -47,7 +47,7 @@ export class LimitedTimeQuests extends GoatResource {
 		return data.a.xshuodong.sjxo
 	}
 	async claimRewards(type: LTQ_TYPES): Promise<void> {
-		const data = JSON.parse(`{ "huodong":{ "hd${type}Rwd":[] },"rsn":"6xwwbpglbgg" }`)
+		const data = JSON.parse(`{ "huodong":{ "hd${type}Rwd":[] } }`)
 		await this.request(data)
 	}
 }

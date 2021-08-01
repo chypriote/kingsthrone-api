@@ -14,7 +14,7 @@ enum RETRY_REASON {
 	SERVER_BUSY = 2,
 }
 export interface IAccount {
-	rsn: string
+	name: string
 	login: {
 		loginAccount: {
 			platform: string
@@ -119,12 +119,12 @@ export class GoatResource {
 		const user = this._goat._getAccount()
 
 		//prevent relogin on gautier
-		if (user.rsn === '2ylxannmqx' && this._goat._getServer() === '699' && process.env.TOKEN && !reconnect) {
+		if (this._goat._isGautier() && this._goat._getServer() === '699' && process.env.TOKEN && !reconnect) {
 			this._goat._setToken(process.env.TOKEN)
 			this._goat._setGid('699002934')
 			return
 		}
-		if (user.rsn === '2ylxannmqx' && this._goat._getServer() === '1094' && process.env.TOKEN_1094 && !reconnect) {
+		if (this._goat._getServer() === '1094' && process.env.TOKEN_1094 && !reconnect) {
 			this._goat._setToken(process.env.TOKEN_1094)
 			this._goat._setGid('1094003443')
 			return

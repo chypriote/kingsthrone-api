@@ -3,16 +3,16 @@ import { EventRank, PicnicStatus } from '../../../types'
 
 export class Picnic extends GoatResource {
 	async eventInfos(): Promise<PicnicStatus> {
-		const data = await this.request({ 'huodong': { 'hd1028Info': [] }, 'rsn': '4ciccfcvff' })
+		const data = await this.request({ huodong: { hd1028Info: [] } })
 		return data.a.gehuodong
 	}
 
 	async claimQuest(id: number): Promise<void> {
-		await this.request({ 'huodong': { 'hd1028Task': { 'id': id } }, 'rsn': '9zmtssbtjct' })
+		await this.request({ huodong: { hd1028Task: { id: id } } })
 	}
 
 	async getRankings(): Promise<EventRank> {
-		const data = await this.request({ 'huodong':{ 'hd1028Rank':[] },'rsn':'1qktqabuqbk' })
+		const data = await this.request({ huodong: { hd1028Rank: [] } })
 		return data.a.gehuodong.list
 	}
 }
