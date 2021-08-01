@@ -1,13 +1,14 @@
 {
   "name": "kingsthrone-api",
   "private": false,
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "lib",
   "types": "types/index.d.ts",
   "dependencies": {
     "axios": "^0.21",
     "dotenv": "^10.0",
-    "lodash": "^4.17"
+    "lodash": "^4.17",
+    "short-unique-id": "^4.3"
   },
   "devDependencies": {
     "@types/axios": "^0.14",
