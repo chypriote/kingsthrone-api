@@ -77,7 +77,11 @@ interface OldGameStats {
     nowFlower: number;
 }
 export interface LoggedUser {
-    pvb: [];
+    pvb: {
+        f: number;
+        h: number;
+        id: number;
+    }[];
     headframe: {
         id: number;
     };

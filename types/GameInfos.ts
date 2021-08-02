@@ -79,7 +79,7 @@ interface OldGameStats {
 }
 
 export interface LoggedUser {
-	pvb: []
+	pvb: { f: number, h: number, id: number}[]
 	headframe: { id: number }
 	user: UserDetails
 	guide: UserGuide

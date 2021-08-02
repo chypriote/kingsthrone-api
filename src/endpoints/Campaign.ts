@@ -7,4 +7,7 @@ export class Campaign extends GoatResource {
 	async fightCampaignBoss(id: number): Promise<void> {
 		await this.request({ user: { pvb: { id: id } } })
 	}
+	async claimCastleCampaign(id: number): Promise<void> {
+		await this.request({ 'user':{ 'getChapterRwd':{ 'bid':id } } })
+	}
 }
