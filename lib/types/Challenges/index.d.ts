@@ -1,2 +1,3 @@
 export * from './AllianceSiege';
-export * from './AllianceChallenge';
+export * from './AllianceChallenges';
+export * from './Challenges';

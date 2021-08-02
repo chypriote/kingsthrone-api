@@ -10,7 +10,9 @@ export declare class LimitedTimeQuests extends GoatResource {
     login(): Promise<LTQStatus>;
     tourneyScore(): Promise<LTQStatus>;
     arrangeMarriages(): Promise<LTQStatus>;
+    challengeTokens(): Promise<LTQStatus>;
     energyDraughtQuest(): Promise<LTQStatus>;
+    increaseCharm(): Promise<LTQStatus>;
     randomVisitsQuest(): Promise<LTQStatus>;
     claimRewards(type: LTQ_TYPES): Promise<void>;
 }

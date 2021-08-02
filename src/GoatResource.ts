@@ -129,6 +129,11 @@ export class GoatResource {
 			this._goat._setGid('1094003443')
 			return
 		}
+		if (this._goat._getServer() === '691' && process.env.TOKEN_691 && !reconnect) {
+			this._goat._setToken(process.env.TOKEN_691)
+			this._goat._setGid('691005165')
+			return
+		}
 
 		this._goat._logout()
 		const response = await this._request(user)

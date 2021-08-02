@@ -38,9 +38,17 @@ export class LimitedTimeQuests extends GoatResource {
 		const data = await this.request({ huodong: { hd210Info: [] } })
 		return data.a.xshuodong.lianyin
 	}
+	async challengeTokens(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd216Info: [] } })
+		return data.a.xshuodong.tiaozhanshu
+	}
 	async energyDraughtQuest(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd220Info: [] } })
 		return data.a.xshuodong.huolidan
+	}
+	async increaseCharm(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd221Info: [] } })
+		return data.a.xshuodong.meilizhi
 	}
 	async randomVisitsQuest(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd1045Info: [] } })

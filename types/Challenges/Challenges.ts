@@ -1,5 +1,5 @@
 import { Item } from '../Item'
-import { ClubEventRwd, EventRwd } from '../Events'
+import { EventRwd } from '../Events'
 
 export interface ChallengeRwdStatus {
 	rwd_stat: number
@@ -34,21 +34,18 @@ export interface ChallengeCfg {
 	rwd: EventRwd[]
 	msg: string
 }
-export interface AllianceChallengeCfg extends ChallengeCfg {
-	rwd: ClubEventRwd[]
-}
 
-export interface AllianceIntimacyStatus {
-	clublove: { cfg: AllianceChallengeCfg }
-	clublovelist: ChallengeRank[]
-	myclubRid: ChallengeRid
-	myclubloveRwdStatus: ChallengeRwdStatus
+export interface TourneyStatus {
+	yamen: { cfg: ChallengeCfg }
+	yamenlist: ChallengeRank[]
+	myyamenRid: ChallengeRid
+	myyamenRwdStatus: ChallengeRwdStatus
 }
-export interface AllianceExperienceStatus {
-	club: { cfg: AllianceChallengeCfg }
-	clublist: ChallengeRank[]
-	myclubRid: ChallengeRid
-	myclubloveRwdStatus: ChallengeRwdStatus
+export interface CharmStatus {
+	meili: { cfg: ChallengeCfg }
+	meililist: ChallengeRank[]
+	myMeiLiRid: ChallengeRid
+	myMeiLiRwdStatus: ChallengeRwdStatus
 }
 export interface QualityStatus {
 	zizhi: { cfg: ChallengeCfg }
@@ -74,4 +71,3 @@ export interface MaidenExpStatus {
 	myJiaRenRid: ChallengeRid
 	myJiaRenRwdStatus: ChallengeRwdStatus
 }
-
