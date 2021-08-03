@@ -1,7 +1,7 @@
 import { Item } from '../Item'
 
 export enum PRIZE_TYPE {
-	GRAND= 0,
+	GRAND= 5,
 	FIRST= 1,
 	SECOND= 2,
 	THIRD= 3,
