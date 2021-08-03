@@ -14,6 +14,6 @@ export interface PicnicStatus {
 	shop: EventShop
 	task: {
 		tasks: EventQuest[]
-		taskscfg: EventQuestCfg
+		taskscfg: EventQuestCfg[]
 	}
 }
