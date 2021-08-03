@@ -3,7 +3,7 @@ import {
 	Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial,
 	Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic,
 	Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt,
-	VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin
+	VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -72,6 +72,7 @@ export class Goat {
 		coronation: new Coronation(this),
 		darkCastle: new DarkCastle(this),
 		divining: new Divining(this),
+		diyStore: new DIYStore(this),
 		dragonSlaying: new DragonSlaying(this),
 		gardenStroll: new GardenStroll(this),
 		giftOfTheFae: new GiftOfTheFae(this),
