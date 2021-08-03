@@ -1,5 +1,6 @@
 import { GoatResource } from '../GoatResource'
 import { ExpeditionInfo, KingdomExpInfo, MerchantInfos } from '../../types'
+import { orderBy } from 'lodash'
 
 export class Expeditions extends GoatResource {
 	//Merchant ventures
@@ -40,21 +41,11 @@ export class Expeditions extends GoatResource {
 	}
 
 	async doKingdomExpedition(level: number): Promise<KingdomExpInfo> {
-		const heroes = this._goat._isGautier()
-			? [
-					{ pos: 1, power: 999999999, hid: 41 },
-					{ pos: 2, power: 999999999, hid: 3 },
-					{ pos: 3, power: 999999999, hid: 8 },
-					{ pos: 4, power: 999999999, hid: 58 },
-					{ pos: 5, power: 999999999, hid: 52 },
-			  ]
-			: [
-					{ pos: 1, power: 999999999, hid: 41 },
-					{ pos: 2, power: 999999999, hid: 3 },
-					{ pos: 3, power: 999999999, hid: 18 },
-					{ pos: 4, power: 999999999, hid: 58 },
-					{ pos: 5, power: 999999999, hid: 204 },
-			  ]
+		const heroes = orderBy((await this._goat.profile.getGameInfos()).hero.heroList, 'zfight_num', 'desc')
+		const heros = []
+		for (let i = 1; i < 6; i++) {
+			heros.push({ pos: i, power: 999999999, hid: heroes[i - 1].id })
+		}
 		const data = await this.request({ huodong: { hd1268Play: { heros: heroes, id: level } } })
 
 		return data.a.kingdomExpedition.info

@@ -122,7 +122,7 @@ export class Goat {
 		return this.gid
 	}
 	_setGid(gid: string): this {
-		this.gid = gid === '691005139' ? '691005130' : gid
+		this.gid = gid
 		return this
 	}
 	_getToken(): string | null {
@@ -137,7 +137,20 @@ export class Goat {
 		return `http://${this.host}/servers/s${this.server}.php`
 	}
 	_isGautier(): boolean {
-		return this.gid === '699002934' || this.loginAccount.name === 'Gautier'
+		return this.server === '699' &&
+		(this.gid === '699002934' || this.loginAccount.name === 'Gautier')
+	}
+	_isDemophlos(): boolean {
+		return this.server === '699' &&
+		(this.gid === '6999005053' || this.loginAccount.name === 'Demophlos')
+	}
+	_isShallan(): boolean {
+		return this.server === '1094' &&
+		(this.gid === '1094003443' || this.loginAccount.name === 'Gautier')
+	}
+	_isAriana(): boolean {
+		return this.server === '691' &&
+		(this.gid === '691005165' || this.loginAccount.name === 'Gautier')
 	}
 	_getAccount(): IAccount {
 		return this.loginAccount

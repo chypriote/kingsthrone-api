@@ -38,6 +38,6 @@ export interface Hero {
 	eep: GameStats //Paragon ?
 	cep: GameStats //Paragon ?
 	aep: GameStats //Total Stats
-	zfight_num: number
+	zfight_num: number //Military Power
 	gfight_num: number
 }

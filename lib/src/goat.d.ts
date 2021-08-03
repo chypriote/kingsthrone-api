@@ -82,6 +82,9 @@ export declare class Goat {
     _setToken(token: string): this;
     _getBaseUrl(): string;
     _isGautier(): boolean;
+    _isDemophlos(): boolean;
+    _isShallan(): boolean;
+    _isAriana(): boolean;
     _getAccount(): IAccount;
     _setAccount(account: IAccount): this;
     _login({ token, uid }: {
