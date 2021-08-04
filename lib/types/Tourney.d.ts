@@ -89,7 +89,7 @@ export declare type Reward = {
     items: RewardItem[];
     jiade: RewardItem[];
 };
-interface Defense extends User {
+export interface Defense extends User {
     id: number;
     fscore: number;
     kill: number;

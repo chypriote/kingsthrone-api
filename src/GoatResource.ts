@@ -65,7 +65,7 @@ export class GoatResource {
 				await this._login(true)
 				return await this._retry(RETRY_REASON.LOGIN)
 			}
-			if (msg === `Error: server_is_busyuser_${this._goat._getGid()}`) {
+			if (msg.indexOf('server_is_busyuser') > -1) {
 				return await this._retry(RETRY_REASON.SERVER_BUSY)
 			}
 
