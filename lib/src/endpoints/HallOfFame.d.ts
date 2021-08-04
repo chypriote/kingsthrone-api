@@ -1,8 +1,8 @@
 import { GoatResource } from '../GoatResource';
-import { HallOfFamer } from '../../types';
+import { HallOfFamer, TITLE } from '../../types';
 export declare class HallOfFame extends GoatResource {
     getHoFInfo(): Promise<HallOfFamer[]>;
-    getHoFTitle(): Promise<HallOfFamer[]>;
-    payHomage(): Promise<void>;
+    getHoFTitle(title: TITLE): Promise<HallOfFamer[]>;
+    payHomage(uid: string, title?: TITLE): Promise<void>;
     claimHomage(): Promise<void>;
 }
