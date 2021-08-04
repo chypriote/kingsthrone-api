@@ -1,4 +1,3 @@
-import { sample } from 'lodash'
 import { GoatResource } from '../GoatResource'
 import { FriendsStatus, GameInfos } from '../../types'
 
