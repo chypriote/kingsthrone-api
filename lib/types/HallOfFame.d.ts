@@ -1,5 +1,5 @@
 import { User } from './User';
-export declare enum TITLE {
+export declare enum HOF_TITLE {
     MIGHT = 1,
     CHARM = 2,
     CONQUERORS = 3,

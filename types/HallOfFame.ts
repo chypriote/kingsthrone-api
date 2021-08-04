@@ -1,6 +1,6 @@
 import { User } from './User'
 
-export enum TITLE {
+export enum HOF_TITLE {
 	MIGHT= 1,
 	CHARM= 2,
 	CONQUERORS= 3,

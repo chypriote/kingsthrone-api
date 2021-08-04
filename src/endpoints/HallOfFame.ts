@@ -1,5 +1,5 @@
 import { GoatResource } from '../GoatResource'
-import { HallOfFamer, TITLE } from '../../types'
+import { HallOfFamer, HOF_TITLE } from '../../types'
 
 export class HallOfFame extends GoatResource {
 	async getHoFInfo(): Promise<HallOfFamer[]> {
@@ -8,13 +8,13 @@ export class HallOfFame extends GoatResource {
 		return data.a.huanggong.Info
 	}
 
-	async getHoFTitle(title: TITLE): Promise<HallOfFamer[]> {
+	async getHoFTitle(title: HOF_TITLE): Promise<HallOfFamer[]> {
 		const data = await this.request({ huanggong: { getInfoByWid: { wid: title } } })
 
 		return data.a.huanggong.widInfo
 	}
 
-	async payHomage(uid: string, title: TITLE = TITLE.MIGHT): Promise<void> {
+	async payHomage(uid: string, title: HOF_TITLE = HOF_TITLE.MIGHT): Promise<void> {
 		await this.request({ huanggong: { qingAn: { fuid: uid, chenghao: title } } })
 	}
 
