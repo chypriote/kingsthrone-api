@@ -51,3 +51,24 @@ export type XSOpponent = {
 	turn: number,
 	type: number,
 }
+
+export interface XSRanking {
+	myScore: {
+		myName: string
+		myScore: number
+		myScorerank: number
+	}
+	severRank: {
+		sid: string
+		name: string
+		rid: number
+		num: number
+	}
+	severScore: {
+		myName: string
+		myScore: number
+		myScorerank: number
+	}
+	scoreRank: User[]
+  
+}

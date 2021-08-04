@@ -52,7 +52,6 @@ export class GoatResource {
 
 		if (response?.a?.system?.version) {
 			this._goat._setVersion(response.a.system.version.ver)
-			await this._login(true)
 			return await this._retry(RETRY_REASON.VERSION)
 		}
 
@@ -138,6 +137,10 @@ export class GoatResource {
 		this._goat._logout()
 		const response = await this._request(user)
 
+		if (response?.a?.system?.version) {
+			this._goat._setVersion(response.a.system.version.ver)
+			return await this._login(true)
+		}
 		if (!response?.a?.loginMod) {
 			throw new Error(`LoginError: ${response?.a?.system?.errror.msg}`)
 		}

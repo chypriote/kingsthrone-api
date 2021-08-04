@@ -1,5 +1,5 @@
 import { GoatResource } from '../../GoatResource'
-import { OpponentHero, Reward, TourneyShopItem, XSOngoingFight } from '../../../types'
+import { OpponentHero, Reward, TourneyShopItem, XSOngoingFight, XSRanking } from '../../../types'
 
 export class XServerTourney extends GoatResource {
 	async xsGetTourneyInfos(): Promise<XSOngoingFight> {
@@ -41,9 +41,12 @@ export class XServerTourney extends GoatResource {
 		try {
 			await this.request({ yamen: { getdilyrwd: { id } } })
 			return true
-		} catch (e) {
-			/*We want to ignore completely*/
-		}
+		} catch (e) {/*We want to ignore completely*/}
 		return false
+	}
+
+	async xsGetRankings(): Promise<XSRanking> {
+		const data = await this.request({ kuayamen: { getRank: { type: 1 } } })
+		return data.a.kuayamen
 	}
 }
