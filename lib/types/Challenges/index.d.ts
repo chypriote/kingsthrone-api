@@ -10,5 +10,6 @@ export declare enum CHALLENGE_TYPES {
     TOURNEY = 254,
     CHARM = 258,
     SPEND_GOLD = 255,
-    QUALITY = 1078
+    QUALITY = 1078,
+    EQUIPMENT = 1339
 }
