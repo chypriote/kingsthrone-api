@@ -4,7 +4,7 @@ import { AllianceExperienceStatus } from '../../../types'
 export class AllianceExperience extends GoatResource {
 	async eventInfos(): Promise<AllianceExperienceStatus> {
 		const data = await this.request({ huodong: { hd250Info: [] } })
-		return data.a.cbhuodong
+		return { ...data.a.cbhuodong, rewards: data.u.cbhuodong.cbTaskStatus }
 	}
 	async claimProgressReward(id: number): Promise<void> {
 		await this.request({ huodong: { hdCbGetRwd: { huodongId: 250, id: id } } })

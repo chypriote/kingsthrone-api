@@ -29,6 +29,12 @@ export interface TourneyStatus {
     yamenlist: ChallengeRank[];
     myyamenRid: ChallengeRid;
     myyamenRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
 }
 export interface CharmStatus {
     meili: {
@@ -37,6 +43,12 @@ export interface CharmStatus {
     meililist: ChallengeRank[];
     myMeiLiRid: ChallengeRid;
     myMeiLiRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
 }
 export interface QualityStatus {
     zizhi: {
@@ -45,6 +57,12 @@ export interface QualityStatus {
     zizhilist: ChallengeRank[];
     myZiZhiRid: ChallengeRid;
     myZiZhiRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
 }
 export interface GrainStatus {
     liangshi: {
@@ -53,6 +71,12 @@ export interface GrainStatus {
     liangshilist: ChallengeRank[];
     myLiangShiRid: ChallengeRid;
     myLiangShiRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
 }
 export interface RaiseChildrenStatus {
     zsshili: {
@@ -61,6 +85,12 @@ export interface RaiseChildrenStatus {
     zsshililist: ChallengeRank[];
     myzsShiliRid: ChallengeRid;
     myzsShiliRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
 }
 export interface MaidenExpStatus {
     jiaren: {
@@ -69,6 +99,12 @@ export interface MaidenExpStatus {
     jiarenlist: ChallengeRank[];
     myJiaRenRid: ChallengeRid;
     myJiaRenRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
 }
 export interface SpendGoldStatus {
     yinliang: {
@@ -77,4 +113,10 @@ export interface SpendGoldStatus {
     yinlianglist: ChallengeRank[];
     myYinLiangRid: ChallengeRid;
     myYinLiangRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
 }

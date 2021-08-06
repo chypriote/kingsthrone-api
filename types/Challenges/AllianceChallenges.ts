@@ -14,11 +14,13 @@ export interface AllianceIntimacyStatus {
 	clublovelist: ChallengeRank[]
 	myclubRid: ChallengeRid
 	myclubloveRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
 export interface AllianceExperienceStatus {
 	club: { cfg: AllianceChallengeCfg }
 	clublist: ChallengeRank[]
 	myclubRid: ChallengeRid
 	myclubloveRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
 

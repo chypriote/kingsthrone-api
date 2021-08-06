@@ -1,4 +1,4 @@
-import { ClubEventRwd, EventProgressReward, EventRwd, GenericEventInfo } from '../Events'
+import { EventProgressReward, EventRwd, GenericEventInfo } from '../Events'
 
 export interface ChallengeRwdStatus {
 	rwd_stat: number
@@ -30,40 +30,47 @@ export interface TourneyStatus {
 	yamenlist: ChallengeRank[]
 	myyamenRid: ChallengeRid
 	myyamenRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
 export interface CharmStatus {
 	meili: { cfg: ChallengeCfg }
 	meililist: ChallengeRank[]
 	myMeiLiRid: ChallengeRid
 	myMeiLiRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
 export interface QualityStatus {
 	zizhi: { cfg: ChallengeCfg }
 	zizhilist: ChallengeRank[]
 	myZiZhiRid: ChallengeRid
 	myZiZhiRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
 export interface GrainStatus {
 	liangshi: { cfg: ChallengeCfg }
 	liangshilist: ChallengeRank[]
 	myLiangShiRid: ChallengeRid
 	myLiangShiRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
 export interface RaiseChildrenStatus {
 	zsshili: { cfg: ChallengeCfg }
 	zsshililist: ChallengeRank[]
 	myzsShiliRid: ChallengeRid
 	myzsShiliRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
 export interface MaidenExpStatus {
 	jiaren: { cfg: ChallengeCfg }
 	jiarenlist: ChallengeRank[]
 	myJiaRenRid: ChallengeRid
 	myJiaRenRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
 export interface SpendGoldStatus {
 	yinliang: { cfg: ChallengeCfg }
 	yinlianglist: ChallengeRank[]
 	myYinLiangRid: ChallengeRid
 	myYinLiangRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
