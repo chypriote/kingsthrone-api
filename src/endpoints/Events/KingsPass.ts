@@ -11,7 +11,7 @@ export class KingsPass extends GoatResource {
 	}
 
 	async claimLevel(id: number): Promise<void> {
-		await this.request({ huodong: { hd1086getrwd: { type: 0, id: id } } })
+		await this.request({ huodong: { hd1086getrwd: { type: 0, 'id': id } } })
 	}
 	async claimAllLevels(): Promise<void> {
 		await this.request({ huodong: { hd1086getrwd: { type: 0, id: 0 } } })

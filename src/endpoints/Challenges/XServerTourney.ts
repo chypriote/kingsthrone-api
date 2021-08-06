@@ -41,7 +41,7 @@ export class XServerTourney extends GoatResource {
 		try {
 			await this.request({ yamen: { getdilyrwd: { id } } })
 			return true
-		} catch (e) {/*We want to ignore completely*/}
+		} catch (e) {/*We want to ignore completely*/		}
 		return false
 	}
 

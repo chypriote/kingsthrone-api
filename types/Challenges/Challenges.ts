@@ -1,4 +1,3 @@
-import { Item } from '../Item'
 import { ClubEventRwd, EventProgressReward, EventRwd, GenericEventInfo } from '../Events'
 
 export interface ChallengeRwdStatus {
@@ -22,7 +21,7 @@ export interface ChallengeCfg {
 	info: GenericEventInfo
 	showNeed: { wang: number }
 	task: EventProgressReward[]
-	rwd: EventRwd[]|ClubEventRwd[]
+	rwd: EventRwd[]
 	msg: string
 }
 

@@ -6,7 +6,7 @@ import {
 	ContinualTopUpStatus,
 	EventRank,
 	LoginRewardsStatus,
-	RenownedMerchantEvent,
+	RenownedMerchantEvent
 } from '../../../types'
 
 export class RenownedMerchant extends GoatResource {
@@ -34,7 +34,7 @@ export class RenownedMerchant extends GoatResource {
 	}
 
 	async buyExchangeItem(id: number, count = 1): Promise<void> {
-		await this.request({ huodong2: { hd1245Exchange: { num: count, id: id } } })
+		await this.request({ huodong2: { hd1245Exchange: { num: count, 'id': id } } })
 	}
 
 	/** Login Rewards */
@@ -52,7 +52,7 @@ export class RenownedMerchant extends GoatResource {
 		return data.a.anniversaryPullInWishTree
 	}
 	async setWishTreeReward(id: number, day: number, pos: number, type: CHERISHED_WISH_TYPE): Promise<void> {
-		await this.request({ huodong2: { hd1209SelectRwd: { type: type, pos: pos, dc: day, id: id } } })
+		await this.request({ huodong2: { hd1209SelectRwd: { type: type, pos: pos, dc: day, 'id': id } } })
 	}
 	async getWishTreeReward(type: CHERISHED_WISH_TYPE): Promise<void> {
 		await this.request({ huodong2: { hd1209Rwd: { type: type } } })

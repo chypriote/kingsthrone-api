@@ -1,4 +1,4 @@
-import { ClubEventRwd, EventProgressReward, EventRwd, GenericEventInfo } from '../Events';
+import { EventProgressReward, EventRwd, GenericEventInfo } from '../Events';
 export interface ChallengeRwdStatus {
     rwd_stat: number;
 }
@@ -19,7 +19,7 @@ export interface ChallengeCfg {
         wang: number;
     };
     task: EventProgressReward[];
-    rwd: EventRwd[] | ClubEventRwd[];
+    rwd: EventRwd[];
     msg: string;
 }
 export interface TourneyStatus {

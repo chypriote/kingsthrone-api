@@ -3,7 +3,7 @@ import { TourneyStatus } from '../../../types'
 
 export class Tourney extends GoatResource {
 	async eventInfos(): Promise<TourneyStatus> {
-		const data = await this.request({ 'huodong':{ 'hd254Info':[] } })
+		const data = await this.request({ huodong: { hd254Info: [] } })
 		return data.a.cbhuodong
 	}
 	async claimProgressReward(id: number): Promise<void> {

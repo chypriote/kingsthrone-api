@@ -22,6 +22,6 @@ export class Divining extends GoatResource {
 	}
 
 	async getShopItem(id: number): Promise<void> {
-		await this.request({ huodong: { hd1123Exchange: { num: 1, id: id } } })
+		await this.request({ huodong: { hd1123Exchange: { num: 1, 'id': id } } })
 	}
 }
