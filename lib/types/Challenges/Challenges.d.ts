@@ -1,4 +1,4 @@
-import { EventProgressReward, EventRwd, GenericEventInfo } from '../Events';
+import { EquipmentMatchingPower, EventProgressReward, EventRwd, GenericEventInfo } from '../Events';
 export interface ChallengeRwdStatus {
     rwd_stat: number;
 }
@@ -113,6 +113,19 @@ export interface SpendGoldStatus {
     yinlianglist: ChallengeRank[];
     myYinLiangRid: ChallengeRid;
     myYinLiangRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
+}
+export interface EquipmentStatus {
+    power: {
+        cfg: EquipmentMatchingPower;
+    };
+    powerlist: ChallengeRank[];
+    myPowerRid: ChallengeRid;
     rewards: {
         id: number;
         taskStatus: {

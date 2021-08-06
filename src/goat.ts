@@ -53,7 +53,7 @@ import {
 	TourneyChallenge,
 	ScratchAndWin,
 	DIYStore,
-	EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern
+	EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -107,6 +107,7 @@ export class Goat {
 		allianceSiege: new AllianceSiege(this),
 		allianceIntimacy: new AllianceIntimacy(this),
 		allianceExperience: new AllianceExperience(this),
+		equipment: new Equipment(this),
 		grain: new Grain(this),
 		quality: new Quality(this),
 		maidenExp: new MaidenExp(this),
