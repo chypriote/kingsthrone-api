@@ -2,7 +2,7 @@ import { ACCOUNT_NAPOLEON, goat } from './src/goat'
 
 const test = async () => {
 	goat._setAccount(ACCOUNT_NAPOLEON)
-	await goat.hallOfFame.getHoFInfo()
+	console.log((await goat.profile.getGameInfos()).huodonglist.all)
 }
 
 test().then(() => {

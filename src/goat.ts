@@ -53,7 +53,7 @@ import {
 	TourneyChallenge,
 	ScratchAndWin,
 	DIYStore,
-	EquipmentTrial, SpendGold, MysteriousIsland
+	EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -130,6 +130,7 @@ export class Goat {
 		giftOfTheFae: new GiftOfTheFae(this),
 		giftingTree: new GiftingTree(this),
 		heroesTrial: new HeroesTrial(this),
+		huntersTavern: new HuntersTavern(this),
 		jewelsOfLuck: new JewelsOfLuck(this),
 		kingsPass: new KingsPass(this),
 		maidenPainting: new MaidenPainting(this),

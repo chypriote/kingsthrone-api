@@ -43,6 +43,7 @@ export { GardenStroll } from './Events/GardenStroll';
 export { GiftOfTheFae } from './Events/GiftOfTheFae';
 export { GiftingTree } from './Events/GiftingTree';
 export { HeroesTrial } from './Events/HeroesTrial';
+export { HuntersTavern } from './Events/HuntersTavern';
 export { JewelsOfLuck } from './Events/JewelsOfLuck';
 export { KingsPass } from './Events/KingsPass';
 export { MaidenPainting } from './Events/MaidenPainting';
