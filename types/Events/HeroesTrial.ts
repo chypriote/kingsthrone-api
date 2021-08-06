@@ -1,4 +1,5 @@
 import { Item } from '../Item'
+import { EventPhasesReward, EventTowerNpc } from './Event'
 
 export interface HeroesTrialFightResult {
 	fight: {
@@ -44,13 +45,8 @@ export interface HeroesTrialStatus {
 		level: number
 		needCost: number
 		needHeroCost: number
-		phasesRewards: { num: number, rewards: Item[], id: number }[] //Progress chests
+		phasesRewards: EventPhasesReward[] //Progress chests
 		image: Item[]
-		towerNpc: {
-			health: number
-			attack: number
-			crit_rate: number
-			crit_damage: number
-		}
+		towerNpc: EventTowerNpc
 	}
 }

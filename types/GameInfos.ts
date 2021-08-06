@@ -161,7 +161,7 @@ export type GameInfos = {
 		total: { cfg: PurchaseReward, cons: number, rwd: number }
 	}
 	czlbhuodong: PackageShop
-	dadian: { counter: { id: number, name: string, num: number }[] } //main quest status
+	dadian: { counter: { id: number, name: string, num: number }[] } //quests status
 	daily: RegularTasks
 	derail: unknown
 	friends: {fapplyStatus: { status: number }}
@@ -169,7 +169,7 @@ export type GameInfos = {
 	hangUpSystem: { info: CastleInfos[] } //Kingdom
 	hanlin: { info: Hanlin }
 	hero: { heroList: Hero[] }
-	huanggong: { qingAn: { type: number } }
+	huanggong: { qingAn: { type: number } } //HoF homage paid
 	huodonglist: { all: Event[] }
 	item: { itemList: Item[] }
 	jingYing: LevyStatus

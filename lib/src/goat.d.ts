@@ -1,4 +1,4 @@
-import { Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore } from './endpoints';
+import { Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore, EquipmentTrial, SpendGold, MysteriousIsland } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -45,6 +45,7 @@ export declare class Goat {
         raiseChildren: RaiseChildren;
         tourney: TourneyChallenge;
         charm: Charm;
+        spendGold: SpendGold;
     };
     events: {
         alchemy: Alchemy;
@@ -55,6 +56,7 @@ export declare class Goat {
         divining: Divining;
         diyStore: DIYStore;
         dragonSlaying: DragonSlaying;
+        equipmentTrial: EquipmentTrial;
         gardenStroll: GardenStroll;
         giftOfTheFae: GiftOfTheFae;
         giftingTree: GiftingTree;
@@ -62,6 +64,7 @@ export declare class Goat {
         jewelsOfLuck: JewelsOfLuck;
         kingsPass: KingsPass;
         maidenPainting: MaidenPainting;
+        mysteriousIsland: MysteriousIsland;
         pathOfWealth: PathOfWealth;
         peoplesMonarch: PeoplesMonarch;
         picnic: Picnic;
@@ -85,7 +88,6 @@ export declare class Goat {
     _isGautier(): boolean;
     _isDemophlos(): boolean;
     _isShallan(): boolean;
-    _isAriana(): boolean;
     _getAccount(): IAccount;
     _setAccount(account: IAccount): this;
     _login({ token, uid }: {

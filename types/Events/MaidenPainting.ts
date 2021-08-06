@@ -1,14 +1,16 @@
 import {
 	EventChestReward,
+	EventLimitedOffers,
 	EventPointExchangeTotalLimit,
 	EventQuest,
 	EventQuestCfg,
 	EventRank,
 	EventRwd,
 	EventWheel,
-	EventWheelConfig, GenericEventInfo
+	EventWheelConfig
 } from './Event'
 import { Item } from '../Item'
+import { ChallengeCfg } from '../Challenges'
 
 interface MaidenPaintingWheel extends EventWheel {
 	cfg: EventWheelConfig & {
@@ -22,37 +24,9 @@ interface MaidenPaintingWheel extends EventWheel {
 }
 
 interface MaidenPaintingChallenge {
-	love: { cfg: {
-			info: GenericEventInfo
-			kua_server: string[]
-			showNeed: { wang: number }
-			task: {
-				id: number
-				target: number
-				rewards: Item[]
-			}[]
-			rwd: EventRwd[]
-			msg: string
-	}}
+	love: { cfg: ChallengeCfg & { kua_server: string[] }}
 	lovelist: EventRank[]
 	myloveRid: EventRank
-}
-
-interface MaidenPaintingLimitedOffers {
-	info: { giftStatus: any }
-	cfg: {
-		giftCfg: {
-			id: number
-			name: string
-			need: number
-			limit: number
-			nowlimit: number
-			islimit: number
-			rebate: number
-			rwd: Item[]
-		}[]
-		showHero: number
-	}
 }
 
 interface MaidenPainting {
@@ -89,9 +63,9 @@ interface MaidenPaintingShop {
 }
 
 export interface MaidenPaintingStatus {
-	wheel: MaidenPaintingWheel,
-	challenge: MaidenPaintingChallenge,
-	limitedOffer: MaidenPaintingLimitedOffers,
-	event: MaidenPainting,
+	wheel: MaidenPaintingWheel
+	challenge: MaidenPaintingChallenge
+	limitedOffer: EventLimitedOffers
+	event: MaidenPainting
 	shop: MaidenPaintingShop
 }

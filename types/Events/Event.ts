@@ -47,7 +47,7 @@ export interface EventChestReward {
 }
 
 export interface EventRwd {
-	member: { count: number, id: number, kind?: number }[]
+	member: Item[]
 	rand: { re: number, rs: number }
 }
 export interface ClubEventRwd {
@@ -94,6 +94,10 @@ export interface EventDropWithProbability {
  * 	- Jewels of Luck
  * 	- Maiden painting
  */
+export interface EventWheelInfo {
+	chosen: {id: number, key: number}[]
+	num: number
+}
 export interface EventWheelConfig {
 	wall_gache:  {
 		id: number
@@ -105,10 +109,7 @@ export interface EventWheelConfig {
 	bili: number
 }
 export interface EventWheel {
-	info: {
-		chosen: {id: number, key: number}[]
-		num: number
-	}
+	info: EventWheelInfo
 	cfg: EventWheelConfig
 }
 
@@ -208,6 +209,58 @@ export interface EventPass {
 		wsShopcfg: EventPassShopItem[]
 	}
 	pass: EventPassConfig
+}
+
+/**
+ * Tower event
+ *  - Heroes trial
+ *  - Equipment trial
+ */
+export interface EventTowerNpc {
+	health: number
+	attack: number
+	crit_rate: number
+	crit_damage: number
+}
+
+export interface ContinualTopUpStatus {
+	hasGetBox: number
+	resetTime: number
+	cfg: {
+		info: GenericEventInfo & {ycdc: number}
+		showHero: number
+		boxRwd: { id: number, count: number }[]
+		rwd: { id: number, items: Item[], need: number /*vipexp needed*/ }[]
+		msg: string
+	}
+	cons: number
+	rwd?: number
+}
+export interface EventProgressReward {
+	id: number;
+	target: number;
+	rewards: Item[];
+}
+export interface EventLimitedOffers {
+	info: { giftStatus: { id: number, num: number }[] } //packs already bought
+	cfg: {
+		giftCfg: {
+			id: number
+			name: string
+			need: number
+			limit: number
+			nowlimit: number
+			islimit: number
+			rebate: number
+			rwd: Item[]
+		}[]
+		showHero: number
+	}
+}
+export interface EventPhasesReward {
+	id: number
+	num: number
+	rewards: Item[]
 }
 
 export interface GenericEventInfo {

@@ -1,9 +1,59 @@
 import {
-	Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle,
-	Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial,
-	Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic,
-	Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt,
-	VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore
+	Account,
+	Alchemy,
+	Alliance,
+	AllianceExperience,
+	AllianceIntimacy,
+	AllianceSiege,
+	BlessedChest,
+	Campaign,
+	Children,
+	Coronation,
+	DarkCastle,
+	Deathmatch,
+	Divining,
+	DragonSlaying,
+	Expeditions,
+	Feasts,
+	GardenStroll,
+	GiftingTree,
+	GiftOfTheFae,
+	Grain,
+	HallOfFame,
+	Heroes,
+	HeroesTrial,
+	Items,
+	JewelsOfLuck,
+	Kingdom,
+	KingsPass,
+	LimitedTimeQuests,
+	MaidenExp,
+	MaidenPainting,
+	Maidens,
+	Mail,
+	PathOfWealth,
+	PeoplesMonarch,
+	Picnic,
+	Processions,
+	Profile,
+	Quality,
+	RaiseChildren,
+	Rankings,
+	Renovation,
+	RenownedMerchant,
+	Rewards,
+	Shop,
+	ThroneRoom,
+	Tourney,
+	TreasureHunt,
+	VenetianPass,
+	WorldBoss,
+	XServerTourney,
+	Charm,
+	TourneyChallenge,
+	ScratchAndWin,
+	DIYStore,
+	EquipmentTrial, SpendGold, MysteriousIsland
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -63,6 +113,7 @@ export class Goat {
 		raiseChildren: new RaiseChildren(this),
 		tourney: new TourneyChallenge(this),
 		charm: new Charm(this),
+		spendGold: new SpendGold(this),
 	}
 
 	events = {
@@ -74,6 +125,7 @@ export class Goat {
 		divining: new Divining(this),
 		diyStore: new DIYStore(this),
 		dragonSlaying: new DragonSlaying(this),
+		equipmentTrial: new EquipmentTrial(this),
 		gardenStroll: new GardenStroll(this),
 		giftOfTheFae: new GiftOfTheFae(this),
 		giftingTree: new GiftingTree(this),
@@ -81,6 +133,7 @@ export class Goat {
 		jewelsOfLuck: new JewelsOfLuck(this),
 		kingsPass: new KingsPass(this),
 		maidenPainting: new MaidenPainting(this),
+		mysteriousIsland: new MysteriousIsland(this),
 		pathOfWealth: new PathOfWealth(this),
 		peoplesMonarch: new PeoplesMonarch(this),
 		picnic: new Picnic(this),
@@ -148,10 +201,6 @@ export class Goat {
 	_isShallan(): boolean {
 		return this.server === '1094' &&
 		(this.gid === '1094003443' || this.loginAccount.name === 'Gautier')
-	}
-	_isAriana(): boolean {
-		return this.server === '691' &&
-		(this.gid === '691005165' || this.loginAccount.name === 'Gautier')
 	}
 	_getAccount(): IAccount {
 		return this.loginAccount

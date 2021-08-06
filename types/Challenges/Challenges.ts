@@ -1,5 +1,5 @@
 import { Item } from '../Item'
-import { EventRwd } from '../Events'
+import { ClubEventRwd, EventProgressReward, EventRwd, GenericEventInfo } from '../Events'
 
 export interface ChallengeRwdStatus {
 	rwd_stat: number
@@ -19,19 +19,10 @@ export interface ChallengeRank {
 }
 
 export interface ChallengeCfg {
-	info: {
-		id: number
-		title: string
-		pindex: number
-		type: number
-		sTime: number
-		eTime: number
-		showTime: number
-		_act_id: string
-	}
+	info: GenericEventInfo
 	showNeed: { wang: number }
-	task: { id: number, target: number, rewards: Item[] }[]
-	rwd: EventRwd[]
+	task: EventProgressReward[]
+	rwd: EventRwd[]|ClubEventRwd[]
 	msg: string
 }
 
@@ -70,4 +61,10 @@ export interface MaidenExpStatus {
 	jiarenlist: ChallengeRank[]
 	myJiaRenRid: ChallengeRid
 	myJiaRenRwdStatus: ChallengeRwdStatus
+}
+export interface SpendGoldStatus {
+	yinliang: { cfg: ChallengeCfg }
+	yinlianglist: ChallengeRank[]
+	myYinLiangRid: ChallengeRid
+	myYinLiangRwdStatus: ChallengeRwdStatus
 }

@@ -47,7 +47,7 @@ export interface ITourneyInfos {
     fuser: User;
 }
 export interface ITourneyStatus {
-    win: ITourneyResult;
+    win?: ITourneyResult;
     fight: ITourneyFight;
     info: ITourneyInfos;
 }

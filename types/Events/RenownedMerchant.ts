@@ -1,4 +1,10 @@
-import { EventDropWithProbability, EventPointExchangeAllLimit, EventRwd, GenericEventInfo } from './Event'
+import {
+	ContinualTopUpStatus,
+	EventDropWithProbability,
+	EventPointExchangeAllLimit,
+	EventRwd,
+	GenericEventInfo
+} from './Event'
 import { Item } from '../Item'
 
 export interface RenownedMerchantEvent {
@@ -34,21 +40,6 @@ export interface CherishedWishStatus {
 		gems_rwd: CherishedWishReward[]
 		vip_rwd: CherishedWishReward[]
 	}
-}
-
-/** Continual Top-Up */
-export interface ContinualTopUpStatus {
-	hasGetBox: number
-	resetTime: number
-	cfg: {
-		info: GenericEventInfo & {ycdc: number}
-		showHero: number
-		boxRwd: { id: number, count: number }[]
-		rwd: { id: number, items: Item[], need: number /*vipexp needed*/ }[]
-		msg: string
-	}
-	cons: number
-	rwd?: any
 }
 
 /** Login Rewards */

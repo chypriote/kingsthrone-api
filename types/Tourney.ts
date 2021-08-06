@@ -48,7 +48,7 @@ export interface ITourneyInfos {
 }
 
 export interface ITourneyStatus { //===OngoingFight
-	win: ITourneyResult
+	win?: ITourneyResult
 	fight: ITourneyFight
 	info: ITourneyInfos
 	//myrank
