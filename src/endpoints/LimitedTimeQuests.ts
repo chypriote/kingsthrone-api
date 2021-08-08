@@ -18,6 +18,10 @@ export class LimitedTimeQuests extends GoatResource {
 		const data = await this.request({ huodong: { hd204Info: [] } })
 		return data.a.xshuodong.juanzhou
 	}
+	async increaseIntimacy(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd205Info: [] } })
+		return data.a.xshuodong.qinmi
+	}
 	async increaseKP(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd206Info: [] } })
 		return data.a.xshuodong.shili
@@ -42,6 +46,14 @@ export class LimitedTimeQuests extends GoatResource {
 		const data = await this.request({ huodong: { hd216Info: [] } })
 		return data.a.xshuodong.tiaozhanshu
 	}
+	async processionsDonation(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd218Info: [] } })
+		return data.a.xshuodong.zhenzai
+	}
+	async goodwillDraughtQuest(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd219Info: [] } })
+		return data.a.xshuodong.tilidan
+	}
 	async energyDraughtQuest(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd220Info: [] } })
 		return data.a.xshuodong.huolidan
@@ -49,6 +61,14 @@ export class LimitedTimeQuests extends GoatResource {
 	async increaseCharm(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd221Info: [] } })
 		return data.a.xshuodong.meilizhi
+	}
+	async attendFeasts(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd222Info: [] } })
+		return data.a.xshuodong.fuyanhui
+	}
+	async feastPoints(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd225Info: [] } })
+		return data.a.xshuodong.jiulouzf
 	}
 	async randomVisitsQuest(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd1045Info: [] } })

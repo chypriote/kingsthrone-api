@@ -20,6 +20,9 @@ export class EquipmentTrial extends GoatResource{
 	async claimQuest(type: number, daily = 0): Promise<void> {
 		await this.request({ 'huodong2':{ 'hd1332GetTaskRewards':{ 'type': type,'is_every': daily } } })
 	}
+	async claimProgressChest(id: number): Promise<void> {
+		await this.request({ 'huodong2':{ 'hd1332GetRwd':{ 'id': id } } })
+	}
 
 	/** Equipment Wheel */
 	async equipmentWheelInfo(): Promise<EquipmentTrialWheel> {

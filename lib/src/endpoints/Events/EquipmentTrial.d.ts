@@ -4,6 +4,7 @@ import { ContinualTopUpStatus, EventLimitedOffers } from '../../../types';
 export declare class EquipmentTrial extends GoatResource {
     eventInfos(): Promise<EquipmentTrialStatus>;
     claimQuest(type: number, daily?: number): Promise<void>;
+    claimProgressChest(id: number): Promise<void>;
     /** Equipment Wheel */
     equipmentWheelInfo(): Promise<EquipmentTrialWheel>;
     selectReward(key: number, id: number): Promise<void>;
