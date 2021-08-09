@@ -133,3 +133,31 @@ export interface EquipmentStatus {
         }[];
     }[];
 }
+export interface IntimacyStatus {
+    love: {
+        cfg: ChallengeCfg;
+    };
+    lovelist: ChallengeRank[];
+    myloveRid: ChallengeRid;
+    myloveRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
+}
+export interface RareBeastsStatus {
+    zhenshou: {
+        cfg: ChallengeCfg;
+    };
+    zhenshoulist: ChallengeRank[];
+    myZhenShouRid: ChallengeRid;
+    myZhenShouRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
+}

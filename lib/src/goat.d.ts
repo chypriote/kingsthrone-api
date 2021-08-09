@@ -1,4 +1,4 @@
-import { Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore, EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment } from './endpoints';
+import { Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore, EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment, Intimacy, RareBeasts } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -47,6 +47,8 @@ export declare class Goat {
         tourney: TourneyChallenge;
         charm: Charm;
         spendGold: SpendGold;
+        intimacy: Intimacy;
+        rareBeasts: RareBeasts;
     };
     events: {
         alchemy: Alchemy;

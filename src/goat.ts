@@ -53,7 +53,7 @@ import {
 	TourneyChallenge,
 	ScratchAndWin,
 	DIYStore,
-	EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment
+	EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment, Intimacy, RareBeasts
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -115,6 +115,8 @@ export class Goat {
 		tourney: new TourneyChallenge(this),
 		charm: new Charm(this),
 		spendGold: new SpendGold(this),
+		intimacy: new Intimacy(this),
+		rareBeasts: new RareBeasts(this),
 	}
 
 	events = {
