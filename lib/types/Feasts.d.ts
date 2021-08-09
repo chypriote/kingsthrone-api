@@ -1,5 +1,5 @@
 import { Item } from './Item';
-declare enum FEAST_TYPE {
+export declare enum FEAST_TYPE {
     SMALL = 1,
     GREAT = 2
 }
@@ -116,4 +116,3 @@ export declare type FeastDetails = {
     maxnum: number;
     list: Seat[];
 };
-export {};

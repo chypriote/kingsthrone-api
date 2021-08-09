@@ -1,6 +1,6 @@
 import { Item } from './Item'
 
-enum FEAST_TYPE {
+export enum FEAST_TYPE {
 	SMALL = 1,
 	GREAT = 2,
 }
