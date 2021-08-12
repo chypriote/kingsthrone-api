@@ -31,4 +31,35 @@ export interface XSIntimacyStatus {
         }[];
     }[];
 }
+export interface XSIntimacyCurrent {
+    userlovelist: {
+        uid: string;
+        serv: number;
+        name: string;
+        rid: number;
+        score: number;
+    }[];
+    mykualoveRid: {
+        rid: number;
+        uid: number;
+        serv: number;
+        score: number;
+        name: string;
+    };
+    mykualoveRwdStatus: {
+        rwd_stat: number;
+    };
+    qufulovelist: {
+        uid: number;
+        serv: number;
+        rid: number;
+        score: number;
+    }[];
+    mykuaquloveRid: {
+        uid: number;
+        serv: number;
+        rid: number;
+        score: number;
+    };
+}
 export {};
