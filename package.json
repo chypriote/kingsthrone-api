@@ -1,7 +1,7 @@
 {
   "name": "kingsthrone-api",
   "private": false,
-  "version": "2.3.16",
+  "version": "2.3.17",
   "main": "lib",
   "types": "types/index.d.ts",
   "dependencies": {
@@ -14,7 +14,7 @@
     "@types/axios": "^0.14",
     "@types/dotenv": "^8.2",
     "@types/lodash": "4.14",
-    "@types/node": "^16.4",
+    "@types/node": "^16.6",
     "@typescript-eslint/eslint-plugin": "^4.29",
     "@typescript-eslint/parser": "^4.29",
     "eslint": "^7.32",
@@ -25,7 +25,7 @@
     "pinst": "^2.1",
     "prettier": "^2.3",
     "rimraf": "^3.0",
-    "ts-node": "^10.1",
+    "ts-node": "^10.2",
     "typescript": "^4.3"
   },
   "scripts": {

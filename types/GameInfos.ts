@@ -126,7 +126,7 @@ interface SpecialOfferPack {
 	itemText: string
 	showHero: { id: number, type: number }
 }
-interface PurchaseReward {
+export interface PurchaseReward {
 	info: {
 		_act_id: number
 		eTime: number //end time

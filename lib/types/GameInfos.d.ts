@@ -156,7 +156,7 @@ interface SpecialOfferPack {
         type: number;
     };
 }
-interface PurchaseReward {
+export interface PurchaseReward {
     info: {
         _act_id: number;
         eTime: number;

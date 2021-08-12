@@ -42,6 +42,10 @@ export class LimitedTimeQuests extends GoatResource {
 		const data = await this.request({ huodong: { hd210Info: [] } })
 		return data.a.xshuodong.lianyin
 	}
+	async trainingGround(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd211Info: [] } })
+		return data.a.xshuodong.school
+	}
 	async challengeTokens(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd216Info: [] } })
 		return data.a.xshuodong.tiaozhanshu
@@ -65,6 +69,14 @@ export class LimitedTimeQuests extends GoatResource {
 	async attendFeasts(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd222Info: [] } })
 		return data.a.xshuodong.fuyanhui
+	}
+	async damageAllianceBosses(): Promise<LTQStatus> {
+		const data = await this.request({ huodong:{ hd223Info:[] } })
+		return data.a.xshuodong.clubbosshit
+	}
+	async killAllianceBosses(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd224Info: [] } })
+		return data.a.xshuodong.clubbossjs
 	}
 	async feastPoints(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd225Info: [] } })

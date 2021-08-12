@@ -53,7 +53,16 @@ import {
 	TourneyChallenge,
 	ScratchAndWin,
 	DIYStore,
-	EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment, Intimacy, RareBeasts, XSIntimacy
+	EquipmentTrial,
+	SpendGold,
+	MysteriousIsland,
+	HuntersTavern,
+	Equipment,
+	Intimacy,
+	RareBeasts,
+	XSIntimacy,
+	TreasureTable,
+	FortunasBlessing
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -130,6 +139,7 @@ export class Goat {
 		diyStore: new DIYStore(this),
 		dragonSlaying: new DragonSlaying(this),
 		equipmentTrial: new EquipmentTrial(this),
+		fortunasBlessing: new FortunasBlessing(this),
 		gardenStroll: new GardenStroll(this),
 		giftingTree: new GiftingTree(this),
 		giftOfTheFae: new GiftOfTheFae(this),
@@ -145,6 +155,7 @@ export class Goat {
 		renownedMerchant: new RenownedMerchant(this),
 		scratchAndWin: new ScratchAndWin(this),
 		treasureHunt: new TreasureHunt(this),
+		treasureTable: new TreasureTable(this),
 		venetianPass: new VenetianPass(this),
 	}
 
