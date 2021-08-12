@@ -4,7 +4,7 @@ import { XSIntimacyCurrent, XSIntimacyStatus } from '../../../types'
 export class XSIntimacy extends GoatResource {
 	async eventInfos(): Promise<XSIntimacyStatus> {
 		const data = await this.request({ huodong: { hd314Info: [] } })
-		return { ...data.a.cbhuodong, rewards: data.u.cbhuodong.cbTaskStatus }
+		return { ...data.a.kuacbhuodong, rewards: data.u.cbhuodong.cbTaskStatus }
 	}
 	async getRankings(): Promise<XSIntimacyCurrent> {
 		const data = await this.request({ 'huodong':{ 'hd314UserRank':[] } })
