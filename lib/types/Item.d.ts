@@ -43,6 +43,8 @@ export declare enum ITEMS {
     MERCENARY_CONTRACT = 69,
     TRIBUTE_CHEST = 79,
     SUP_WAR_FUNDS = 87,
+    URGENT_CALL_TO_ARMS = 88,
+    GOLD_TRIBUTE = 95,
     PROVISIONS_TRIBUTE = 96,
     SOLDIERS_TRIBUTE = 97,
     SUP_GOLD_TRIBUTE = 98,
@@ -53,7 +55,8 @@ export declare enum ITEMS {
     REWARD_PACK = 261,
     LARGE_REWARD_PACK = 262,
     NOBLE_REWARD_PACK = 263,
-    DOWRY_PACKAGE = 120
+    DOWRY_PACKAGE = 120,
+    GONDOLA = 14304
 }
 export declare const RESOURCES_ITEMS: ITEMS[];
 export declare const REWARD_PACKS: ITEMS[];
