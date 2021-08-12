@@ -53,7 +53,7 @@ import {
 	TourneyChallenge,
 	ScratchAndWin,
 	DIYStore,
-	EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment, Intimacy, RareBeasts
+	EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment, Intimacy, RareBeasts, XSIntimacy
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -102,21 +102,22 @@ export class Goat {
 	worldBoss = new WorldBoss(this)
 
 	challenges = {
-		xServerTourney: new XServerTourney(this),
-		deathmatch: new Deathmatch(this),
-		allianceSiege: new AllianceSiege(this),
-		allianceIntimacy: new AllianceIntimacy(this),
 		allianceExperience: new AllianceExperience(this),
+		allianceIntimacy: new AllianceIntimacy(this),
+		allianceSiege: new AllianceSiege(this),
+		charm: new Charm(this),
+		deathmatch: new Deathmatch(this),
 		equipment: new Equipment(this),
 		grain: new Grain(this),
-		quality: new Quality(this),
-		maidenExp: new MaidenExp(this),
-		raiseChildren: new RaiseChildren(this),
-		tourney: new TourneyChallenge(this),
-		charm: new Charm(this),
-		spendGold: new SpendGold(this),
 		intimacy: new Intimacy(this),
+		xsIntimacy: new XSIntimacy(this),
+		maidenExp: new MaidenExp(this),
+		quality: new Quality(this),
+		raiseChildren: new RaiseChildren(this),
 		rareBeasts: new RareBeasts(this),
+		spendGold: new SpendGold(this),
+		tourney: new TourneyChallenge(this),
+		xServerTourney: new XServerTourney(this),
 	}
 
 	events = {
@@ -130,8 +131,8 @@ export class Goat {
 		dragonSlaying: new DragonSlaying(this),
 		equipmentTrial: new EquipmentTrial(this),
 		gardenStroll: new GardenStroll(this),
-		giftOfTheFae: new GiftOfTheFae(this),
 		giftingTree: new GiftingTree(this),
+		giftOfTheFae: new GiftOfTheFae(this),
 		heroesTrial: new HeroesTrial(this),
 		huntersTavern: new HuntersTavern(this),
 		jewelsOfLuck: new JewelsOfLuck(this),

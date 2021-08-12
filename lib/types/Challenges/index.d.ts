@@ -1,6 +1,7 @@
 export * from './AllianceSiege';
 export * from './AllianceChallenges';
 export * from './Challenges';
+export * from './XSChallenge';
 export declare enum CHALLENGE_TYPES {
     ALLIANCE_INTIMACY = 312,
     ALLIANCE_EXPERIENCE = 250,
@@ -13,5 +14,6 @@ export declare enum CHALLENGE_TYPES {
     SPEND_GOLD = 255,
     QUALITY = 1078,
     RARE_BEASTS = 1098,
-    EQUIPMENT = 1339
+    EQUIPMENT = 1339,
+    XS_INTIMACY = 314
 }
