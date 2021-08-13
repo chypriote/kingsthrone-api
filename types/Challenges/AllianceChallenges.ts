@@ -23,4 +23,12 @@ export interface AllianceExperienceStatus {
 	myclubloveRwdStatus: ChallengeRwdStatus
 	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
+export interface AlliancePowerStatus {
+	clubshili: { cfg: AllianceChallengeCfg }
+	clubshililist: ChallengeRank[]
+	myclubShiliRid: ChallengeRid
+	myclubShiliRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
+}
+
 

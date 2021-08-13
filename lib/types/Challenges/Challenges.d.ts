@@ -161,3 +161,17 @@ export interface RareBeastsStatus {
         }[];
     }[];
 }
+export interface FeastPointsStatus {
+    jiulou: {
+        cfg: ChallengeCfg;
+    };
+    jiuloulist: ChallengeRank[];
+    myJiuLouRid: ChallengeRid;
+    myjiulouRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
+}

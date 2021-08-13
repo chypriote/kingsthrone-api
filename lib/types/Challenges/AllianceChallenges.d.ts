@@ -37,3 +37,17 @@ export interface AllianceExperienceStatus {
         }[];
     }[];
 }
+export interface AlliancePowerStatus {
+    clubshili: {
+        cfg: AllianceChallengeCfg;
+    };
+    clubshililist: ChallengeRank[];
+    myclubShiliRid: ChallengeRid;
+    myclubShiliRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
+}

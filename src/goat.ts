@@ -62,7 +62,7 @@ import {
 	RareBeasts,
 	XSIntimacy,
 	TreasureTable,
-	FortunasBlessing
+	FortunasBlessing, AlliancePower, FeastPoints, AlliancePurchase, SparksUnderMoonlight
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -113,10 +113,12 @@ export class Goat {
 	challenges = {
 		allianceExperience: new AllianceExperience(this),
 		allianceIntimacy: new AllianceIntimacy(this),
+		alliancePower: new AlliancePower(this),
 		allianceSiege: new AllianceSiege(this),
 		charm: new Charm(this),
 		deathmatch: new Deathmatch(this),
 		equipment: new Equipment(this),
+		feastPoints: new FeastPoints(this),
 		grain: new Grain(this),
 		intimacy: new Intimacy(this),
 		xsIntimacy: new XSIntimacy(this),
@@ -131,6 +133,7 @@ export class Goat {
 
 	events = {
 		alchemy: new Alchemy(this),
+		alliancePurchase: new AlliancePurchase(this),
 		blessedChest: new BlessedChest(this),
 		castle: new Renovation(this),
 		coronation: new Coronation(this),
@@ -154,6 +157,7 @@ export class Goat {
 		picnic: new Picnic(this),
 		renownedMerchant: new RenownedMerchant(this),
 		scratchAndWin: new ScratchAndWin(this),
+		sparksUnderMoonlight: new SparksUnderMoonlight(this),
 		treasureHunt: new TreasureHunt(this),
 		treasureTable: new TreasureTable(this),
 		venetianPass: new VenetianPass(this),

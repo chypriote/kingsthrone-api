@@ -94,3 +94,10 @@ export interface RareBeastsStatus {
 	myZhenShouRwdStatus: ChallengeRwdStatus
 	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
+export interface FeastPointsStatus {
+	jiulou: { cfg: ChallengeCfg }
+	jiuloulist: ChallengeRank[]
+	myJiuLouRid: ChallengeRid
+	myjiulouRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
+}
