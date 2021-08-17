@@ -23,6 +23,7 @@ export { AllianceExperience } from './Challenges/AllianceExperience';
 export { AllianceIntimacy } from './Challenges/AllianceIntimacy';
 export { AlliancePower } from './Challenges/AlliancePower';
 export { AllianceSiege } from './Challenges/AllianceSiege';
+export { AllianceChampionship } from './Challenges/AllianceChampionship';
 export { Charm } from './Challenges/Charm';
 export { Deathmatch } from './Challenges/Deathmatch';
 export { Equipment } from './Challenges/Equipment';

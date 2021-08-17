@@ -68,7 +68,7 @@ import {
 	AlliancePurchase,
 	SparksUnderMoonlight,
 	ArchersAndAccolades,
-	KingdomPower, LoseSoldiers,
+	KingdomPower, LoseSoldiers, AllianceChampionship,
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -121,6 +121,7 @@ export class Goat {
 		allianceIntimacy: new AllianceIntimacy(this),
 		alliancePower: new AlliancePower(this),
 		allianceSiege: new AllianceSiege(this),
+		allianceChampionship: new AllianceChampionship(this),
 		charm: new Charm(this),
 		deathmatch: new Deathmatch(this),
 		equipment: new Equipment(this),
