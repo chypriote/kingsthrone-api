@@ -62,7 +62,13 @@ import {
 	RareBeasts,
 	XSIntimacy,
 	TreasureTable,
-	FortunasBlessing, AlliancePower, FeastPoints, AlliancePurchase, SparksUnderMoonlight
+	FortunasBlessing,
+	AlliancePower,
+	FeastPoints,
+	AlliancePurchase,
+	SparksUnderMoonlight,
+	ArchersAndAccolades,
+	KingdomPower, LoseSoldiers,
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
@@ -121,6 +127,8 @@ export class Goat {
 		feastPoints: new FeastPoints(this),
 		grain: new Grain(this),
 		intimacy: new Intimacy(this),
+		kingdomPower: new KingdomPower(this),
+		loseSoldiers: new LoseSoldiers(this),
 		xsIntimacy: new XSIntimacy(this),
 		maidenExp: new MaidenExp(this),
 		quality: new Quality(this),
@@ -134,6 +142,7 @@ export class Goat {
 	events = {
 		alchemy: new Alchemy(this),
 		alliancePurchase: new AlliancePurchase(this),
+		archersAndAccolads: new ArchersAndAccolades(this),
 		blessedChest: new BlessedChest(this),
 		castle: new Renovation(this),
 		coronation: new Coronation(this),

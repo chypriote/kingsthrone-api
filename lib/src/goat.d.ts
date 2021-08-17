@@ -1,4 +1,4 @@
-import { Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore, EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment, Intimacy, RareBeasts, XSIntimacy, TreasureTable, FortunasBlessing, AlliancePower, FeastPoints, AlliancePurchase, SparksUnderMoonlight } from './endpoints';
+import { Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore, EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment, Intimacy, RareBeasts, XSIntimacy, TreasureTable, FortunasBlessing, AlliancePower, FeastPoints, AlliancePurchase, SparksUnderMoonlight, ArchersAndAccolades, KingdomPower, LoseSoldiers } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -44,6 +44,8 @@ export declare class Goat {
         feastPoints: FeastPoints;
         grain: Grain;
         intimacy: Intimacy;
+        kingdomPower: KingdomPower;
+        loseSoldiers: LoseSoldiers;
         xsIntimacy: XSIntimacy;
         maidenExp: MaidenExp;
         quality: Quality;
@@ -56,6 +58,7 @@ export declare class Goat {
     events: {
         alchemy: Alchemy;
         alliancePurchase: AlliancePurchase;
+        archersAndAccolads: ArchersAndAccolades;
         blessedChest: BlessedChest;
         castle: Renovation;
         coronation: Coronation;

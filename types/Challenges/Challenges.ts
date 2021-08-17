@@ -101,3 +101,17 @@ export interface FeastPointsStatus {
 	myjiulouRwdStatus: ChallengeRwdStatus
 	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
+export interface KingdomPowerStatus {
+	shili: { cfg: ChallengeCfg }
+	shililist: ChallengeRank[]
+	myshiliRid: ChallengeRid
+	myshiliRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
+}
+export interface LoseSoldiersStatus {
+	shibing: { cfg: ChallengeCfg }
+	shibinglist: ChallengeRank[]
+	myShiBingRid: ChallengeRid
+	myShiBingRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
+}

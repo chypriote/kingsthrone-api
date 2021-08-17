@@ -8,7 +8,7 @@ export class LimitedTimeQuests extends GoatResource {
 	}
 	async loseSoldiers(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd202Info: [] } })
-		return data.a.xshuodong.juanzhou
+		return data.a.xshuodong.amy
 	}
 	async spendGold(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd203Info: [] } })
@@ -45,6 +45,10 @@ export class LimitedTimeQuests extends GoatResource {
 	async trainingGround(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd211Info: [] } })
 		return data.a.xshuodong.school
+	}
+	async killSiegeBoss(): Promise<LTQStatus> {
+		const data = await this.request({"huodong":{"hd215Info":[]}})
+		return data.a.xshuodong.jishag2d
 	}
 	async challengeTokens(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd216Info: [] } })
