@@ -47,7 +47,7 @@ export class LimitedTimeQuests extends GoatResource {
 		return data.a.xshuodong.school
 	}
 	async killSiegeBoss(): Promise<LTQStatus> {
-		const data = await this.request({"huodong":{"hd215Info":[]}})
+		const data = await this.request({ huodong: { hd215Info: [] } })
 		return data.a.xshuodong.jishag2d
 	}
 	async challengeTokens(): Promise<LTQStatus> {
