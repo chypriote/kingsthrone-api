@@ -57,6 +57,7 @@ import {
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
+import { Deathmatch } from './endpoints/Challenges/Deathmatch'
 
 const VERSION = process.env.VERSION || 'V1.3.571'
 const COOKIE = 'lyjxncc=c3ac4e77dff349b66c7aeed276e3eb6c'
@@ -101,22 +102,24 @@ export class Goat {
 	tourney = new Tourney(this)
 	worldBoss = new WorldBoss(this)
 
-	challenges = {
-		challenges: new Challenges(this),
-		allianceSiege: new AllianceSiege(this),
-		allianceChampionship: new AllianceChampionship(this),
+
+	challenges = new Challenges(this)
+	xsChallenges = {
 		xsIntimacy: new XSIntimacy(this),
 		xServerTourney: new XServerTourney(this),
 	}
 
 	events = {
 		alchemy: new Alchemy(this),
+		allianceChampionship: new AllianceChampionship(this),
 		alliancePurchase: new AlliancePurchase(this),
+		allianceSiege: new AllianceSiege(this),
 		archersAndAccolads: new ArchersAndAccolades(this),
 		blessedChest: new BlessedChest(this),
 		castle: new Renovation(this),
 		coronation: new Coronation(this),
 		darkCastle: new DarkCastle(this),
+		deathmatch: new Deathmatch(this),
 		divining: new Divining(this),
 		diyStore: new DIYStore(this),
 		dragonSlaying: new DragonSlaying(this),
