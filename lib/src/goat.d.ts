@@ -1,4 +1,4 @@
-import { Account, Alchemy, Alliance, AllianceExperience, AllianceIntimacy, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Deathmatch, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, Grain, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenExp, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Quality, RaiseChildren, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, Charm, TourneyChallenge, ScratchAndWin, DIYStore, EquipmentTrial, SpendGold, MysteriousIsland, HuntersTavern, Equipment, Intimacy, RareBeasts, XSIntimacy, TreasureTable, FortunasBlessing, AlliancePower, FeastPoints, AlliancePurchase, SparksUnderMoonlight, ArchersAndAccolades, KingdomPower, LoseSoldiers, AllianceChampionship } from './endpoints';
+import { Account, Alchemy, Alliance, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, ScratchAndWin, DIYStore, EquipmentTrial, MysteriousIsland, HuntersTavern, XSIntimacy, TreasureTable, FortunasBlessing, AlliancePurchase, SparksUnderMoonlight, ArchersAndAccolades, AllianceChampionship, Challenges } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -34,26 +34,10 @@ export declare class Goat {
     tourney: Tourney;
     worldBoss: WorldBoss;
     challenges: {
-        allianceExperience: AllianceExperience;
-        allianceIntimacy: AllianceIntimacy;
-        alliancePower: AlliancePower;
+        challenges: Challenges;
         allianceSiege: AllianceSiege;
         allianceChampionship: AllianceChampionship;
-        charm: Charm;
-        deathmatch: Deathmatch;
-        equipment: Equipment;
-        feastPoints: FeastPoints;
-        grain: Grain;
-        intimacy: Intimacy;
-        kingdomPower: KingdomPower;
-        loseSoldiers: LoseSoldiers;
         xsIntimacy: XSIntimacy;
-        maidenExp: MaidenExp;
-        quality: Quality;
-        raiseChildren: RaiseChildren;
-        rareBeasts: RareBeasts;
-        spendGold: SpendGold;
-        tourney: TourneyChallenge;
         xServerTourney: XServerTourney;
     };
     events: {

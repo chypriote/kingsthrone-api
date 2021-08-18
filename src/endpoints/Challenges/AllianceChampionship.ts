@@ -12,6 +12,6 @@ export class AllianceChampionship extends GoatResource {
 	}
 
 	async collectReward(turn: number): Promise<void> {
-		await this.request({"qxzb":{"qxzbBatAward":{"turn": turn}}})
+		await this.request({ 'qxzb':{ 'qxzbBatAward':{ 'turn': turn } } })
 	}
 }

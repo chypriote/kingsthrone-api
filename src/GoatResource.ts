@@ -52,6 +52,7 @@ export class GoatResource {
 
 		if (response?.a?.system?.version) {
 			this._goat._setVersion(response.a.system.version.ver)
+			console.warn(`New version ${response.a.system.version.ver}`)
 			return await this._retry(RETRY_REASON.VERSION)
 		}
 
