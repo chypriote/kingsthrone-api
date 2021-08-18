@@ -1,5 +1,5 @@
 import { GoatResource } from '../../GoatResource'
-import { AllianceChampionshipStatus, AllianceMatchList } from '../../../types/Challenges/AllianceChampionship'
+import { AllianceChampionshipStatus, AllianceMatchList } from '../../../types'
 
 export class AllianceChampionship extends GoatResource {
 	async eventInfos(): Promise<AllianceChampionshipStatus> {

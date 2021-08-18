@@ -1,6 +1,6 @@
-import { User } from './User';
-import { ITourneyFight, ITourneyInfos, ITourneyResult, ITourneyStatus } from './Tourney';
-import { Item } from './Item';
+import { User } from '../User';
+import { ITourneyFight, ITourneyInfos, ITourneyResult, ITourneyStatus } from '../Tourney';
+import { Item } from '../Item';
 interface DMTourneyFight extends ITourneyFight {
     fstate: number;
 }

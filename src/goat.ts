@@ -1,65 +1,20 @@
 import {
-	Account,
-	Alchemy,
-	Alliance,
-	AllianceSiege,
-	BlessedChest,
-	Campaign,
-	Children,
-	Coronation,
-	DarkCastle,
-	Divining,
-	DragonSlaying,
-	Expeditions,
-	Feasts,
-	GardenStroll,
-	GiftingTree,
-	GiftOfTheFae,
-	HallOfFame,
-	Heroes,
-	HeroesTrial,
-	Items,
-	JewelsOfLuck,
-	Kingdom,
-	KingsPass,
-	LimitedTimeQuests,
-	MaidenPainting,
-	Maidens,
-	Mail,
-	PathOfWealth,
-	PeoplesMonarch,
-	Picnic,
-	Processions,
-	Profile,
-	Rankings,
-	Renovation,
-	RenownedMerchant,
-	Rewards,
-	Shop,
-	ThroneRoom,
-	Tourney,
-	TreasureHunt,
-	VenetianPass,
-	WorldBoss,
-	XServerTourney,
-	ScratchAndWin,
-	DIYStore,
-	EquipmentTrial,
-	MysteriousIsland,
-	HuntersTavern,
-	XSIntimacy,
-	TreasureTable,
-	FortunasBlessing,
-	AlliancePurchase,
-	SparksUnderMoonlight,
-	ArchersAndAccolades,
-	AllianceChampionship, Challenges
+	Account, Alchemy, Alliance, AllianceSiege, BlessedChest, Campaign,
+	Children, Coronation, DarkCastle, Divining, DragonSlaying, Expeditions,
+	Feasts, GardenStroll, GiftingTree, GiftOfTheFae, HallOfFame, Heroes,
+	HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests,
+	MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic,
+	Processions, Profile, Rankings, Renovation, RenownedMerchant, Rewards,
+	Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss,
+	XServerTourney, ScratchAndWin, DIYStore, EquipmentTrial, MysteriousIsland,
+	HuntersTavern, TreasureTable, FortunasBlessing, AlliancePurchase,
+	SparksUnderMoonlight, ArchersAndAccolades, AllianceChampionship, Challenges,
+	XSChallenges, Deathmatch
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
-import { Deathmatch } from './endpoints/Challenges/Deathmatch'
 
-const VERSION = process.env.VERSION || 'V1.3.571'
+const VERSION = process.env.VERSION || 'V1.3.580'
 const COOKIE = 'lyjxncc=c3ac4e77dff349b66c7aeed276e3eb6c'
 const DEFAULT_HOST = 'ksrus.gtbackoverseas.com'
 // const OLD_HOST = 'zsjefunbm.zwformat.com'
@@ -104,14 +59,14 @@ export class Goat {
 
 
 	challenges = new Challenges(this)
-	xsChallenges = {
-		xsIntimacy: new XSIntimacy(this),
-		xServerTourney: new XServerTourney(this),
-	}
+	xsChallenges = new XSChallenges(this)
+
+	xServerTourney = new XServerTourney(this)
+	allianceChampionship = new AllianceChampionship(this)
+	deathmatch = new Deathmatch(this)
 
 	events = {
 		alchemy: new Alchemy(this),
-		allianceChampionship: new AllianceChampionship(this),
 		alliancePurchase: new AlliancePurchase(this),
 		allianceSiege: new AllianceSiege(this),
 		archersAndAccolads: new ArchersAndAccolades(this),
@@ -119,7 +74,6 @@ export class Goat {
 		castle: new Renovation(this),
 		coronation: new Coronation(this),
 		darkCastle: new DarkCastle(this),
-		deathmatch: new Deathmatch(this),
 		divining: new Divining(this),
 		diyStore: new DIYStore(this),
 		dragonSlaying: new DragonSlaying(this),

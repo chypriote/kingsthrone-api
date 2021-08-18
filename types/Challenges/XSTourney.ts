@@ -1,5 +1,5 @@
-import { ITourneyFight, ITourneyInfos, ITourneyResult, ITourneyStatus, UserTourney } from './Tourney'
-import { User } from './User'
+import { ITourneyFight, ITourneyInfos, ITourneyResult, ITourneyStatus, UserTourney } from '../Tourney'
+import { User } from '../User'
 
 interface XSTourneyFight extends ITourneyFight {
 	fstate: number

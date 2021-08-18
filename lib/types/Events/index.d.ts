@@ -1,6 +1,7 @@
 export * from './Event';
 export * from './Alchemy';
 export * from './AlliancePurchase';
+export * from './AllianceSiege';
 export * from './BlessedChest';
 export * from './Coronation';
 export * from './Divining';

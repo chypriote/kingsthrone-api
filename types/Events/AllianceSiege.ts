@@ -1,7 +1,7 @@
 import { User } from '../User'
 import { Alliance } from '../Alliance'
 import { Item } from '../Item'
-import { ClubEventRwd, EventQuest, EventQuestCfg, EventRwd } from '../Events'
+import { ClubEventRwd, EventQuest, EventQuestCfg, EventRwd } from './index'
 
 interface AllianceSiegeRank {
 	generalName: string

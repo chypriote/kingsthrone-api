@@ -1,6 +1,5 @@
-import { Account, Alchemy, Alliance, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, ScratchAndWin, DIYStore, EquipmentTrial, MysteriousIsland, HuntersTavern, XSIntimacy, TreasureTable, FortunasBlessing, AlliancePurchase, SparksUnderMoonlight, ArchersAndAccolades, AllianceChampionship, Challenges } from './endpoints';
+import { Account, Alchemy, Alliance, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, ScratchAndWin, DIYStore, EquipmentTrial, MysteriousIsland, HuntersTavern, TreasureTable, FortunasBlessing, AlliancePurchase, SparksUnderMoonlight, ArchersAndAccolades, AllianceChampionship, Challenges, XSChallenges, Deathmatch } from './endpoints';
 import { IAccount } from './GoatResource';
-import { Deathmatch } from './endpoints/Challenges/Deathmatch';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
 export { ACCOUNT_RAYMUNDUS } from './accounts/raymundus';
@@ -35,13 +34,12 @@ export declare class Goat {
     tourney: Tourney;
     worldBoss: WorldBoss;
     challenges: Challenges;
-    xsChallenges: {
-        xsIntimacy: XSIntimacy;
-        xServerTourney: XServerTourney;
-    };
+    xsChallenges: XSChallenges;
+    xServerTourney: XServerTourney;
+    allianceChampionship: AllianceChampionship;
+    deathmatch: Deathmatch;
     events: {
         alchemy: Alchemy;
-        allianceChampionship: AllianceChampionship;
         alliancePurchase: AlliancePurchase;
         allianceSiege: AllianceSiege;
         archersAndAccolads: ArchersAndAccolades;
@@ -49,7 +47,6 @@ export declare class Goat {
         castle: Renovation;
         coronation: Coronation;
         darkCastle: DarkCastle;
-        deathmatch: Deathmatch;
         divining: Divining;
         diyStore: DIYStore;
         dragonSlaying: DragonSlaying;
