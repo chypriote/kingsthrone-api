@@ -14,7 +14,7 @@ export interface AllianceIntimacyStatus {
         cfg: AllianceChallengeCfg;
     };
     clublovelist: ChallengeRank[];
-    myclubRid: ChallengeRid;
+    myclubLoveRid: ChallengeRid;
     myclubloveRwdStatus: ChallengeRwdStatus;
     rewards: {
         id: number;
