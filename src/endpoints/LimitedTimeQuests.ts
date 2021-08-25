@@ -46,6 +46,10 @@ export class LimitedTimeQuests extends GoatResource {
 		const data = await this.request({ huodong: { hd211Info: [] } })
 		return data.a.xshuodong.school
 	}
+	async collectGrain(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd213Info: [] } })
+		return data.a.xshuodong.nongchan
+	}
 	async killSiegeBoss(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd215Info: [] } })
 		return data.a.xshuodong.jishag2d
@@ -85,6 +89,10 @@ export class LimitedTimeQuests extends GoatResource {
 	async feastPoints(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd225Info: [] } })
 		return data.a.xshuodong.jiulouzf
+	}
+	async consumeGrain(): Promise<LTQStatus> {
+		const data = await this.request({ huodong: { hd226Info: [] } })
+		return data.a.xshuodong.food
 	}
 	async randomVisitsQuest(): Promise<LTQStatus> {
 		const data = await this.request({ huodong: { hd1045Info: [] } })
