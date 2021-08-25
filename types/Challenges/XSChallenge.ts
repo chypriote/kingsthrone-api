@@ -29,6 +29,11 @@ export interface XSKingdomPowerStatus {
 	mykuashiliRwdStatus: { rwd_stat: number }
 	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
+export interface XSQualityStatus {
+	kuazizhi: XServerStatus
+	mykuazizhiRwdStatus: { rwd_stat: number }
+	rewards: { id: number, taskStatus: {id:number}[] }[]
+}
 
 export interface XSRid {
 	uid: number
@@ -50,4 +55,11 @@ export interface XSKingdomPowerRankings {
 	mykuashiliRwdStatus: { rwd_stat: number }
 	qufulist: XSRid[]
 	userlist: XSNamedRid[]
+}
+export interface XSQualityRankings {
+	mykuaquzizhiRid: XSRid
+	mykuazizhiRid: XSNamedRid
+	mykuazizhiRwdStatus: { rwd_stat: number }
+	qufuzizhilist: XSRid[]
+	userzizhilist: XSNamedRid[]
 }

@@ -45,6 +45,18 @@ export interface XSKingdomPowerStatus {
         }[];
     }[];
 }
+export interface XSQualityStatus {
+    kuazizhi: XServerStatus;
+    mykuazizhiRwdStatus: {
+        rwd_stat: number;
+    };
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
+}
 export interface XSRid {
     uid: number;
     serv: number;
@@ -71,5 +83,14 @@ export interface XSKingdomPowerRankings {
     };
     qufulist: XSRid[];
     userlist: XSNamedRid[];
+}
+export interface XSQualityRankings {
+    mykuaquzizhiRid: XSRid;
+    mykuazizhiRid: XSNamedRid;
+    mykuazizhiRwdStatus: {
+        rwd_stat: number;
+    };
+    qufuzizhilist: XSRid[];
+    userzizhilist: XSNamedRid[];
 }
 export {};

@@ -22,5 +22,6 @@ export declare enum CHALLENGE_TYPES {
     RARE_BEASTS = 1098,
     EQUIPMENT = 1339,
     XS_KINGDOM_POWER = 313,
-    XS_INTIMACY = 314
+    XS_INTIMACY = 314,
+    XS_QUALITY = 1138
 }

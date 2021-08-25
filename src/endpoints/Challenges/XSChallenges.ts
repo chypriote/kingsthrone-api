@@ -5,6 +5,8 @@ import {
 	XSIntimacyStatus,
 	XSKingdomPowerRankings,
 	XSKingdomPowerStatus,
+	XSQualityRankings,
+	XSQualityStatus
 } from '../../../types'
 
 export class XSChallenges extends GoatResource {
@@ -22,6 +24,14 @@ export class XSChallenges extends GoatResource {
 	}
 	async getKingdomPowerRankings(): Promise<XSKingdomPowerRankings> {
 		const data = await this.request({ huodong:{ hd313UserRank:[] } })
+		return data.a.kuacbhuodong
+	}
+	async quality(): Promise<XSQualityStatus> {
+		const data = await this.request({ huodong: { hd1138Info: [] } })
+		return { ...data.a.kuacbhuodong, rewards: data.u.cbhuodong.cbTaskStatus }
+	}
+	async getQuality(): Promise<XSQualityRankings> {
+		const data = await this.request({ huodong:{ hd1138UserRank:[] } })
 		return data.a.kuacbhuodong
 	}
 
