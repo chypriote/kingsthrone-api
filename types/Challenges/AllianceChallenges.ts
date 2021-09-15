@@ -30,5 +30,10 @@ export interface AlliancePowerStatus {
 	myclubShiliRwdStatus: ChallengeRwdStatus
 	rewards: { id: number, taskStatus: {id:number}[] }[]
 }
-
-
+export interface AllianceTourneyStatus {
+	clubyamen: { cfg: AllianceChallengeCfg }
+	clubyamenlist: ChallengeRank[]
+	myclubyamen: ChallengeRid
+	myclubyamenRwdStatus: ChallengeRwdStatus
+	rewards: { id: number, taskStatus: {id:number}[] }[]
+}

@@ -1,6 +1,7 @@
 export { Account } from './Account';
 export { Alliance } from './Alliance';
 export { Campaign } from './Campaign';
+export { Card } from './Card';
 export { Children } from './Children';
 export { Expeditions } from './Expeditions';
 export { Feasts } from './Feasts';

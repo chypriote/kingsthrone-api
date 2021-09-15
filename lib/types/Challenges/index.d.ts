@@ -1,5 +1,6 @@
 export * from './AllianceChallenges';
 export * from './AllianceChampionship';
+export * from './AllianceChampionship';
 export * from './Challenges';
 export * from './XSChallenge';
 export * from './XSTourney';
@@ -8,6 +9,7 @@ export declare enum CHALLENGE_TYPES {
     ALLIANCE_INTIMACY = 312,
     ALLIANCE_EXPERIENCE = 250,
     ALLIANCE_POWER = 310,
+    ALLIANCE_TOURNEY = 315,
     GRAIN = 259,
     MAIDEN_EXPERIENCE = 1075,
     RAISE_CHILDREN = 311,

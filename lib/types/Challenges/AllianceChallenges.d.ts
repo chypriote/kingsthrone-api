@@ -51,3 +51,17 @@ export interface AlliancePowerStatus {
         }[];
     }[];
 }
+export interface AllianceTourneyStatus {
+    clubyamen: {
+        cfg: AllianceChallengeCfg;
+    };
+    clubyamenlist: ChallengeRank[];
+    myclubyamen: ChallengeRid;
+    myclubyamenRwdStatus: ChallengeRwdStatus;
+    rewards: {
+        id: number;
+        taskStatus: {
+            id: number;
+        }[];
+    }[];
+}

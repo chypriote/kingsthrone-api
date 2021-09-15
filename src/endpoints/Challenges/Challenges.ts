@@ -2,7 +2,7 @@ import { GoatResource } from '../../GoatResource'
 import {
 	AllianceExperienceStatus,
 	AllianceIntimacyStatus,
-	AlliancePowerStatus,
+	AlliancePowerStatus, AllianceTourneyStatus,
 	CHALLENGE_TYPES,
 	CharmStatus,
 	EquipmentStatus,
@@ -12,7 +12,7 @@ import {
 	KingdomPowerStatus,
 	LoseSoldiersStatus,
 	MaidenExpStatus,
-	QualityStatus, RaiseChildrenStatus, RareBeastsStatus, SpendGoldStatus, TourneyStatus,
+	QualityStatus, RaiseChildrenStatus, RareBeastsStatus, SpendGoldStatus, TourneyStatus
 } from '../../../types'
 
 export class Challenges extends GoatResource {
@@ -39,6 +39,10 @@ export class Challenges extends GoatResource {
 	}
 	async alliancePower(): Promise<AlliancePowerStatus> {
 		const data = await this.request({ huodong: { hd310Info: [] } })
+		return { ...data.a.cbhuodong, rewards: data.u.cbhuodong.cbTaskStatus }
+	}
+	async allianceTourney(): Promise<AllianceTourneyStatus> {
+		const data = await this.request({ huodong: { hd315Info: [] } })
 		return { ...data.a.cbhuodong, rewards: data.u.cbhuodong.cbTaskStatus }
 	}
 	async charm(): Promise<CharmStatus> {

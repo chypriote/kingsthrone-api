@@ -1,4 +1,4 @@
-import { Account, Alchemy, Alliance, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, ScratchAndWin, DIYStore, EquipmentTrial, MysteriousIsland, HuntersTavern, TreasureTable, FortunasBlessing, AlliancePurchase, SparksUnderMoonlight, ArchersAndAccolades, AllianceChampionship, Challenges, XSChallenges, Deathmatch } from './endpoints';
+import { Account, Alchemy, Alliance, AllianceSiege, BlessedChest, Campaign, Children, Coronation, DarkCastle, Divining, DragonSlaying, Expeditions, Feasts, GardenStroll, GiftingTree, GiftOfTheFae, HallOfFame, Heroes, HeroesTrial, Items, JewelsOfLuck, Kingdom, KingsPass, LimitedTimeQuests, MaidenPainting, Maidens, Mail, PathOfWealth, PeoplesMonarch, Picnic, Processions, Profile, Rankings, Renovation, RenownedMerchant, Rewards, Shop, ThroneRoom, Tourney, TreasureHunt, VenetianPass, WorldBoss, XServerTourney, ScratchAndWin, DIYStore, EquipmentTrial, MysteriousIsland, HuntersTavern, TreasureTable, FortunasBlessing, AlliancePurchase, SparksUnderMoonlight, ArchersAndAccolades, AllianceChampionship, Challenges, XSChallenges, Deathmatch, Card } from './endpoints';
 import { IAccount } from './GoatResource';
 export { ACCOUNT_GAUTIER } from './accounts/gautier';
 export { ACCOUNT_NAPOLEON } from './accounts/demophlos';
@@ -14,6 +14,7 @@ export declare class Goat {
     isLoggedIn: boolean;
     account: Account;
     alliance: Alliance;
+    card: Card;
     campaign: Campaign;
     children: Children;
     expeditions: Expeditions;
@@ -83,9 +84,6 @@ export declare class Goat {
     _getToken(): string | null;
     _setToken(token: string): this;
     _getBaseUrl(): string;
-    _isGautier(): boolean;
-    _isDemophlos(): boolean;
-    _isShallan(): boolean;
     _getAccount(): IAccount;
     _setAccount(account: IAccount): this;
     _login({ token, uid }: {

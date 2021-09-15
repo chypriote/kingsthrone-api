@@ -9,12 +9,12 @@ import {
 	XServerTourney, ScratchAndWin, DIYStore, EquipmentTrial, MysteriousIsland,
 	HuntersTavern, TreasureTable, FortunasBlessing, AlliancePurchase,
 	SparksUnderMoonlight, ArchersAndAccolades, AllianceChampionship, Challenges,
-	XSChallenges, Deathmatch
+	XSChallenges, Deathmatch, Card
 } from './endpoints'
 import { IAccount } from './GoatResource'
 import { ACCOUNT_NAPOLEON } from './accounts/demophlos'
 
-const VERSION = process.env.VERSION || 'V1.3.580'
+const VERSION = process.env.VERSION || 'V1.3.597'
 const COOKIE = 'lyjxncc=c3ac4e77dff349b66c7aeed276e3eb6c'
 const DEFAULT_HOST = 'ksrus.gtbackoverseas.com'
 // const OLD_HOST = 'zsjefunbm.zwformat.com'
@@ -37,6 +37,7 @@ export class Goat {
 
 	account = new Account(this)
 	alliance = new Alliance(this)
+	card = new Card(this)
 	campaign = new Campaign(this)
 	children = new Children(this)
 	expeditions = new Expeditions(this)
@@ -145,18 +146,6 @@ export class Goat {
 	}
 	_getBaseUrl(): string {
 		return `http://${this.host}/servers/s${this.server}.php`
-	}
-	_isGautier(): boolean {
-		return this.server === '699' &&
-		(this.gid === '699002934' || this.loginAccount.name === 'Gautier')
-	}
-	_isDemophlos(): boolean {
-		return this.server === '699' &&
-		(this.gid === '6999005053' || this.loginAccount.name === 'Demophlos')
-	}
-	_isShallan(): boolean {
-		return this.server === '1094' &&
-		(this.gid === '1094003443' || this.loginAccount.name === 'Gautier')
 	}
 	_getAccount(): IAccount {
 		return this.loginAccount
